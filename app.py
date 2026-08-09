@@ -1,108 +1,283 @@
+```python
 import streamlit as st
 
+# --------------------------------------------------
+# PAGE CONFIGURATION
+# --------------------------------------------------
+
 st.set_page_config(
-    page_title="Sristi | Data Analyst",
+    page_title="Sristi | Data Analyst Portfolio",
     page_icon="📊",
     layout="wide"
 )
 
-# -----------------------------
-# HOME
-# -----------------------------
+# --------------------------------------------------
+# HEADER
+# --------------------------------------------------
 
 st.title("Sristi")
 st.subheader("Aspiring Data Analyst")
 
 st.write(
-    "I am building my skills in SQL, Python, Excel, "
-    "Statistics, and Data Analytics."
+    "Building practical skills in SQL, Python, Excel, "
+    "Power BI, Statistics, Data Visualization, and DSA."
 )
 
 st.divider()
 
-# -----------------------------
-# SKILLS
-# -----------------------------
+# --------------------------------------------------
+# ABOUT ME
+# --------------------------------------------------
 
-st.header("Skills")
+st.header("👩‍💻 About Me")
 
-col1, col2, col3, col4 = st.columns(4)
+st.write(
+    """
+    I am preparing for a career as a Data Analyst with a strong focus
+    on practical data analysis and problem solving.
 
-with col1:
-    st.subheader("🐍 Python")
-    st.write("Python, Pandas, Data Analysis")
+    I am developing my skills across SQL, Python, NumPy, Pandas,
+    Matplotlib, Seaborn, Plotly, Excel, Power BI, Statistics,
+    Data Visualization, Git/GitHub, and Data Structures & Algorithms.
 
-with col2:
-    st.subheader("🗄️ SQL")
-    st.write("SQL queries, aggregation, analysis")
-
-with col3:
-    st.subheader("📊 Excel")
-    st.write("Data cleaning, analysis, dashboards")
-
-with col4:
-    st.subheader("📈 Statistics")
-    st.write("Descriptive & inferential statistics")
+    My goal is to build real-world projects that demonstrate my
+    ability to clean data, analyze information, create visualizations,
+    identify insights, and communicate findings clearly.
+    """
+)
 
 st.divider()
 
-# -----------------------------
-# PROJECTS
-# -----------------------------
+# --------------------------------------------------
+# SKILLS
+# --------------------------------------------------
 
-st.header("Projects")
+st.header("🛠️ Skills")
+
+# PYTHON & DATA ANALYSIS
+col1, col2, col3 = st.columns(3)
+
+with col1:
+    st.subheader("🐍 Python")
+    st.write(
+        "Python, NumPy, Pandas"
+    )
+
+    st.subheader("🗄️ SQL")
+    st.write(
+        "Queries, Filtering, Aggregation, GROUP BY, "
+        "Joins, Subqueries, Data Analysis"
+    )
+
+with col2:
+    st.subheader("📊 Excel")
+    st.write(
+        "Data Cleaning, Functions, Pivot Tables, "
+        "Charts, Dashboards"
+    )
+
+    st.subheader("📈 Power BI")
+    st.write(
+        "Power Query, Data Modeling, DAX, "
+        "Interactive Dashboards"
+    )
+
+with col3:
+    st.subheader("📐 Statistics")
+    st.write(
+        "Descriptive Statistics, Probability, "
+        "Hypothesis Testing, Regression"
+    )
+
+    st.subheader("🧠 DSA")
+    st.write(
+        "Arrays, Linked Lists, Stacks, Queues, "
+        "Trees, Graphs, Searching, Sorting, Recursion"
+    )
+
+# VISUALIZATION & TOOLS
+st.divider()
+
+col1, col2, col3 = st.columns(3)
+
+with col1:
+    st.subheader("📉 Data Visualization")
+    st.write(
+        "Matplotlib, Seaborn, Plotly"
+    )
+
+with col2:
+    st.subheader("🔧 Data Tools")
+    st.write(
+        "Data Cleaning, EDA, Data Analysis, "
+        "Data Transformation"
+    )
+
+with col3:
+    st.subheader("💻 Tools")
+    st.write(
+        "Git, GitHub, Google Colab"
+    )
+
+st.divider()
+
+# --------------------------------------------------
+# PROJECTS
+# --------------------------------------------------
+
+st.header("📂 Projects")
+
+# COVID PROJECT
 
 st.subheader("🦠 COVID-19 Data Analysis")
 
 st.write(
-    "SQL analysis exploring reported COVID-19 cases, "
-    "deaths, and trends over time."
+    """
+    SQL-based analysis exploring reported COVID-19 cases,
+    deaths, death rates, and changes in reported cases and
+    deaths over time.
+    """
 )
 
-st.write("**Tools:** SQL, Data Analysis")
+st.write("**Tools:** SQL | Data Analysis")
+
+if st.button("View COVID-19 Project"):
+    st.info(
+        "Project page will be connected here after the "
+        "SQL assessment is completed."
+    )
 
 st.divider()
+
+# POWER BI
+
+st.subheader("📊 Power BI Dashboard")
+
+st.write(
+    """
+    Interactive business dashboard project using Power BI
+    to explore KPIs, trends, and business performance.
+    """
+)
+
+st.write("**Tools:** Power BI | Power Query | DAX")
+
+st.info("🚧 Coming Soon")
+
+st.divider()
+
+# PYTHON
 
 st.subheader("🐍 Python Data Analysis")
 
 st.write(
-    "Coming soon — Python and Pandas based data analysis project."
+    """
+    Data analysis project using Python and Pandas to clean,
+    explore, visualize, and extract insights from a dataset.
+    """
 )
-
-st.write("**Tools:** Python, Pandas, Matplotlib")
-
-st.divider()
-
-st.subheader("📊 Excel Data Analysis")
 
 st.write(
-    "Coming soon — Excel-based data analysis project."
+    "**Tools:** Python | Pandas | NumPy | Matplotlib | Seaborn"
 )
 
-st.write("**Tools:** Excel, Data Analysis")
+st.info("🚧 Coming Soon")
 
 st.divider()
 
-# -----------------------------
-# ABOUT
-# -----------------------------
+# EXCEL
 
-st.header("About Me")
+st.subheader("📈 Excel Data Analysis")
 
 st.write(
-    "I am preparing for a career as a Data Analyst. "
-    "My focus is on developing practical skills in SQL, "
-    "Python, Excel, Statistics, and data visualization."
+    """
+    Excel-based data analysis project involving data cleaning,
+    formulas, pivot tables, charts, and dashboard creation.
+    """
+)
+
+st.write("**Tools:** Excel | Pivot Tables | Data Visualization")
+
+st.info("🚧 Coming Soon")
+
+st.divider()
+
+# DSA
+
+st.subheader("🧠 DSA Problem Solving")
+
+st.write(
+    """
+    Collection of Data Structures and Algorithms problems
+    solved using Python, focusing on problem-solving,
+    searching, sorting, trees, graphs, and recursion.
+    """
+)
+
+st.write("**Tools:** Python | Data Structures | Algorithms")
+
+st.info("🚧 Coming Soon")
+
+st.divider()
+
+# --------------------------------------------------
+# LEARNING JOURNEY
+# --------------------------------------------------
+
+st.header("🎯 Learning Journey")
+
+st.write("**Currently developing:**")
+
+progress = {
+    "SQL": "In Progress",
+    "Python": "In Progress",
+    "NumPy": "In Progress",
+    "Pandas": "In Progress",
+    "Matplotlib": "In Progress",
+    "Seaborn": "Planned",
+    "Plotly": "Planned",
+    "Excel": "In Progress",
+    "Power BI": "In Progress",
+    "Statistics": "In Progress",
+    "DSA": "In Progress",
+    "Git/GitHub": "In Progress"
+}
+
+for skill, status in progress.items():
+    st.write(f"**{skill}:** {status}")
+
+st.divider()
+
+# --------------------------------------------------
+# CAREER GOAL
+# --------------------------------------------------
+
+st.header("🚀 Career Goal")
+
+st.write(
+    """
+    My goal is to become a job-ready Data Analyst by combining
+    strong analytical thinking with practical skills in SQL,
+    Python, Excel, Power BI, Statistics, and data visualization.
+
+    I aim to solve real-world business problems using data and
+    communicate actionable insights clearly.
+    """
 )
 
 st.divider()
 
-# -----------------------------
+# --------------------------------------------------
 # CONTACT
-# -----------------------------
+# --------------------------------------------------
 
-st.header("Contact")
+st.header("📬 Contact")
 
 st.write("📧 Email: Add your email here")
-st.write("🔗 LinkedIn: Add your LinkedIn here")
-st.write("💻 GitHub: Add your GitHub here")
+st.write("💼 LinkedIn: Add your LinkedIn profile here")
+st.write("💻 GitHub: Add your GitHub profile here")
+
+st.divider()
+
+st.caption("© 2026 Sristi | Data Analyst Portfolio")
+```
