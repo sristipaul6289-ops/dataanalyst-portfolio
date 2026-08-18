@@ -1,4 +1,3 @@
-```python
 import streamlit as st
 
 # --------------------------------------------------
@@ -54,7 +53,6 @@ st.divider()
 
 st.header("🛠️ Skills")
 
-# PYTHON & DATA ANALYSIS
 col1, col2, col3 = st.columns(3)
 
 with col1:
@@ -95,22 +93,27 @@ with col3:
         "Trees, Graphs, Searching, Sorting, Recursion"
     )
 
-# VISUALIZATION & TOOLS
 st.divider()
+
+# --------------------------------------------------
+# DATA VISUALIZATION & TOOLS
+# --------------------------------------------------
+
+st.header("📊 Data Visualization & Tools")
 
 col1, col2, col3 = st.columns(3)
 
 with col1:
-    st.subheader("📉 Data Visualization")
+    st.subheader("📉 Visualization")
     st.write(
         "Matplotlib, Seaborn, Plotly"
     )
 
 with col2:
-    st.subheader("🔧 Data Tools")
+    st.subheader("🔧 Data Analysis")
     st.write(
-        "Data Cleaning, EDA, Data Analysis, "
-        "Data Transformation"
+        "Data Cleaning, EDA, Data Transformation, "
+        "Data Analysis"
     )
 
 with col3:
@@ -141,11 +144,7 @@ st.write(
 
 st.write("**Tools:** SQL | Data Analysis")
 
-if st.button("View COVID-19 Project"):
-    st.info(
-        "Project page will be connected here after the "
-        "SQL assessment is completed."
-    )
+st.info("🚧 Project currently in development")
 
 st.divider()
 
@@ -160,7 +159,9 @@ st.write(
     """
 )
 
-st.write("**Tools:** Power BI | Power Query | DAX")
+st.write(
+    "**Tools:** Power BI | Power Query | DAX"
+)
 
 st.info("🚧 Coming Soon")
 
@@ -196,7 +197,9 @@ st.write(
     """
 )
 
-st.write("**Tools:** Excel | Pivot Tables | Data Visualization")
+st.write(
+    "**Tools:** Excel | Pivot Tables | Data Visualization"
+)
 
 st.info("🚧 Coming Soon")
 
@@ -214,7 +217,9 @@ st.write(
     """
 )
 
-st.write("**Tools:** Python | Data Structures | Algorithms")
+st.write(
+    "**Tools:** Python | Data Structures | Algorithms"
+)
 
 st.info("🚧 Coming Soon")
 
@@ -280,4 +285,3 @@ st.write("💻 GitHub: Add your GitHub profile here")
 st.divider()
 
 st.caption("© 2026 Sristi | Data Analyst Portfolio")
-```
