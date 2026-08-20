@@ -2,9 +2,7 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Sristi Paul | Data Analyst Portfolio</title>
@@ -25,16 +23,21 @@
             font-family: Arial, Helvetica, sans-serif;
             background: #f8fafc;
             color: #1e293b;
-            line-height: 1.7;
+            line-height: 1.6;
         }
+
+        /* ================= NAVBAR ================= */
 
         nav {
             position: sticky;
             top: 0;
             z-index: 1000;
-            background: #ffffff;
+
+            background: white;
             border-bottom: 1px solid #e2e8f0;
-            padding: 16px 8%;
+
+            padding: 16px 7%;
+
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -49,8 +52,8 @@
         nav ul {
             list-style: none;
             display: flex;
-            gap: 25px;
             align-items: center;
+            gap: 25px;
         }
 
         nav a {
@@ -64,20 +67,22 @@
             color: #2563eb;
         }
 
-        /* RESUME MENU */
+        /* ================= RESUME ================= */
 
         .resume-menu {
             position: relative;
         }
 
         .resume-button {
-            cursor: pointer;
             border: none;
             background: none;
+            cursor: pointer;
+
             font-family: inherit;
-            color: #475569;
             font-size: 14px;
             font-weight: 600;
+
+            color: #475569;
         }
 
         .resume-button:hover {
@@ -86,23 +91,28 @@
 
         .resume-dropdown {
             display: none;
+
             position: absolute;
             right: 0;
             top: 30px;
+
+            width: 175px;
+
             background: white;
-            min-width: 170px;
             border: 1px solid #e2e8f0;
             border-radius: 7px;
+
             box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+
             overflow: hidden;
         }
 
         .resume-dropdown a {
             display: block;
             padding: 12px 15px;
+
             color: #334155;
             text-decoration: none;
-            font-size: 14px;
         }
 
         .resume-dropdown a:hover {
@@ -114,44 +124,55 @@
             display: block;
         }
 
-        /* HERO */
+        /* ================= HERO ================= */
 
         .hero {
-            background: #ffffff;
-            padding: 105px 8% 95px;
+            background: white;
+
+            padding: 100px 7% 90px;
+
             border-bottom: 1px solid #e2e8f0;
         }
 
         .hero-content {
-            max-width: 1000px;
+            max-width: 950px;
             margin: auto;
         }
 
         .hero h1 {
             font-size: 58px;
             line-height: 1.1;
+
             color: #0f172a;
+
             margin-bottom: 15px;
         }
 
         .hero h2 {
             font-size: 25px;
             font-weight: 500;
+
             color: #2563eb;
-            margin-bottom: 12px;
+
+            margin-bottom: 10px;
         }
 
         .hero-role {
             font-size: 16px;
             font-weight: 600;
+
             color: #475569;
-            margin-bottom: 22px;
+
+            margin-bottom: 20px;
         }
 
         .hero p {
             max-width: 780px;
+
             color: #64748b;
+
             font-size: 17px;
+
             margin-bottom: 28px;
         }
 
@@ -163,11 +184,15 @@
 
         .button {
             display: inline-block;
+
             padding: 12px 22px;
+
             border-radius: 6px;
+
             text-decoration: none;
-            font-weight: 600;
+
             font-size: 14px;
+            font-weight: 600;
         }
 
         .primary {
@@ -181,130 +206,156 @@
 
         .secondary {
             border: 1px solid #cbd5e1;
-            color: #334155;
             background: white;
+            color: #334155;
         }
 
         .secondary:hover {
             background: #f1f5f9;
         }
 
-        /* SECTIONS */
+        /* ================= SECTIONS ================= */
 
         section {
             max-width: 1100px;
             margin: auto;
-            padding: 80px 30px;
+
+            padding: 75px 30px;
         }
 
         .section-title {
             font-size: 32px;
             color: #0f172a;
-            margin-bottom: 10px;
+
+            margin-bottom: 8px;
         }
 
         .section-line {
             width: 50px;
             height: 3px;
+
             background: #2563eb;
-            margin-bottom: 32px;
+
+            margin-bottom: 30px;
         }
 
-        .section-description {
-            color: #64748b;
-            max-width: 800px;
-            margin-bottom: 35px;
-        }
-
-        /* ABOUT */
+        /* ================= ABOUT ================= */
 
         .about-text {
             max-width: 900px;
+
             color: #475569;
+
             font-size: 16px;
         }
 
-        /* SKILLS */
+        /* ================= SKILLS ================= */
 
         .skills-grid {
             display: grid;
+
             grid-template-columns: repeat(2, 1fr);
+
             gap: 18px;
         }
 
         .skill-box {
             background: white;
+
             border: 1px solid #e2e8f0;
+
             border-radius: 8px;
-            padding: 24px;
+
+            padding: 22px;
         }
 
         .skill-box h3 {
             color: #0f172a;
+
             font-size: 17px;
-            margin-bottom: 8px;
+
+            margin-bottom: 7px;
         }
 
         .skill-box p {
             color: #64748b;
+
             font-size: 14px;
         }
 
-        /* PROJECTS */
+        /* ================= PROJECTS ================= */
 
         .project-category {
             font-size: 23px;
+
             color: #0f172a;
-            margin-top: 30px;
+
+            margin-top: 35px;
             margin-bottom: 20px;
         }
 
         .projects-grid {
             display: grid;
+
             grid-template-columns: repeat(2, 1fr);
-            gap: 22px;
+
+            gap: 20px;
         }
 
         .project-card {
             background: white;
+
             border: 1px solid #e2e8f0;
+
             border-radius: 8px;
-            padding: 28px;
+
+            padding: 25px;
+
             transition: 0.2s ease;
         }
 
         .project-card:hover {
             border-color: #93c5fd;
+
             transform: translateY(-3px);
         }
 
         .project-card h3 {
             color: #0f172a;
+
             font-size: 19px;
-            margin-bottom: 8px;
+
+            margin-bottom: 7px;
         }
 
         .project-tech {
             color: #2563eb;
+
             font-size: 13px;
             font-weight: 600;
-            margin-bottom: 15px;
+
+            margin-bottom: 14px;
         }
 
         .project-card ul {
             padding-left: 20px;
-            margin-bottom: 20px;
+
+            margin-bottom: 15px;
         }
 
         .project-card li {
             color: #64748b;
+
             font-size: 14px;
-            margin-bottom: 6px;
+
+            margin-bottom: 5px;
         }
 
         .project-link {
-            text-decoration: none;
             color: #2563eb;
+
+            text-decoration: none;
+
             font-size: 14px;
             font-weight: 700;
         }
@@ -313,33 +364,42 @@
             text-decoration: underline;
         }
 
-        /* EDUCATION */
+        /* ================= EDUCATION ================= */
 
         .education-item {
             background: white;
+
             border-left: 3px solid #2563eb;
-            padding: 24px;
-            margin-bottom: 18px;
+
+            padding: 22px;
+
+            margin-bottom: 17px;
+
             border-radius: 0 8px 8px 0;
         }
 
         .education-item h3 {
             color: #0f172a;
-            margin-bottom: 5px;
+
+            margin-bottom: 4px;
         }
 
         .education-item p {
             color: #64748b;
+
             font-size: 14px;
         }
 
-        /* CERTIFICATIONS */
+        /* ================= CERTIFICATIONS ================= */
 
         .certifications {
             background: white;
+
             border: 1px solid #e2e8f0;
+
             border-radius: 8px;
-            padding: 28px;
+
+            padding: 25px;
         }
 
         .certifications ul {
@@ -347,57 +407,72 @@
         }
 
         .certifications li {
-            margin-bottom: 13px;
             color: #475569;
+
+            margin-bottom: 12px;
         }
 
         .certifications a {
             color: #2563eb;
+
             text-decoration: none;
-            font-weight: 700;
+
+            font-weight: 600;
         }
 
         .certifications a:hover {
             text-decoration: underline;
         }
 
-        /* CONTACT */
+        /* ================= CONTACT ================= */
 
         .contact-grid {
             display: grid;
+
             grid-template-columns: repeat(2, 1fr);
+
             gap: 18px;
         }
 
         .contact-item {
             background: white;
+
             border: 1px solid #e2e8f0;
-            padding: 22px;
+
+            padding: 20px;
+
             border-radius: 8px;
         }
 
         .contact-item strong {
             display: block;
+
             color: #0f172a;
-            margin-bottom: 5px;
+
+            margin-bottom: 4px;
         }
 
         .contact-item a {
             color: #2563eb;
+
             text-decoration: none;
         }
 
-        /* FOOTER */
+        /* ================= FOOTER ================= */
 
         footer {
             background: #0f172a;
+
             color: #94a3b8;
+
             text-align: center;
-            padding: 25px;
+
+            padding: 24px;
+
             font-size: 13px;
         }
 
-        /* MOBILE */
+        /* ================= MOBILE ================= */
 
         @media (max-width: 768px) {
 
@@ -410,7 +485,7 @@
             }
 
             .hero {
-                padding: 75px 25px;
+                padding: 70px 25px;
             }
 
             .hero h1 {
@@ -441,7 +516,7 @@
 <body>
 
 
-<!-- NAVIGATION -->
+<!-- ================= NAVIGATION ================= -->
 
 <nav>
 
@@ -475,7 +550,7 @@
             <a href="#contact">Contact</a>
         </li>
 
-        <!-- RESUME DROPDOWN -->
+        <!-- RESUME -->
 
         <li class="resume-menu">
 
@@ -494,8 +569,7 @@
                 </a>
 
                 <a
-                    href="https://github.com/sristipaul6289-ops/dataanalyst-portfolio/raw/refs/heads/main/Black%20and%20White%20ATS-Friendly%20Simple%20Clean%20Resume%20CV%20%283%29.pdf"
-                    download>
+                    href="https://github.com/sristipaul6289-ops/dataanalyst-portfolio/raw/refs/heads/main/Black%20and%20White%20ATS-Friendly%20Simple%20Clean%20Resume%20CV%20%283%29.pdf">
 
                     Download Resume
 
@@ -510,7 +584,7 @@
 </nav>
 
 
-<!-- HERO -->
+<!-- ================= HERO ================= -->
 
 <header class="hero">
 
@@ -529,9 +603,9 @@
         <p>
 
             MCA graduate with a strong foundation in Data Analytics,
-            Python, SQL, Excel, Power BI, and Statistics. Passionate
-            about transforming raw data into meaningful insights and
-            solving real-world problems through data-driven approaches.
+            SQL, Python, Excel, Power BI, and Statistics. Interested
+            in transforming data into meaningful insights and solving
+            real-world business problems through data-driven analysis.
 
         </p>
 
@@ -561,7 +635,7 @@
 </header>
 
 
-<!-- ABOUT -->
+<!-- ================= ABOUT ================= -->
 
 <section id="about">
 
@@ -578,22 +652,21 @@
 
         <br><br>
 
-        I have hands-on experience working with SQL, Python, Pandas,
-        Excel, Power BI, Statistics, and Machine Learning.
+        I have developed skills in SQL, Python, Pandas, Excel,
+        Power BI, Statistics, and Data Visualization.
 
         <br><br>
 
-        My projects include data analysis, customer segmentation,
-        recommendation systems, deep learning, and automation.
-        I enjoy working with real-world datasets, identifying patterns,
-        creating visualizations, and communicating insights clearly.
+        My portfolio includes personal and academic projects where
+        I have worked with data analysis, visualization, machine
+        learning, and programming.
 
     </p>
 
 </section>
 
 
-<!-- SKILLS -->
+<!-- ================= SKILLS ================= -->
 
 <section id="skills">
 
@@ -611,9 +684,9 @@
             <h3>Data Analytics</h3>
 
             <p>
-                Data Analysis, Data Cleaning, Data Preprocessing,
+                Data Cleaning, Data Preprocessing,
                 Exploratory Data Analysis, Data Visualization,
-                Statistics
+                Statistical Analysis
             </p>
 
         </div>
@@ -636,7 +709,7 @@
 
             <p>
                 Pandas, NumPy, Matplotlib, Seaborn,
-                Scikit-Learn, NLTK
+                Scikit-Learn
             </p>
 
         </div>
@@ -647,7 +720,7 @@
             <h3>Business Intelligence</h3>
 
             <p>
-                Microsoft Excel, Power BI, Power Query,
+                Microsoft Excel, Power BI,
                 Pivot Tables, Data Visualization
             </p>
 
@@ -659,8 +732,8 @@
             <h3>Machine Learning</h3>
 
             <p>
-                K-Means Clustering, NLP, Cosine Similarity,
-                CNN, BiLSTM
+                K-Means Clustering, NLP,
+                Cosine Similarity, CNN, BiLSTM
             </p>
 
         </div>
@@ -668,10 +741,10 @@
 
         <div class="skill-box">
 
-            <h3>Databases & Tools</h3>
+            <h3>Tools</h3>
 
             <p>
-                MySQL, Git, GitHub, Google Colab,
+                Git, GitHub, Google Colab,
                 Jupyter Notebook, Streamlit
             </p>
 
@@ -683,7 +756,8 @@
             <h3>Data Structures & Algorithms</h3>
 
             <p>
-                Data Structures, Algorithms, Problem Solving
+                Data Structures, Algorithms,
+                Problem Solving
             </p>
 
         </div>
@@ -706,7 +780,7 @@
 </section>
 
 
-<!-- PROJECTS -->
+<!-- ================= PROJECTS ================= -->
 
 <section id="projects">
 
@@ -718,23 +792,20 @@
 
     <p class="section-description">
 
-        Selected projects demonstrating practical data analysis,
-        visualization, machine learning, programming, and
-        problem-solving skills.
+        Selected personal and academic projects demonstrating
+        practical data analysis, visualization, machine learning,
+        and problem-solving skills.
 
     </p>
 
 
-    <!-- PERSONAL PROJECTS -->
+    <!-- PERSONAL PROJECT -->
 
     <h3 class="project-category">
         Personal Project
     </h3>
 
     <div class="projects-grid">
-
-
-        <!-- COVID PROJECT -->
 
         <div class="project-card">
 
@@ -751,20 +822,18 @@
             <ul>
 
                 <li>
-                    Analyzed 429K+ COVID-19 records across
-                    255 locations to identify trends in cases,
-                    deaths, and fatality rates.
+                    Analyzed global COVID-19 data to identify
+                    trends in cases, deaths, and fatality rates.
                 </li>
 
                 <li>
-                    Combined SQL, Python, Pandas, Excel,
-                    and Power BI for end-to-end data analysis.
+                    Used SQL, Python, Pandas, and Excel for
+                    data analysis and exploration.
                 </li>
 
                 <li>
-                    Built an interactive Power BI dashboard
-                    with KPIs, rankings, trends, comparisons,
-                    and filters.
+                    Created a Power BI dashboard to communicate
+                    key trends and comparisons visually.
                 </li>
 
             </ul>
@@ -780,23 +849,19 @@
 
         </div>
 
-
     </div>
 
 
     <!-- ACADEMIC PROJECTS -->
 
     <h3 class="project-category">
-
         Academic Projects
-
     </h3>
-
 
     <div class="projects-grid">
 
 
-        <!-- CUSTOMER SEGMENTATION -->
+        <!-- PROJECT 1 -->
 
         <div class="project-card">
 
@@ -813,13 +878,13 @@
             <ul>
 
                 <li>
-                    Segmented customers using K-Means clustering
-                    to identify distinct customer groups.
+                    Applied K-Means clustering to segment
+                    customers into meaningful groups.
                 </li>
 
                 <li>
-                    Applied EDA and cluster analysis to derive
-                    insights for targeted marketing strategies.
+                    Performed exploratory analysis to understand
+                    customer characteristics and patterns.
                 </li>
 
             </ul>
@@ -827,7 +892,7 @@
         </div>
 
 
-        <!-- MOVIE RECOMMENDATION -->
+        <!-- PROJECT 2 -->
 
         <div class="project-card">
 
@@ -837,20 +902,20 @@
 
             <div class="project-tech">
 
-                Python | Pandas | Scikit-Learn | NLTK | Streamlit
+                Python | Pandas | NLP | Cosine Similarity
 
             </div>
 
             <ul>
 
                 <li>
-                    Built a content-based recommendation system
-                    using NLP and cosine similarity.
+                    Developed a content-based recommendation
+                    system using movie information.
                 </li>
 
                 <li>
-                    Designed an interactive application for
-                    personalized movie recommendations.
+                    Used NLP and cosine similarity to generate
+                    relevant movie recommendations.
                 </li>
 
             </ul>
@@ -858,7 +923,7 @@
         </div>
 
 
-        <!-- HANDWRITTEN -->
+        <!-- PROJECT 3 -->
 
         <div class="project-card">
 
@@ -868,21 +933,20 @@
 
             <div class="project-tech">
 
-                Python | TensorFlow/Keras | CNN | BiLSTM | OpenCV
+                Python | CNN | BiLSTM | Deep Learning
 
             </div>
 
             <ul>
 
                 <li>
-                    Implemented a deep learning model for
-                    handwritten word recognition using CNN
-                    and BiLSTM.
+                    Developed a deep learning model for
+                    handwritten word recognition.
                 </li>
 
                 <li>
-                    Integrated CTC Loss with CNN-BiLSTM
-                    architecture for text recognition.
+                    Combined CNN and BiLSTM architecture
+                    for sequence-based text recognition.
                 </li>
 
             </ul>
@@ -890,7 +954,7 @@
         </div>
 
 
-        <!-- VOICE ASSISTANT -->
+        <!-- PROJECT 4 -->
 
         <div class="project-card">
 
@@ -900,20 +964,20 @@
 
             <div class="project-tech">
 
-                Python | SpeechRecognition | pyttsx3 | OpenCV
+                Python | Speech Recognition | Automation
 
             </div>
 
             <ul>
 
                 <li>
-                    Built a voice-controlled desktop assistant
-                    for task automation.
+                    Developed a voice-controlled desktop
+                    assistant using Python.
                 </li>
 
                 <li>
-                    Enabled web search, application launching,
-                    email handling, and information retrieval.
+                    Implemented voice commands for automation
+                    and information retrieval.
                 </li>
 
             </ul>
@@ -926,7 +990,7 @@
 </section>
 
 
-<!-- EDUCATION -->
+<!-- ================= EDUCATION ================= -->
 
 <section id="education">
 
@@ -940,16 +1004,11 @@
     <div class="education-item">
 
         <h3>
-            Master of Computer Applications | CGPA: 7.36
+            Master of Computer Applications
         </h3>
 
         <p>
-            Netaji Subhash Engineering College,
-            Kolkata, West Bengal
-        </p>
-
-        <p>
-            2024 – 2026
+            Netaji Subhash Engineering College, Kolkata
         </p>
 
     </div>
@@ -958,16 +1017,11 @@
     <div class="education-item">
 
         <h3>
-            Bachelor of Computer Applications | CGPA: 8.11
+            Bachelor of Computer Applications
         </h3>
 
         <p>
-            B.P. Poddar Institute of Management &
-            Technology, Kolkata, West Bengal
-        </p>
-
-        <p>
-            2021 – 2024
+            B.P. Poddar Institute of Management & Technology, Kolkata
         </p>
 
     </div>
@@ -976,32 +1030,24 @@
     <div class="education-item">
 
         <h3>
-            AISSCE – Class XII | Commerce with Mathematics | 81.8%
+            Class XII – Commerce with Mathematics
         </h3>
 
         <p>
             Shri Shikshayatan School, Kolkata
         </p>
 
-        <p>
-            2021
-        </p>
-
     </div>
 
 
     <div class="education-item">
 
         <h3>
-            AISSE – Class X | 82.6%
+            Class X
         </h3>
 
         <p>
             Shri Shikshayatan School, Kolkata
-        </p>
-
-        <p>
-            2019
         </p>
 
     </div>
@@ -1009,12 +1055,12 @@
 </section>
 
 
-<!-- CERTIFICATIONS -->
+<!-- ================= CERTIFICATIONS ================= -->
 
 <section id="certifications">
 
     <h2 class="section-title">
-        Certifications & Training
+        Certifications
     </h2>
 
     <div class="section-line"></div>
@@ -1031,11 +1077,9 @@
                     href="https://github.com/sristipaul6289-ops/dataanalyst-portfolio/blob/main/nptel-data-analytics-certificate.pdf"
                     target="_blank">
 
-                    NPTEL Elite – Data Analytics with Python
+                    NPTEL – Data Analytics with Python
 
                 </a>
-
-                | IIT Roorkee | 2026
 
             </li>
 
@@ -1050,9 +1094,6 @@
 
                 </a>
 
-                | JavaScript, React.js, Node.js,
-                Express.js, MongoDB | 2026
-
             </li>
 
 
@@ -1062,11 +1103,9 @@
                     href="https://github.com/sristipaul6289-ops/dataanalyst-portfolio/blob/main/ETHICAL%20HACKING.png"
                     target="_blank">
 
-                    Technical Workshop on Cyber Security & Ethical Hacking
+                    Ethical Hacking & Cyber Security Workshop
 
                 </a>
-
-                | ISOEH | 2026
 
             </li>
 
@@ -1081,8 +1120,6 @@
 
                 </a>
 
-                | Spoken Tutorial Project, IIT Bombay | 2025
-
             </li>
 
 
@@ -1096,9 +1133,6 @@
 
                 </a>
 
-                | Webel Fujisoft Vara Centre of Excellence
-                in Industry 4.0 | 2023
-
             </li>
 
 
@@ -1108,12 +1142,9 @@
                     href="https://github.com/sristipaul6289-ops/dataanalyst-portfolio/blob/main/Adobe%20Scan%2018%20Feb%202026%20%281%29.pdf"
                     target="_blank">
 
-                    Artificial Intelligence & Machine Learning
-                    Internship & Project
+                    Artificial Intelligence & Machine Learning Training
 
                 </a>
-
-                | ESC | 2025
 
             </li>
 
@@ -1124,11 +1155,9 @@
                     href="https://github.com/sristipaul6289-ops/dataanalyst-portfolio/blob/main/UDEMY%20SQL.jpg"
                     target="_blank">
 
-                    SQL Completion Certificate
+                    SQL Completion Certificate – Udemy
 
                 </a>
-
-                | Udemy
 
             </li>
 
@@ -1140,7 +1169,7 @@
 </section>
 
 
-<!-- CONTACT -->
+<!-- ================= CONTACT ================= -->
 
 <section id="contact">
 
@@ -1205,7 +1234,7 @@
 </section>
 
 
-<!-- FOOTER -->
+<!-- ================= FOOTER ================= -->
 
 <footer>
 
