@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -26,205 +27,119 @@
             line-height: 1.6;
         }
 
-        /* ================= NAVBAR ================= */
 
-        nav {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+        /* ================= HOME ================= */
 
+        .home {
+            min-height: 100vh;
             background: white;
-            border-bottom: 1px solid #e2e8f0;
-
-            padding: 16px 7%;
 
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            padding: 70px 25px;
         }
 
-        .logo {
-            font-size: 21px;
-            font-weight: 700;
-            color: #0f172a;
+        .home-content {
+            max-width: 900px;
+            width: 100%;
         }
 
-        nav ul {
-            list-style: none;
-            display: flex;
-            align-items: center;
-            gap: 25px;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: #475569;
-            font-size: 14px;
-            font-weight: 600;
-        }
-
-        nav a:hover {
-            color: #2563eb;
-        }
-
-        /* ================= RESUME ================= */
-
-        .resume-menu {
-            position: relative;
-        }
-
-        .resume-button {
-            border: none;
-            background: none;
-            cursor: pointer;
-
-            font-family: inherit;
-            font-size: 14px;
-            font-weight: 600;
-
-            color: #475569;
-        }
-
-        .resume-button:hover {
-            color: #2563eb;
-        }
-
-        .resume-dropdown {
-            display: none;
-
-            position: absolute;
-            right: 0;
-            top: 30px;
-
-            width: 175px;
-
-            background: white;
-            border: 1px solid #e2e8f0;
-            border-radius: 7px;
-
-            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-
-            overflow: hidden;
-        }
-
-        .resume-dropdown a {
-            display: block;
-            padding: 12px 15px;
-
-            color: #334155;
-            text-decoration: none;
-        }
-
-        .resume-dropdown a:hover {
-            background: #f1f5f9;
-            color: #2563eb;
-        }
-
-        .resume-menu:hover .resume-dropdown {
-            display: block;
-        }
-
-        /* ================= HERO ================= */
-
-        .hero {
-            background: white;
-
-            padding: 100px 7% 90px;
-
-            border-bottom: 1px solid #e2e8f0;
-        }
-
-        .hero-content {
-            max-width: 950px;
-            margin: auto;
-        }
-
-        .hero h1 {
+        .home h1 {
             font-size: 58px;
-            line-height: 1.1;
-
             color: #0f172a;
-
-            margin-bottom: 15px;
-        }
-
-        .hero h2 {
-            font-size: 25px;
-            font-weight: 500;
-
-            color: #2563eb;
-
             margin-bottom: 10px;
         }
 
-        .hero-role {
-            font-size: 16px;
-            font-weight: 600;
-
-            color: #475569;
-
-            margin-bottom: 20px;
+        .home h2 {
+            font-size: 25px;
+            color: #2563eb;
+            font-weight: 500;
+            margin-bottom: 10px;
         }
 
-        .hero p {
-            max-width: 780px;
+        .home-role {
+            color: #475569;
+            font-weight: 600;
+            font-size: 16px;
+            margin-bottom: 22px;
+        }
+
+        .home-summary {
+            max-width: 760px;
+            margin: auto;
 
             color: #64748b;
+            font-size: 16px;
 
-            font-size: 17px;
+            line-height: 1.8;
 
-            margin-bottom: 28px;
+            margin-bottom: 35px;
         }
 
-        .buttons {
+
+        /* ================= NAVIGATION BOXES ================= */
+
+        .navigation-boxes {
             display: flex;
-            gap: 14px;
+            justify-content: center;
+            align-items: center;
+
             flex-wrap: wrap;
+
+            gap: 12px;
+
+            margin-top: 25px;
         }
 
-        .button {
+        .nav-box {
             display: inline-block;
 
-            padding: 12px 22px;
+            padding: 13px 23px;
 
-            border-radius: 6px;
+            background: white;
+
+            border: 1px solid #cbd5e1;
+
+            border-radius: 7px;
 
             text-decoration: none;
 
+            color: #334155;
+
             font-size: 14px;
+
             font-weight: 600;
+
+            transition: 0.2s ease;
         }
 
-        .primary {
+        .nav-box:hover {
             background: #2563eb;
             color: white;
+
+            border-color: #2563eb;
+
+            transform: translateY(-2px);
         }
 
-        .primary:hover {
-            background: #1d4ed8;
-        }
-
-        .secondary {
-            border: 1px solid #cbd5e1;
-            background: white;
-            color: #334155;
-        }
-
-        .secondary:hover {
-            background: #f1f5f9;
-        }
 
         /* ================= SECTIONS ================= */
 
         section {
             max-width: 1100px;
+
             margin: auto;
 
-            padding: 75px 30px;
+            padding: 80px 30px;
         }
 
         .section-title {
             font-size: 32px;
+
             color: #0f172a;
 
             margin-bottom: 8px;
@@ -239,6 +154,7 @@
             margin-bottom: 30px;
         }
 
+
         /* ================= ABOUT ================= */
 
         .about-text {
@@ -247,7 +163,10 @@
             color: #475569;
 
             font-size: 16px;
+
+            line-height: 1.8;
         }
+
 
         /* ================= SKILLS ================= */
 
@@ -266,7 +185,7 @@
 
             border-radius: 8px;
 
-            padding: 22px;
+            padding: 24px;
         }
 
         .skill-box h3 {
@@ -283,6 +202,7 @@
             font-size: 14px;
         }
 
+
         /* ================= PROJECTS ================= */
 
         .project-category {
@@ -291,6 +211,7 @@
             color: #0f172a;
 
             margin-top: 35px;
+
             margin-bottom: 20px;
         }
 
@@ -332,6 +253,7 @@
             color: #2563eb;
 
             font-size: 13px;
+
             font-weight: 600;
 
             margin-bottom: 14px;
@@ -348,7 +270,7 @@
 
             font-size: 14px;
 
-            margin-bottom: 5px;
+            margin-bottom: 6px;
         }
 
         .project-link {
@@ -357,12 +279,14 @@
             text-decoration: none;
 
             font-size: 14px;
+
             font-weight: 700;
         }
 
         .project-link:hover {
             text-decoration: underline;
         }
+
 
         /* ================= EDUCATION ================= */
 
@@ -381,7 +305,7 @@
         .education-item h3 {
             color: #0f172a;
 
-            margin-bottom: 4px;
+            margin-bottom: 5px;
         }
 
         .education-item p {
@@ -389,6 +313,7 @@
 
             font-size: 14px;
         }
+
 
         /* ================= CERTIFICATIONS ================= */
 
@@ -424,6 +349,88 @@
             text-decoration: underline;
         }
 
+
+        /* ================= RESUME ================= */
+
+        .resume-container {
+            background: white;
+
+            border: 1px solid #e2e8f0;
+
+            border-radius: 10px;
+
+            padding: 35px;
+
+            text-align: center;
+
+            max-width: 700px;
+
+            margin: auto;
+        }
+
+        .resume-container h3 {
+            color: #0f172a;
+
+            font-size: 22px;
+
+            margin-bottom: 10px;
+        }
+
+        .resume-container p {
+            color: #64748b;
+
+            font-size: 15px;
+
+            margin-bottom: 25px;
+        }
+
+        .resume-buttons {
+            display: flex;
+
+            justify-content: center;
+
+            gap: 15px;
+
+            flex-wrap: wrap;
+        }
+
+        .resume-button {
+            display: inline-block;
+
+            padding: 12px 24px;
+
+            border-radius: 6px;
+
+            text-decoration: none;
+
+            font-size: 14px;
+
+            font-weight: 600;
+        }
+
+        .resume-view {
+            background: #2563eb;
+
+            color: white;
+        }
+
+        .resume-view:hover {
+            background: #1d4ed8;
+        }
+
+        .resume-download {
+            border: 1px solid #cbd5e1;
+
+            color: #334155;
+
+            background: white;
+        }
+
+        .resume-download:hover {
+            background: #f1f5f9;
+        }
+
+
         /* ================= CONTACT ================= */
 
         .contact-grid {
@@ -439,7 +446,7 @@
 
             border: 1px solid #e2e8f0;
 
-            padding: 20px;
+            padding: 22px;
 
             border-radius: 8px;
         }
@@ -449,7 +456,7 @@
 
             color: #0f172a;
 
-            margin-bottom: 4px;
+            margin-bottom: 5px;
         }
 
         .contact-item a {
@@ -457,6 +464,7 @@
 
             text-decoration: none;
         }
+
 
         /* ================= FOOTER ================= */
 
@@ -467,33 +475,30 @@
 
             text-align: center;
 
-            padding: 24px;
+            padding: 25px;
 
             font-size: 13px;
         }
+
 
         /* ================= MOBILE ================= */
 
         @media (max-width: 768px) {
 
-            nav {
-                padding: 15px 20px;
-            }
-
-            nav ul {
-                display: none;
-            }
-
-            .hero {
-                padding: 70px 25px;
-            }
-
-            .hero h1 {
+            .home h1 {
                 font-size: 42px;
             }
 
-            .hero h2 {
+            .home h2 {
                 font-size: 21px;
+            }
+
+            .navigation-boxes {
+                gap: 10px;
+            }
+
+            .nav-box {
+                padding: 11px 17px;
             }
 
             section {
@@ -516,123 +521,70 @@
 <body>
 
 
-<!-- ================= NAVIGATION ================= -->
+<!-- ================= HOME ================= -->
 
-<nav>
+<div class="home" id="home">
 
-    <div class="logo">
-        Sristi Paul
-    </div>
-
-    <ul>
-
-        <li>
-            <a href="#about">About</a>
-        </li>
-
-        <li>
-            <a href="#skills">Skills</a>
-        </li>
-
-        <li>
-            <a href="#projects">Projects</a>
-        </li>
-
-        <li>
-            <a href="#education">Education</a>
-        </li>
-
-        <li>
-            <a href="#certifications">Certifications</a>
-        </li>
-
-        <li>
-            <a href="#contact">Contact</a>
-        </li>
-
-        <!-- RESUME -->
-
-        <li class="resume-menu">
-
-            <button class="resume-button">
-                Resume ▾
-            </button>
-
-            <div class="resume-dropdown">
-
-                <a
-                    href="https://github.com/sristipaul6289-ops/dataanalyst-portfolio/blob/main/Black%20and%20White%20ATS-Friendly%20Simple%20Clean%20Resume%20CV%20(4).pdf"
-                    target="_blank">
-
-                    View Resume
-
-                </a>
-
-                <a
-                    href="https://github.com/sristipaul6289-ops/dataanalyst-portfolio/blob/main/Black%20and%20White%20ATS-Friendly%20Simple%20Clean%20Resume%20CV%20(4).pdf">
-
-                    Download Resume
-
-                </a>
-
-            </div>
-
-        </li>
-
-    </ul>
-
-</nav>
-
-
-<!-- ================= HERO ================= -->
-
-<header class="hero">
-
-    <div class="hero-content">
+    <div class="home-content">
 
         <h1>Sristi Paul</h1>
 
         <h2>Aspiring Data Analyst</h2>
 
-        <div class="hero-role">
+        <div class="home-role">
 
-            SQL | Python | Excel | Power BI | Statistics
+            MCA Graduate | SQL | Python | Excel | Power BI | Pandas
 
         </div>
 
-        <p>
+        <p class="home-summary">
 
             MCA graduate with a strong foundation in Data Analytics,
-            SQL, Python, Excel, Power BI, and Statistics. Interested
-            in transforming data into meaningful insights and solving
-            real-world business problems through data-driven analysis.
+            SQL, Python, Excel, Power BI, Pandas, and Statistics.
+            I am interested in transforming raw data into meaningful
+            insights, identifying patterns, and solving real-world
+            problems through data-driven analysis.
 
         </p>
 
-        <div class="buttons">
 
-            <a
-                class="button primary"
-                href="#projects">
+        <!-- MAIN NAVIGATION -->
 
-                View Projects
+        <div class="navigation-boxes">
 
+            <a class="nav-box" href="#about">
+                About
             </a>
 
-            <a
-                class="button secondary"
-                href="https://github.com/sristipaul6289-ops"
-                target="_blank">
+            <a class="nav-box" href="#skills">
+                Skills
+            </a>
 
-                GitHub
+            <a class="nav-box" href="#projects">
+                Projects
+            </a>
 
+            <a class="nav-box" href="#education">
+                Education
+            </a>
+
+            <a class="nav-box" href="#certifications">
+                Certifications
+            </a>
+
+            <a class="nav-box" href="#resume">
+                Resume
+            </a>
+
+            <a class="nav-box" href="#contact">
+                Contact
             </a>
 
         </div>
 
     </div>
 
-</header>
+</div>
 
 
 <!-- ================= ABOUT ================= -->
@@ -657,9 +609,10 @@
 
         <br><br>
 
-        My portfolio includes personal and academic projects where
-        I have worked with data analysis, visualization, machine
-        learning, and programming.
+        My portfolio includes a personal COVID-19 data analysis project
+        combining SQL, Python, Excel, and Power BI, along with academic
+        projects involving machine learning, recommendation systems,
+        deep learning, and Python development.
 
     </p>
 
@@ -675,6 +628,7 @@
     </h2>
 
     <div class="section-line"></div>
+
 
     <div class="skills-grid">
 
@@ -751,30 +705,6 @@
         </div>
 
 
-        <div class="skill-box">
-
-            <h3>Data Structures & Algorithms</h3>
-
-            <p>
-                Data Structures, Algorithms,
-                Problem Solving
-            </p>
-
-        </div>
-
-
-        <div class="skill-box">
-
-            <h3>Professional Skills</h3>
-
-            <p>
-                Analytical Thinking, Problem Solving,
-                Communication, Teamwork
-            </p>
-
-        </div>
-
-
     </div>
 
 </section>
@@ -790,14 +720,6 @@
 
     <div class="section-line"></div>
 
-    <p class="section-description">
-
-        Selected personal and academic projects demonstrating
-        practical data analysis, visualization, machine learning,
-        and problem-solving skills.
-
-    </p>
-
 
     <!-- PERSONAL PROJECT -->
 
@@ -805,7 +727,9 @@
         Personal Project
     </h3>
 
+
     <div class="projects-grid">
+
 
         <div class="project-card">
 
@@ -828,7 +752,7 @@
 
                 <li>
                     Used SQL, Python, Pandas, and Excel for
-                    data analysis and exploration.
+                    data cleaning, analysis, and exploration.
                 </li>
 
                 <li>
@@ -837,6 +761,7 @@
                 </li>
 
             </ul>
+
 
             <a
                 class="project-link"
@@ -849,6 +774,7 @@
 
         </div>
 
+
     </div>
 
 
@@ -858,10 +784,9 @@
         Academic Projects
     </h3>
 
+
     <div class="projects-grid">
 
-
-        <!-- PROJECT 1 -->
 
         <div class="project-card">
 
@@ -883,16 +808,14 @@
                 </li>
 
                 <li>
-                    Performed exploratory analysis to understand
-                    customer characteristics and patterns.
+                    Performed exploratory analysis to identify
+                    customer patterns and characteristics.
                 </li>
 
             </ul>
 
         </div>
 
-
-        <!-- PROJECT 2 -->
 
         <div class="project-card">
 
@@ -909,21 +832,19 @@
             <ul>
 
                 <li>
-                    Developed a content-based recommendation
-                    system using movie information.
+                    Developed a content-based movie
+                    recommendation system.
                 </li>
 
                 <li>
                     Used NLP and cosine similarity to generate
-                    relevant movie recommendations.
+                    relevant recommendations.
                 </li>
 
             </ul>
 
         </div>
 
-
-        <!-- PROJECT 3 -->
 
         <div class="project-card">
 
@@ -953,8 +874,6 @@
 
         </div>
 
-
-        <!-- PROJECT 4 -->
 
         <div class="project-card">
 
@@ -1163,6 +1082,61 @@
 
 
         </ul>
+
+    </div>
+
+</section>
+
+
+<!-- ================= RESUME ================= -->
+
+<section id="resume">
+
+    <h2 class="section-title">
+        Resume
+    </h2>
+
+    <div class="section-line"></div>
+
+
+    <div class="resume-container">
+
+        <h3>
+            My Resume
+        </h3>
+
+        <p>
+            View or download my latest resume.
+        </p>
+
+
+        <div class="resume-buttons">
+
+
+            <!-- VIEW RESUME -->
+
+            <a
+                class="resume-button resume-view"
+                href="https://github.com/sristipaul6289-ops/dataanalyst-portfolio/blob/main/Black%20and%20White%20ATS-Friendly%20Simple%20Clean%20Resume%20CV%20%284%29.pdf"
+                target="_blank">
+
+                View Resume
+
+            </a>
+
+
+            <!-- DOWNLOAD RESUME -->
+
+            <a
+                class="resume-button resume-download"
+                href="https://github.com/sristipaul6289-ops/dataanalyst-portfolio/raw/refs/heads/main/Black%20and%20White%20ATS-Friendly%20Simple%20Clean%20Resume%20CV%20%284%29.pdf">
+
+                Download Resume
+
+            </a>
+
+
+        </div>
 
     </div>
 
