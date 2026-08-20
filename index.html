@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sristi Paul | Data Analyst</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f8fafc;
+            color: #1e293b;
+            line-height: 1.7;
+        }
+
+        /* NAVIGATION */
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: #ffffff;
+            border-bottom: 1px solid #e2e8f0;
+            padding: 16px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 21px;
+            font-weight: 700;
+            color: #0f172a;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 28px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #475569;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        nav a:hover {
+            color: #2563eb;
+        }
+
+        /* HERO */
+
+        .hero {
+            background: #ffffff;
+            padding: 110px 8% 100px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .hero-content {
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .hero h1 {
+            font-size: 58px;
+            line-height: 1.1;
+            color: #0f172a;
+            margin-bottom: 15px;
+        }
+
+        .hero h2 {
+            font-size: 24px;
+            font-weight: 500;
+            color: #2563eb;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            max-width: 750px;
+            color: #64748b;
+            font-size: 17px;
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 12px 22px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .primary {
+            background: #2563eb;
+            color: white;
+        }
+
+        .primary:hover {
+            background: #1d4ed8;
+        }
+
+        .secondary {
+            border: 1px solid #cbd5e1;
+            color: #334155;
+            background: white;
+        }
+
+        .secondary:hover {
+            background: #f1f5f9;
+        }
+
+        /* GENERAL */
+
+        section {
+            max-width: 1100px;
+            margin: auto;
+            padding: 80px 30px;
+        }
+
+        .section-title {
+            font-size: 32px;
+            color: #0f172a;
+            margin-bottom: 10px;
+        }
+
+        .section-line {
+            width: 50px;
+            height: 3px;
+            background: #2563eb;
+            margin-bottom: 35px;
+        }
+
+        .section-description {
+            color: #64748b;
+            max-width: 800px;
+            margin-bottom: 35px;
+        }
+
+        /* ABOUT */
+
+        .about-text {
+            max-width: 900px;
+            color: #475569;
+            font-size: 16px;
+        }
+
+        /* SKILLS */
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+        }
+
+        .skill-box {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 24px;
+        }
+
+        .skill-box h3 {
+            color: #0f172a;
+            font-size: 17px;
+            margin-bottom: 8px;
+        }
+
+        .skill-box p {
+            color: #64748b;
+            font-size: 14px;
+        }
+
+        /* PROJECTS */
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 22px;
+        }
+
+        .project-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 28px;
+            transition: 0.2s ease;
+        }
+
+        .project-card:hover {
+            border-color: #93c5fd;
+            transform: translateY(-3px);
+        }
+
+        .project-card h3 {
+            color: #0f172a;
+            font-size: 19px;
+            margin-bottom: 8px;
+        }
+
+        .project-tech {
+            color: #2563eb;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .project-card ul {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        .project-card li {
+            color: #64748b;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .project-link {
+            text-decoration: none;
+            color: #2563eb;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .project-link:hover {
+            text-decoration: underline;
+        }
+
+        /* EDUCATION */
+
+        .education-item {
+            background: white;
+            border-left: 3px solid #2563eb;
+            padding: 24px;
+            margin-bottom: 18px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .education-item h3 {
+            color: #0f172a;
+            margin-bottom: 5px;
+        }
+
+        .education-item p {
+            color: #64748b;
+            font-size: 14px;
+        }
+
+        /* CERTIFICATIONS */
+
+        .certifications {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 28px;
+        }
+
+        .certifications li {
+            margin-bottom: 12px;
+            color: #475569;
+        }
+
+        /* RESUME */
+
+        .resume-box {
+            background: #0f172a;
+            color: white;
+            border-radius: 10px;
+            padding: 45px;
+        }
+
+        .resume-box h2 {
+            margin-bottom: 10px;
+        }
+
+        .resume-box p {
+            color: #cbd5e1;
+            margin-bottom: 22px;
+        }
+
+        /* CONTACT */
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+        }
+
+        .contact-item {
+            background: white;
+            border: 1px solid #e2e8f0;
+            padding: 22px;
+            border-radius: 8px;
+        }
+
+        .contact-item strong {
+            display: block;
+            color: #0f172a;
+            margin-bottom: 5px;
+        }
+
+        .contact-item a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #0f172a;
+            color: #94a3b8;
+            text-align: center;
+            padding: 25px;
+            font-size: 13px;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 768px) {
+
+            nav {
+                padding: 15px 20px;
+            }
+
+            nav ul {
+                display: none;
+            }
+
+            .hero {
+                padding: 80px 25px;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .hero h2 {
+                font-size: 20px;
+            }
+
+            section {
+                padding: 60px 20px;
+            }
+
+            .skills-grid,
+            .projects-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<nav>
+    <div class="logo">Sristi Paul</div>
+
+    <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+
+<!-- HERO -->
+
+<header class="hero">
+
+    <div class="hero-content">
+
+        <h1>Sristi Paul</h1>
+
+        <h2>Data Analyst</h2>
+
+        <p>
+            Aspiring Data Analyst with a strong foundation in SQL, Python,
+            Excel, Power BI, Statistics, and Data Visualization.
+            I enjoy transforming raw data into meaningful insights
+            through analysis, visualization, and problem solving.
+        </p>
+
+        <div class="buttons">
+
+            <a class="button primary"
+               href="#projects">
+                View Projects
+            </a>
+
+            <a class="button secondary"
+               href="https://github.com/sristipaul6289-ops"
+               target="_blank">
+                GitHub
+            </a>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+    <h2 class="section-title">About Me</h2>
+
+    <div class="section-line"></div>
+
+    <p class="about-text">
+
+        I am an MCA graduate preparing for a career in Data Analytics,
+        with a focus on practical problem solving and real-world data analysis.
+
+        <br><br>
+
+        My experience includes working with SQL, Python, Pandas, Excel,
+        Power BI, Statistics, and Machine Learning. I have worked on
+        projects involving data cleaning, exploratory data analysis,
+        visualization, customer segmentation, recommendation systems,
+        and deep learning.
+
+        <br><br>
+
+        My goal is to build data-driven solutions that turn complex
+        datasets into clear and actionable insights.
+
+    </p>
+
+</section>
+
+
+<!-- SKILLS -->
+
+<section id="skills">
+
+    <h2 class="section-title">Technical Skills</h2>
+
+    <div class="section-line"></div>
+
+    <div class="skills-grid">
+
+        <div class="skill-box">
+            <h3>Data Analytics</h3>
+            <p>
+                Data Analysis, Data Cleaning, Data Preprocessing,
+                Exploratory Data Analysis, Data Visualization,
+                Statistics
+            </p>
+        </div>
+
+        <div class="skill-box">
+            <h3>Programming & Query Languages</h3>
+            <p>
+                Python, SQL
+            </p>
+        </div>
+
+        <div class="skill-box">
+            <h3>Python Libraries</h3>
+            <p>
+                Pandas, NumPy, Matplotlib, Seaborn,
+                Scikit-Learn, NLTK
+            </p>
+        </div>
+
+        <div class="skill-box">
+            <h3>Business Intelligence</h3>
+            <p>
+                Microsoft Excel, Power BI, Power Query,
+                Pivot Tables, Data Visualization
+            </p>
+        </div>
+
+        <div class="skill-box">
+            <h3>Machine Learning</h3>
+            <p>
+                K-Means Clustering, NLP, Cosine Similarity,
+                CNN, BiLSTM
+            </p>
+        </div>
+
+        <div class="skill-box">
+            <h3>Databases & Tools</h3>
+            <p>
+                MySQL, Git, GitHub, Google Colab,
+                Jupyter Notebook, Streamlit
+            </p>
+        </div>
+
+        <div class="skill-box">
+            <h3>Data Structures & Algorithms</h3>
+            <p>
+                Problem Solving, Searching, Sorting,
+                Data Structures, Algorithms
+            </p>
+        </div>
+
+        <div class="skill-box">
+            <h3>Professional Skills</h3>
+            <p>
+                Analytical Thinking, Problem Solving,
+                Communication, Teamwork
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PROJECTS -->
+
+<section id="projects">
+
+    <h2 class="section-title">Projects</h2>
+
+    <div class="section-line"></div>
+
+    <p class="section-description">
+        Selected academic and personal projects demonstrating
+        data analysis, machine learning, programming, and
+        problem-solving skills.
+    </p>
+
+    <div class="projects-grid">
+
+
+        <!-- COVID -->
+
+        <div class="project-card">
+
+            <h3>COVID-19 Data Analysis</h3>
+
+            <div class="project-tech">
+                SQL | Python | Pandas | Excel | Power BI
+            </div>
+
+            <ul>
+                <li>
+                    Analyzed 429K+ COVID-19 records across
+                    255 locations to identify trends in cases,
+                    deaths, and fatality rates.
+                </li>
+
+                <li>
+                    Designed an interactive Power BI dashboard
+                    with KPIs, country rankings, time-series
+                    trends, continental comparisons, and filters.
+                </li>
+            </ul>
+
+            <a class="project-link"
+               href="https://github.com/sristipaul6289-ops"
+               target="_blank">
+                View Project →
+            </a>
+
+        </div>
+
+
+        <!-- CUSTOMER -->
+
+        <div class="project-card">
+
+            <h3>Customer Segmentation using K-Means</h3>
+
+            <div class="project-tech">
+                Python | Pandas | Scikit-Learn | Matplotlib
+            </div>
+
+            <ul>
+                <li>
+                    Segmented customers using K-Means
+                    clustering to identify distinct customer groups.
+                </li>
+
+                <li>
+                    Applied EDA and cluster analysis to derive
+                    insights for targeted marketing strategies.
+                </li>
+            </ul>
+
+            <a class="project-link"
+               href="https://github.com/sristipaul6289-ops"
+               target="_blank">
+                View Project →
+            </a>
+
+        </div>
+
+
+        <!-- MOVIE -->
+
+        <div class="project-card">
+
+            <h3>Movie Recommendation System</h3>
+
+            <div class="project-tech">
+                Python | Pandas | Scikit-Learn | NLTK | Streamlit
+            </div>
+
+            <ul>
+                <li>
+                    Developed a content-based recommendation
+                    system using NLP and cosine similarity.
+                </li>
+
+                <li>
+                    Designed an interactive Streamlit application
+                    for personalized movie recommendations.
+                </li>
+            </ul>
+
+            <a class="project-link"
+               href="https://github.com/sristipaul6289-ops"
+               target="_blank">
+                View Project →
+            </a>
+
+        </div>
+
+
+        <!-- HANDWRITTEN -->
+
+        <div class="project-card">
+
+            <h3>Handwritten Word Recognition System</h3>
+
+            <div class="project-tech">
+                Python | TensorFlow/Keras | CNN | BiLSTM | OpenCV
+            </div>
+
+            <ul>
+                <li>
+                    Implemented a deep learning model for
+                    handwritten word recognition using CNN and BiLSTM.
+                </li>
+
+                <li>
+                    Integrated CTC Loss with CNN-BiLSTM architecture
+                    for text recognition.
+                </li>
+            </ul>
+
+            <a class="project-link"
+               href="https://github.com/sristipaul6289-ops"
+               target="_blank">
+                View Project →
+            </a>
+
+        </div>
+
+
+        <!-- VOICE ASSISTANT -->
+
+        <div class="project-card">
+
+            <h3>AI Desktop Voice Assistant</h3>
+
+            <div class="project-tech">
+                Python | SpeechRecognition | pyttsx3 | OpenCV
+            </div>
+
+            <ul>
+                <li>
+                    Built a voice-controlled desktop assistant
+                    for task automation.
+                </li>
+
+                <li>
+                    Enabled web search, application launching,
+                    email handling, and information retrieval.
+                </li>
+            </ul>
+
+            <a class="project-link"
+               href="https://github.com/sristipaul6289-ops"
+               target="_blank">
+                View Project →
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- EDUCATION -->
+
+<section id="education">
+
+    <h2 class="section-title">Education</h2>
+
+    <div class="section-line"></div>
+
+
+    <div class="education-item">
+
+        <h3>Master of Computer Applications</h3>
+
+        <p>
+            Netaji Subhash Engineering College,
+            Kolkata, West Bengal
+        </p>
+
+        <p>
+            2024 – 2026
+        </p>
+
+    </div>
+
+
+    <div class="education-item">
+
+        <h3>Bachelor of Computer Applications | CGPA: 8.11</h3>
+
+        <p>
+            B.P. Poddar Institute of Management &
+            Technology, Kolkata, West Bengal
+        </p>
+
+        <p>
+            2021 – 2024
+        </p>
+
+    </div>
+
+
+    <div class="education-item">
+
+        <h3>AISSCE – Class XII | Commerce with Mathematics | 81.8%</h3>
+
+        <p>
+            Shri Shikshayatan School, Kolkata
+        </p>
+
+        <p>
+            2021
+        </p>
+
+    </div>
+
+
+    <div class="education-item">
+
+        <h3>AISSE – Class X | 82.6%</h3>
+
+        <p>
+            Shri Shikshayatan School, Kolkata
+        </p>
+
+        <p>
+            2019
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- CERTIFICATIONS -->
+
+<section id="certifications">
+
+    <h2 class="section-title">Certifications & Training</h2>
+
+    <div class="section-line"></div>
+
+    <div class="certifications">
+
+        <ul>
+
+            <li>
+                <strong>NPTEL Elite – Data Analytics with Python</strong>
+                | IIT Roorkee | 2026
+            </li>
+
+            <li>
+                <strong>MERN Stack Development Training</strong>
+                | JavaScript, React.js, Node.js, Express.js, MongoDB | 2026
+            </li>
+
+            <li>
+                <strong>Technical Workshop on Cyber Security & Ethical Hacking</strong>
+                | ISOEH | 2026
+            </li>
+
+            <li>
+                <strong>Artificial Intelligence & Machine Learning
+                Internship & Project</strong>
+                | ESC | 2025
+            </li>
+
+            <li>
+                <strong>Python 3.4.3 Certification</strong>
+                | Spoken Tutorial Project, IIT Bombay | 2025
+            </li>
+
+            <li>
+                <strong>Data Science – 50 Hours</strong>
+                | Webel Fujisoft Vara Centre of Excellence in Industry 4.0 | 2023
+            </li>
+
+            <li>
+                <strong>Web Design Workshop</strong>
+                | HTML, CSS, Bootstrap | MYWBUT | 2023
+            </li>
+
+        </ul>
+
+    </div>
+
+</section>
+
+
+<!-- RESUME -->
+
+<section>
+
+    <div class="resume-box">
+
+        <h2>Resume</h2>
+
+        <p>
+            Interested in my background and experience?
+            View or download my latest resume.
+        </p>
+
+        <!-- Replace this link with your resume PDF later -->
+
+        <a class="button primary"
+           href="#"
+           target="_blank">
+            View Resume
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+    <h2 class="section-title">Contact</h2>
+
+    <div class="section-line"></div>
+
+    <div class="contact-grid">
+
+        <div class="contact-item">
+
+            <strong>Email</strong>
+
+            <a href="mailto:sristipaul6289@gmail.com">
+                sristipaul6289@gmail.com
+            </a>
+
+        </div>
+
+
+        <div class="contact-item">
+
+            <strong>Phone</strong>
+
+            6289089308
+
+        </div>
+
+
+        <div class="contact-item">
+
+            <strong>GitHub</strong>
+
+            <a href="https://github.com/sristipaul6289-ops"
+               target="_blank">
+                github.com/sristipaul6289-ops
+            </a>
+
+        </div>
+
+
+        <div class="contact-item">
+
+            <strong>Location</strong>
+
+            Howrah, West Bengal, India
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    © 2026 Sristi Paul | Data Analyst Portfolio
+
+</footer>
+
+</body>
+</html>
