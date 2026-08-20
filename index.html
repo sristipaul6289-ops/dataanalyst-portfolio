@@ -2,7 +2,9 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Sristi Paul | Data Analyst Portfolio</title>
@@ -48,6 +50,7 @@
             list-style: none;
             display: flex;
             gap: 25px;
+            align-items: center;
         }
 
         nav a {
@@ -60,6 +63,58 @@
         nav a:hover {
             color: #2563eb;
         }
+
+        /* RESUME MENU */
+
+        .resume-menu {
+            position: relative;
+        }
+
+        .resume-button {
+            cursor: pointer;
+            border: none;
+            background: none;
+            font-family: inherit;
+            color: #475569;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .resume-button:hover {
+            color: #2563eb;
+        }
+
+        .resume-dropdown {
+            display: none;
+            position: absolute;
+            right: 0;
+            top: 30px;
+            background: white;
+            min-width: 170px;
+            border: 1px solid #e2e8f0;
+            border-radius: 7px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+
+        .resume-dropdown a {
+            display: block;
+            padding: 12px 15px;
+            color: #334155;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .resume-dropdown a:hover {
+            background: #f1f5f9;
+            color: #2563eb;
+        }
+
+        .resume-menu:hover .resume-dropdown {
+            display: block;
+        }
+
+        /* HERO */
 
         .hero {
             background: #ffffff;
@@ -134,6 +189,8 @@
             background: #f1f5f9;
         }
 
+        /* SECTIONS */
+
         section {
             max-width: 1100px;
             margin: auto;
@@ -159,11 +216,15 @@
             margin-bottom: 35px;
         }
 
+        /* ABOUT */
+
         .about-text {
             max-width: 900px;
             color: #475569;
             font-size: 16px;
         }
+
+        /* SKILLS */
 
         .skills-grid {
             display: grid;
@@ -187,6 +248,15 @@
         .skill-box p {
             color: #64748b;
             font-size: 14px;
+        }
+
+        /* PROJECTS */
+
+        .project-category {
+            font-size: 23px;
+            color: #0f172a;
+            margin-top: 30px;
+            margin-bottom: 20px;
         }
 
         .projects-grid {
@@ -243,6 +313,8 @@
             text-decoration: underline;
         }
 
+        /* EDUCATION */
+
         .education-item {
             background: white;
             border-left: 3px solid #2563eb;
@@ -260,6 +332,8 @@
             color: #64748b;
             font-size: 14px;
         }
+
+        /* CERTIFICATIONS */
 
         .certifications {
             background: white;
@@ -287,6 +361,8 @@
             text-decoration: underline;
         }
 
+        /* CONTACT */
+
         .contact-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -311,6 +387,8 @@
             text-decoration: none;
         }
 
+        /* FOOTER */
+
         footer {
             background: #0f172a;
             color: #94a3b8;
@@ -318,6 +396,8 @@
             padding: 25px;
             font-size: 13px;
         }
+
+        /* MOBILE */
 
         @media (max-width: 768px) {
 
@@ -371,12 +451,59 @@
 
     <ul>
 
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#certifications">Certifications</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li>
+            <a href="#about">About</a>
+        </li>
+
+        <li>
+            <a href="#skills">Skills</a>
+        </li>
+
+        <li>
+            <a href="#projects">Projects</a>
+        </li>
+
+        <li>
+            <a href="#education">Education</a>
+        </li>
+
+        <li>
+            <a href="#certifications">Certifications</a>
+        </li>
+
+        <li>
+            <a href="#contact">Contact</a>
+        </li>
+
+        <!-- RESUME DROPDOWN -->
+
+        <li class="resume-menu">
+
+            <button class="resume-button">
+                Resume ▾
+            </button>
+
+            <div class="resume-dropdown">
+
+                <a
+                    href="https://github.com/sristipaul6289-ops/dataanalyst-portfolio/blob/main/Black%20and%20White%20ATS-Friendly%20Simple%20Clean%20Resume%20CV%20%283%29.pdf"
+                    target="_blank">
+
+                    View Resume
+
+                </a>
+
+                <a
+                    href="https://github.com/sristipaul6289-ops/dataanalyst-portfolio/raw/refs/heads/main/Black%20and%20White%20ATS-Friendly%20Simple%20Clean%20Resume%20CV%20%283%29.pdf"
+                    download>
+
+                    Download Resume
+
+                </a>
+
+            </div>
+
+        </li>
 
     </ul>
 
@@ -394,47 +521,37 @@
         <h2>Aspiring Data Analyst</h2>
 
         <div class="hero-role">
+
             SQL | Python | Excel | Power BI | Statistics
+
         </div>
 
         <p>
+
             MCA graduate with a strong foundation in Data Analytics,
             Python, SQL, Excel, Power BI, and Statistics. Passionate
             about transforming raw data into meaningful insights and
             solving real-world problems through data-driven approaches.
+
         </p>
 
         <div class="buttons">
 
-            <a class="button primary" href="#projects">
+            <a
+                class="button primary"
+                href="#projects">
+
                 View Projects
+
             </a>
-
-            <!-- VIEW RESUME -->
-
-            <a
-                class="button secondary"
-                href="https://github.com/sristipaul6289-ops/dataanalyst-portfolio/blob/main/Black%20and%20White%20ATS-Friendly%20Simple%20Clean%20Resume%20CV%20%283%29.pdf"
-                target="_blank">
-                View Resume
-            </a>
-
-            <!-- DOWNLOAD RESUME -->
-
-            <a
-                class="button secondary"
-                href="https://github.com/sristipaul6289-ops/dataanalyst-portfolio/raw/refs/heads/main/Black%20and%20White%20ATS-Friendly%20Simple%20Clean%20Resume%20CV%20%283%29.pdf"
-                download>
-                Download Resume
-            </a>
-
-            <!-- GITHUB -->
 
             <a
                 class="button secondary"
                 href="https://github.com/sristipaul6289-ops"
                 target="_blank">
+
                 GitHub
+
             </a>
 
         </div>
@@ -448,7 +565,9 @@
 
 <section id="about">
 
-    <h2 class="section-title">About Me</h2>
+    <h2 class="section-title">
+        About Me
+    </h2>
 
     <div class="section-line"></div>
 
@@ -478,7 +597,9 @@
 
 <section id="skills">
 
-    <h2 class="section-title">Technical Skills</h2>
+    <h2 class="section-title">
+        Technical Skills
+    </h2>
 
     <div class="section-line"></div>
 
@@ -589,63 +710,104 @@
 
 <section id="projects">
 
-    <h2 class="section-title">Projects</h2>
+    <h2 class="section-title">
+        Projects
+    </h2>
 
     <div class="section-line"></div>
 
     <p class="section-description">
+
         Selected projects demonstrating practical data analysis,
         visualization, machine learning, programming, and
         problem-solving skills.
+
     </p>
 
+
+    <!-- PERSONAL PROJECTS -->
+
+    <h3 class="project-category">
+        Personal Project
+    </h3>
 
     <div class="projects-grid">
 
 
-        <!-- COVID -->
+        <!-- COVID PROJECT -->
 
         <div class="project-card">
 
-            <h3>COVID-19 Data Analysis</h3>
+            <h3>
+                COVID-19 Data Analysis & Interactive Dashboard
+            </h3>
 
             <div class="project-tech">
+
                 SQL | Python | Pandas | Excel | Power BI
+
             </div>
 
             <ul>
 
                 <li>
-                    Analyzed 429K+ COVID-19 records across 255 locations
-                    to identify trends in cases, deaths, and fatality rates.
+                    Analyzed 429K+ COVID-19 records across
+                    255 locations to identify trends in cases,
+                    deaths, and fatality rates.
                 </li>
 
                 <li>
-                    Built an interactive Power BI dashboard with KPIs,
-                    country rankings, time-series trends, continental
-                    comparisons, and filters.
+                    Combined SQL, Python, Pandas, Excel,
+                    and Power BI for end-to-end data analysis.
+                </li>
+
+                <li>
+                    Built an interactive Power BI dashboard
+                    with KPIs, rankings, trends, comparisons,
+                    and filters.
                 </li>
 
             </ul>
 
             <a
                 class="project-link"
-                href="https://github.com/sristipaul6289-ops"
+                href="https://github.com/sristipaul6289-ops/dataanalyst-portfolio/tree/main/covid19-data-analysis"
                 target="_blank">
+
                 View Project →
+
             </a>
 
         </div>
+
+
+    </div>
+
+
+    <!-- ACADEMIC PROJECTS -->
+
+    <h3 class="project-category">
+
+        Academic Projects
+
+    </h3>
+
+
+    <div class="projects-grid">
 
 
         <!-- CUSTOMER SEGMENTATION -->
 
         <div class="project-card">
 
-            <h3>Customer Segmentation using K-Means</h3>
+            <h3>
+                Customer Segmentation using K-Means
+            </h3>
 
             <div class="project-tech">
+
                 Python | Pandas | Scikit-Learn | Matplotlib
+
             </div>
 
             <ul>
@@ -662,13 +824,6 @@
 
             </ul>
 
-            <a
-                class="project-link"
-                href="https://github.com/sristipaul6289-ops"
-                target="_blank">
-                View Project →
-            </a>
-
         </div>
 
 
@@ -676,10 +831,14 @@
 
         <div class="project-card">
 
-            <h3>Movie Recommendation System</h3>
+            <h3>
+                Movie Recommendation System
+            </h3>
 
             <div class="project-tech">
+
                 Python | Pandas | Scikit-Learn | NLTK | Streamlit
+
             </div>
 
             <ul>
@@ -690,18 +849,11 @@
                 </li>
 
                 <li>
-                    Designed an interactive Streamlit application
-                    for personalized movie recommendations.
+                    Designed an interactive application for
+                    personalized movie recommendations.
                 </li>
 
             </ul>
-
-            <a
-                class="project-link"
-                href="https://github.com/sristipaul6289-ops"
-                target="_blank">
-                View Project →
-            </a>
 
         </div>
 
@@ -710,32 +862,30 @@
 
         <div class="project-card">
 
-            <h3>Handwritten Word Recognition System</h3>
+            <h3>
+                Handwritten Word Recognition System
+            </h3>
 
             <div class="project-tech">
+
                 Python | TensorFlow/Keras | CNN | BiLSTM | OpenCV
+
             </div>
 
             <ul>
 
                 <li>
-                    Implemented a deep learning model for handwritten
-                    word recognition using CNN and BiLSTM.
+                    Implemented a deep learning model for
+                    handwritten word recognition using CNN
+                    and BiLSTM.
                 </li>
 
                 <li>
-                    Integrated CTC Loss with CNN-BiLSTM architecture
-                    for text recognition.
+                    Integrated CTC Loss with CNN-BiLSTM
+                    architecture for text recognition.
                 </li>
 
             </ul>
-
-            <a
-                class="project-link"
-                href="https://github.com/sristipaul6289-ops"
-                target="_blank">
-                View Project →
-            </a>
 
         </div>
 
@@ -744,10 +894,14 @@
 
         <div class="project-card">
 
-            <h3>AI Desktop Voice Assistant</h3>
+            <h3>
+                AI Desktop Voice Assistant
+            </h3>
 
             <div class="project-tech">
+
                 Python | SpeechRecognition | pyttsx3 | OpenCV
+
             </div>
 
             <ul>
@@ -764,13 +918,6 @@
 
             </ul>
 
-            <a
-                class="project-link"
-                href="https://github.com/sristipaul6289-ops"
-                target="_blank">
-                View Project →
-            </a>
-
         </div>
 
 
@@ -783,7 +930,9 @@
 
 <section id="education">
 
-    <h2 class="section-title">Education</h2>
+    <h2 class="section-title">
+        Education
+    </h2>
 
     <div class="section-line"></div>
 
@@ -876,8 +1025,6 @@
         <ul>
 
 
-            <!-- 1 NPTEL -->
-
             <li>
 
                 <a
@@ -892,8 +1039,6 @@
 
             </li>
 
-
-            <!-- 2 MERN -->
 
             <li>
 
@@ -911,8 +1056,6 @@
             </li>
 
 
-            <!-- 3 CYBER SECURITY -->
-
             <li>
 
                 <a
@@ -928,8 +1071,6 @@
             </li>
 
 
-            <!-- 4 PYTHON -->
-
             <li>
 
                 <a
@@ -944,8 +1085,6 @@
 
             </li>
 
-
-            <!-- 5 DATA SCIENCE -->
 
             <li>
 
@@ -963,8 +1102,6 @@
             </li>
 
 
-            <!-- 6 AI & ML -->
-
             <li>
 
                 <a
@@ -980,8 +1117,6 @@
 
             </li>
 
-
-            <!-- 7 UDEMY SQL -->
 
             <li>
 
@@ -1009,7 +1144,9 @@
 
 <section id="contact">
 
-    <h2 class="section-title">Contact</h2>
+    <h2 class="section-title">
+        Contact
+    </h2>
 
     <div class="section-line"></div>
 
@@ -1022,7 +1159,9 @@
             <strong>Email</strong>
 
             <a href="mailto:sristipaul6289@gmail.com">
+
                 sristipaul6289@gmail.com
+
             </a>
 
         </div>
