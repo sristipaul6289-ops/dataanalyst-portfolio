@@ -53,4 +53,4 @@ Technology generated the highest sales among the three product categories in the
 
 ## Project File
 
-[Download Excel Project](E-Commerce_Sales_Profitability_Analysis.xlsx)
+[Download Excel Project](https://github.com/sristipaul6289-ops/dataanalyst-portfolio/raw/refs/heads/main/ecommerce-excel-analysis/E-Commerce_Sales_Profitability_Analysis.xlsx)
