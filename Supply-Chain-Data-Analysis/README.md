@@ -63,13 +63,5 @@ Matplotlib
 Seaborn
 Plotly
 Google Colab
-
-## Project Notebook
-
-The complete analysis and Python code are available in the project notebook.
-
-## LinkedIn
-
 Key findings and visualizations from the project are shared on LinkedIn.
 
-[View LinkedIn Post](PASTE_LINK_HERE)
