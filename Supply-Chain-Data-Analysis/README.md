@@ -63,5 +63,29 @@ Matplotlib
 Seaborn
 Plotly
 Google Colab
-Key findings and visualizations from the project are shared on LinkedIn.
 
+## Project Notebook
+
+[View Full Analysis on Google Colab](https://colab.research.google.com/drive/15ftM1tAGPD17H0N2fUAwvsoMAZ9BQbz9?usp=sharing)
+
+## Visualizations
+
+### Analysis Overview
+
+![Analysis Overview](https://github.com/sristipaul6289-ops/dataanalyst-portfolio/blob/main/Supply-Chain-Data-Analysis/Screenshot%202026-08-29%20001640.png?raw=true)
+
+### Sales and Profit Analysis
+
+![Sales and Profit Analysis](https://github.com/sristipaul6289-ops/dataanalyst-portfolio/blob/main/Supply-Chain-Data-Analysis/Screenshot%202026-08-29%20001818.png?raw=true)
+
+### Product Performance Analysis
+
+![Product Performance Analysis](https://github.com/sristipaul6289-ops/dataanalyst-portfolio/blob/main/Supply-Chain-Data-Analysis/Screenshot%202026-08-29%20001947.png?raw=true)
+
+### Category Performance Analysis
+
+![Category Performance Analysis](https://github.com/sristipaul6289-ops/dataanalyst-portfolio/blob/main/Supply-Chain-Data-Analysis/Screenshot%202026-08-29%20002046.png?raw=true)
+
+### Customer and Business Analysis
+
+![Customer and Business Analysis](https://github.com/sristipaul6289-ops/dataanalyst-portfolio/blob/main/Supply-Chain-Data-Analysis/Screenshot%202026-08-29%20002414.png?raw=true)
