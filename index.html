@@ -8,16 +8,26 @@
 <title>Sristi Paul | Data Analyst Portfolio</title>
 
 <meta name="description"
-content="Sristi Paul - Aspiring Data Analyst skilled in SQL, Python, Excel, Power BI and Data Analytics.">
+content="Sristi Paul - Data Analyst skilled in SQL, Python, Excel, Power BI and Data Analytics.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+rel="stylesheet">
 
 <style>
 
-/* ================= ROOT ================= */
+/* =========================================================
+   ROOT
+========================================================= */
 
 :root {
 
     --ink: #0b1220;
     --ink-soft: #1e293b;
+
     --muted: #64748b;
     --muted-dark: #475569;
 
@@ -29,27 +39,41 @@ content="Sristi Paul - Aspiring Data Analyst skilled in SQL, Python, Excel, Powe
 
     --accent: #2563eb;
     --accent-dark: #1d4ed8;
+    --accent-light: #60a5fa;
     --accent-soft: #eff6ff;
 
-    --shadow-sm: 0 4px 14px rgba(15, 23, 42, 0.05);
-    --shadow-md: 0 14px 35px rgba(15, 23, 42, 0.08);
-    --shadow-lg: 0 24px 55px rgba(15, 23, 42, 0.11);
+    --shadow-sm:
+        0 4px 14px rgba(15, 23, 42, 0.05);
 
-    --radius: 14px;
+    --shadow-md:
+        0 14px 35px rgba(15, 23, 42, 0.08);
+
+    --shadow-lg:
+        0 24px 55px rgba(15, 23, 42, 0.12);
+
+    --radius: 16px;
+
 }
 
 
-/* ================= RESET ================= */
+/* =========================================================
+   RESET
+========================================================= */
 
 * {
+
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
 }
 
 html {
+
     scroll-behavior: smooth;
+
     scroll-padding-top: 82px;
+
 }
 
 body {
@@ -65,31 +89,83 @@ body {
         sans-serif;
 
     background: var(--surface-soft);
+
     color: var(--ink-soft);
 
     line-height: 1.7;
 
     -webkit-font-smoothing: antialiased;
+
     text-rendering: optimizeLegibility;
+
+    overflow-x: hidden;
+
 }
 
 a {
+
     text-decoration: none;
+
+}
+
+button {
+
+    font-family: inherit;
+
 }
 
 
-/* ================= PROFESSIONAL MOTION ================= */
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+::-webkit-scrollbar {
+
+    width: 8px;
+
+}
+
+::-webkit-scrollbar-track {
+
+    background: #f1f5f9;
+
+}
+
+::-webkit-scrollbar-thumb {
+
+    background: #cbd5e1;
+
+    border-radius: 20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover {
+
+    background: #94a3b8;
+
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
 
 @keyframes fadeUp {
 
     from {
+
         opacity: 0;
-        transform: translateY(22px);
+
+        transform: translateY(28px);
+
     }
 
     to {
+
         opacity: 1;
+
         transform: translateY(0);
+
     }
 
 }
@@ -98,43 +174,61 @@ a {
 @keyframes fadeDown {
 
     from {
+
         opacity: 0;
-        transform: translateY(-12px);
+
+        transform: translateY(-15px);
+
     }
 
     to {
+
         opacity: 1;
+
         transform: translateY(0);
+
     }
 
 }
 
 
-@keyframes softFloat {
+@keyframes float {
 
     0%,
     100% {
-        transform: translate3d(0, 0, 0);
+
+        transform:
+            translate3d(0, 0, 0);
+
     }
 
     50% {
-        transform: translate3d(0, -10px, 0);
+
+        transform:
+            translate3d(0, -14px, 0);
+
     }
 
 }
 
 
-@keyframes pulseLine {
+@keyframes pulse {
 
     0%,
     100% {
+
+        transform: scaleX(.9);
+
         opacity: .65;
-        transform: scaleX(.92);
+
     }
 
     50% {
-        opacity: 1;
+
         transform: scaleX(1);
+
+        opacity: 1;
+
     }
 
 }
@@ -143,240 +237,164 @@ a {
 @keyframes shimmer {
 
     0% {
-        transform: translateX(-120%);
+
+        transform: translateX(-140%);
+
     }
 
     100% {
-        transform: translateX(120%);
+
+        transform: translateX(160%);
+
     }
 
 }
 
 
-.home-content {
-    animation:
-        fadeUp .85s cubic-bezier(.22, 1, .36, 1) both;
+@keyframes blink {
+
+    0%,
+    100% {
+
+        opacity: 1;
+
+    }
+
+    50% {
+
+        opacity: .35;
+
+    }
+
 }
 
-.home::before {
-    animation:
-        softFloat 8s ease-in-out infinite;
+
+@keyframes gridMove {
+
+    from {
+
+        transform:
+            translateY(0);
+
+    }
+
+    to {
+
+        transform:
+            translateY(30px);
+
+    }
+
 }
 
-.home::after {
-    animation:
-        softFloat 10s ease-in-out infinite reverse;
+
+.reveal {
+
+    opacity: 0;
+
+    transform: translateY(25px);
+
+    transition:
+        opacity .75s ease,
+        transform .75s cubic-bezier(.22, 1, .36, 1);
+
 }
 
-.section-title {
-    animation:
-        fadeUp .65s ease both;
+.reveal.active {
+
+    opacity: 1;
+
+    transform: translateY(0);
+
 }
 
-.section-line {
 
-    animation:
-        pulseLine 3s ease-in-out infinite;
-
-    transform-origin: center;
-}
+/* =========================================================
+   NAVBAR
+========================================================= */
 
 nav {
-    animation:
-        fadeDown .55s ease both;
-}
 
-
-.social-box,
-.primary-button,
-.secondary-button,
-.resume-button,
-.contact-link,
-.project-link,
-.certification-card a {
-
-    will-change: transform;
-}
-
-
-.social-box,
-.primary-button,
-.secondary-button,
-.resume-button,
-.contact-link {
-
-    position: relative;
-    overflow: hidden;
-}
-
-
-.social-box::after,
-.primary-button::after,
-.secondary-button::after,
-.resume-button::after,
-.contact-link::after {
-
-    content: "";
-
-    position: absolute;
+    position: fixed;
 
     top: 0;
+
     left: 0;
 
-    width: 35%;
-    height: 100%;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            rgba(255, 255, 255, .28),
-            transparent
-        );
-
-    transform: translateX(-140%);
-
-    pointer-events: none;
-}
-
-
-.social-box:hover::after,
-.primary-button:hover::after,
-.secondary-button:hover::after,
-.resume-button:hover::after,
-.contact-link:hover::after {
-
-    animation:
-        shimmer .75s ease;
-}
-
-
-.skill-card,
-.project-card,
-.education-card,
-.certification-card,
-.resume-container {
-
-    will-change: transform;
-}
-
-
-.skill-card,
-.project-card,
-.education-card,
-.certification-card {
-
-    animation:
-        fadeUp .7s cubic-bezier(.22, 1, .36, 1) both;
-}
-
-
-.skills-grid .skill-card:nth-child(2),
-.projects-grid .project-card:nth-child(2),
-.certifications-grid .certification-card:nth-child(2) {
-
-    animation-delay: .08s;
-}
-
-
-.skills-grid .skill-card:nth-child(3),
-.projects-grid .project-card:nth-child(3),
-.certifications-grid .certification-card:nth-child(3) {
-
-    animation-delay: .16s;
-}
-
-
-.skills-grid .skill-card:nth-child(4),
-.certifications-grid .certification-card:nth-child(4) {
-
-    animation-delay: .24s;
-}
-
-
-.skills-grid .skill-card:nth-child(5) {
-    animation-delay: .32s;
-}
-
-.skills-grid .skill-card:nth-child(6) {
-    animation-delay: .40s;
-}
-
-
-.resume-container {
-
-    animation:
-        fadeUp .75s cubic-bezier(.22, 1, .36, 1) both;
-}
-
-
-@media (prefers-reduced-motion: reduce) {
-
-    *,
-    *::before,
-    *::after {
-
-        scroll-behavior: auto !important;
-
-        animation-duration: .01ms !important;
-
-        animation-iteration-count: 1 !important;
-
-        transition-duration: .01ms !important;
-    }
-
-}
-
-
-/* ================= NAVBAR ================= */
-
-nav {
-
-    position: sticky;
-
-    top: 0;
+    width: 100%;
 
     z-index: 1000;
 
-    background: rgba(255, 255, 255, .92);
+    background:
+        rgba(255, 255, 255, .88);
 
     border-bottom:
-        1px solid rgba(226, 232, 240, .9);
+        1px solid rgba(226, 232, 240, .8);
 
     box-shadow:
-        0 5px 24px rgba(15, 23, 42, .05);
+        0 5px 25px rgba(15, 23, 42, .04);
 
-    backdrop-filter: blur(14px);
+    backdrop-filter:
+        blur(16px);
 
-    -webkit-backdrop-filter: blur(14px);
+    -webkit-backdrop-filter:
+        blur(16px);
+
+    animation:
+        fadeDown .6s ease both;
+
+    transition:
+        background .25s ease,
+        box-shadow .25s ease;
+
+}
+
+nav.scrolled {
+
+    background:
+        rgba(255, 255, 255, .96);
+
+    box-shadow:
+        0 8px 30px rgba(15, 23, 42, .08);
+
 }
 
 
 .nav-container {
 
-    max-width: 1140px;
+    max-width: 1180px;
+
+    min-height: 76px;
 
     margin: auto;
 
-    padding: 16px 25px;
+    padding: 0 25px;
 
     display: flex;
 
+    align-items: center;
+
     justify-content: space-between;
 
-    align-items: center;
 }
 
 
 .logo {
 
+    color: var(--ink);
+
     font-size: 20px;
 
     font-weight: 800;
 
-    letter-spacing: -.4px;
+    letter-spacing: -.7px;
 
-    color: var(--ink);
+}
+
+.logo span {
+
+    color: var(--accent);
+
 }
 
 
@@ -384,9 +402,12 @@ nav {
 
     display: flex;
 
-    gap: 26px;
+    align-items: center;
+
+    gap: 25px;
 
     list-style: none;
+
 }
 
 
@@ -400,10 +421,9 @@ nav {
 
     font-weight: 650;
 
-    letter-spacing: .1px;
-
     transition:
         color .2s ease;
+
 }
 
 
@@ -413,9 +433,9 @@ nav {
 
     position: absolute;
 
-    left: 0;
+    left: 50%;
 
-    bottom: -7px;
+    bottom: -8px;
 
     width: 0;
 
@@ -425,43 +445,63 @@ nav {
 
     background: var(--accent);
 
+    transform:
+        translateX(-50%);
+
     transition:
-        width .2s ease;
+        width .25s ease;
+
 }
 
 
-.nav-links a:hover {
+.nav-links a:hover,
+.nav-links a.active {
+
     color: var(--accent);
+
 }
 
-.nav-links a:hover::after {
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+
     width: 100%;
+
 }
 
 
-/* ================= HOME ================= */
+.menu-button {
+
+    display: none;
+
+    width: 42px;
+
+    height: 42px;
+
+    border: 1px solid var(--line);
+
+    border-radius: 10px;
+
+    background: white;
+
+    color: var(--ink);
+
+    cursor: pointer;
+
+    font-size: 20px;
+
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
 
 .home {
 
     position: relative;
 
-    min-height: 92vh;
-
-    overflow: hidden;
-
-    background:
-
-        radial-gradient(
-            circle at 50% 35%,
-            rgba(37, 99, 235, .08),
-            transparent 34%
-        ),
-
-        linear-gradient(
-            180deg,
-            #fff 0%,
-            #f8fbff 100%
-        );
+    min-height: 100vh;
 
     display: flex;
 
@@ -469,52 +509,113 @@ nav {
 
     justify-content: center;
 
+    overflow: hidden;
+
     text-align: center;
 
-    padding: 95px 25px 85px;
+    padding:
+        120px 25px 90px;
+
+    background:
+
+        radial-gradient(
+            circle at 50% 32%,
+            rgba(37, 99, 235, .09),
+            transparent 35%
+        ),
+
+        linear-gradient(
+            180deg,
+            #ffffff 0%,
+            #f8fbff 100%
+        );
+
 }
 
 
-.home::before,
+.home::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 330px;
+
+    height: 330px;
+
+    left: -180px;
+
+    top: 16%;
+
+    border:
+        1px solid rgba(37, 99, 235, .10);
+
+    border-radius: 50%;
+
+    animation:
+        float 8s ease-in-out infinite;
+
+}
+
+
 .home::after {
 
     content: "";
 
     position: absolute;
 
-    border-radius: 999px;
+    width: 440px;
+
+    height: 440px;
+
+    right: -250px;
+
+    bottom: -240px;
+
+    border:
+        1px solid rgba(37, 99, 235, .09);
+
+    border-radius: 50%;
+
+    animation:
+        float 10s ease-in-out infinite reverse;
+
+}
+
+
+/* subtle data-grid */
+
+.home-grid {
+
+    position: absolute;
+
+    inset: 0;
+
+    opacity: .35;
 
     pointer-events: none;
-}
 
+    background-image:
+        linear-gradient(
+            rgba(37,99,235,.035) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(37,99,235,.035) 1px,
+            transparent 1px
+        );
 
-.home::before {
+    background-size:
+        55px 55px;
 
-    width: 260px;
+    mask-image:
+        linear-gradient(
+            to bottom,
+            black,
+            transparent 85%
+        );
 
-    height: 260px;
-
-    top: 9%;
-
-    left: -120px;
-
-    border:
-        1px solid rgba(37, 99, 235, .08);
-}
-
-
-.home::after {
-
-    width: 360px;
-
-    height: 360px;
-
-    right: -190px;
-
-    bottom: -180px;
-
-    border:
-        1px solid rgba(37, 99, 235, .08);
 }
 
 
@@ -522,45 +623,119 @@ nav {
 
     position: relative;
 
-    z-index: 1;
+    z-index: 2;
 
-    max-width: 900px;
+    max-width: 920px;
 
     width: 100%;
+
+    animation:
+        fadeUp .9s cubic-bezier(.22,1,.36,1) both;
+
+}
+
+
+.status-pill {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding:
+        7px 13px;
+
+    margin-bottom: 24px;
+
+    border:
+        1px solid #dbeafe;
+
+    border-radius: 100px;
+
+    background:
+        rgba(255,255,255,.75);
+
+    color:
+        var(--muted-dark);
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    box-shadow:
+        0 4px 15px rgba(15,23,42,.035);
+
+}
+
+
+.status-dot {
+
+    width: 7px;
+
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: var(--accent);
+
+    animation:
+        blink 2s ease-in-out infinite;
+
 }
 
 
 .home h1 {
 
-    font-size:
-        clamp(46px, 7vw, 68px);
-
-    line-height: 1.05;
-
     color: var(--ink);
 
-    margin-bottom: 12px;
+    font-size:
+        clamp(48px, 7vw, 76px);
 
-    letter-spacing: -2.8px;
+    line-height: 1;
 
     font-weight: 800;
+
+    letter-spacing: -4px;
+
+    margin-bottom: 18px;
+
+}
+
+
+.home h1 span {
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--accent),
+            #4f8df7
+        );
+
+    -webkit-background-clip: text;
+
+    background-clip: text;
+
+    color: transparent;
+
 }
 
 
 .home h2 {
 
+    color: var(--accent);
+
     font-size:
-        clamp(23px, 3vw, 30px);
+        clamp(22px, 3vw, 31px);
 
     line-height: 1.2;
 
-    color: var(--accent);
+    font-weight: 700;
 
-    font-weight: 650;
+    letter-spacing: -.8px;
 
     margin-bottom: 14px;
 
-    letter-spacing: -.6px;
 }
 
 
@@ -568,13 +743,14 @@ nav {
 
     color: var(--muted-dark);
 
-    font-size: 15px;
+    font-size: 14px;
 
-    font-weight: 650;
-
-    margin-bottom: 27px;
+    font-weight: 700;
 
     letter-spacing: .15px;
+
+    margin-bottom: 26px;
+
 }
 
 
@@ -589,6 +765,7 @@ nav {
     font-size: 16px;
 
     line-height: 1.9;
+
 }
 
 
@@ -598,26 +775,38 @@ nav {
 
     justify-content: center;
 
+    flex-wrap: wrap;
+
     gap: 10px;
 
-    margin: 27px 0;
+    margin:
+        27px 0 23px;
 
-    flex-wrap: wrap;
 }
 
 
 .social-box {
 
-    display: inline-block;
+    position: relative;
 
-    padding: 9px 18px;
+    overflow: hidden;
 
-    background: rgba(255, 255, 255, .82);
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding:
+        9px 18px;
 
     border:
         1px solid var(--line-strong);
 
     border-radius: 9px;
+
+    background:
+        rgba(255,255,255,.85);
 
     color: var(--muted-dark);
 
@@ -626,45 +815,118 @@ nav {
     font-weight: 700;
 
     box-shadow:
-        0 3px 12px rgba(15, 23, 42, .035);
+        0 3px 12px rgba(15,23,42,.035);
 
-    transition: .22s ease;
+    transition:
+        transform .25s ease,
+        background .25s ease,
+        color .25s ease,
+        border-color .25s ease,
+        box-shadow .25s ease;
+
+}
+
+
+.social-box::before,
+.primary-button::before,
+.secondary-button::before,
+.resume-button::before,
+.project-link::before,
+.certification-link::before,
+.internship-link::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    width: 30%;
+
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.35),
+            transparent
+        );
+
+    transform:
+        translateX(-150%);
+
+    pointer-events: none;
+
+}
+
+
+.social-box:hover::before,
+.primary-button:hover::before,
+.secondary-button:hover::before,
+.resume-button:hover::before,
+.project-link:hover::before,
+.certification-link:hover::before,
+.internship-link:hover::before {
+
+    animation:
+        shimmer .7s ease;
+
 }
 
 
 .social-box:hover {
 
-    background: var(--accent);
+    background:
+        var(--accent);
 
-    color: #fff;
+    color:
+        white;
 
-    border-color: var(--accent);
+    border-color:
+        var(--accent);
 
-    transform: translateY(-2px);
+    transform:
+        translateY(-3px);
 
     box-shadow:
-        0 8px 20px rgba(37, 99, 235, .2);
+        0 9px 22px rgba(37,99,235,.18);
+
 }
 
 
 .home-buttons {
 
-    margin-top: 31px;
-
     display: flex;
 
     justify-content: center;
 
+    flex-wrap: wrap;
+
     gap: 11px;
 
-    flex-wrap: wrap;
+    margin-top: 28px;
+
 }
 
 
 .primary-button,
 .secondary-button {
 
-    padding: 12px 24px;
+    position: relative;
+
+    overflow: hidden;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding:
+        12px 24px;
 
     border-radius: 9px;
 
@@ -672,70 +934,92 @@ nav {
 
     font-weight: 700;
 
-    letter-spacing: .1px;
+    transition:
+        transform .25s ease,
+        background .25s ease,
+        color .25s ease,
+        box-shadow .25s ease;
 
-    transition: .22s ease;
 }
 
 
 .primary-button {
 
-    background: var(--accent);
+    background:
+        var(--accent);
 
-    color: #fff;
+    color:
+        white;
 
     box-shadow:
-        0 7px 18px rgba(37, 99, 235, .18);
+        0 8px 20px rgba(37,99,235,.18);
+
 }
 
 
 .primary-button:hover {
 
-    background: var(--accent-dark);
+    background:
+        var(--accent-dark);
 
-    transform: translateY(-2px);
+    transform:
+        translateY(-3px);
 
     box-shadow:
-        0 10px 24px rgba(37, 99, 235, .24);
+        0 12px 27px rgba(37,99,235,.25);
+
 }
 
 
 .secondary-button {
 
-    background: rgba(255, 255, 255, .9);
+    background:
+        white;
 
-    color: var(--muted-dark);
+    color:
+        var(--muted-dark);
 
     border:
         1px solid var(--line-strong);
+
 }
 
 
 .secondary-button:hover {
 
-    background: var(--accent-soft);
+    background:
+        var(--accent-soft);
 
-    color: var(--accent-dark);
+    color:
+        var(--accent-dark);
 
-    border-color: #bfdbfe;
+    border-color:
+        #bfdbfe;
 
-    transform: translateY(-2px);
+    transform:
+        translateY(-3px);
+
 }
 
 
-/* ================= GENERAL SECTIONS ================= */
+/* =========================================================
+   GENERAL SECTION
+========================================================= */
 
 section {
 
-    padding: 92px 25px;
+    padding:
+        95px 25px;
+
 }
 
 
 .section-container {
 
-    max-width: 1140px;
+    max-width: 1180px;
 
     margin: auto;
+
 }
 
 
@@ -743,17 +1027,35 @@ section {
 
     text-align: center;
 
-    font-size: 31px;
+    color: var(--ink);
+
+    font-size:
+        clamp(28px, 4vw, 34px);
 
     line-height: 1.2;
 
-    color: var(--ink);
-
-    margin-bottom: 12px;
-
-    letter-spacing: -.8px;
-
     font-weight: 800;
+
+    letter-spacing: -.9px;
+
+    margin-bottom: 13px;
+
+}
+
+
+.section-subtitle {
+
+    max-width: 680px;
+
+    margin:
+        -32px auto 40px;
+
+    text-align: center;
+
+    color: var(--muted);
+
+    font-size: 14px;
+
 }
 
 
@@ -765,91 +1067,171 @@ section {
 
     height: 3px;
 
-    background: var(--accent);
-
     margin:
         0 auto 48px;
 
     border-radius: 10px;
 
+    background:
+        linear-gradient(
+            90deg,
+            var(--accent),
+            var(--accent-light)
+        );
+
     box-shadow:
-        0 3px 10px rgba(37, 99, 235, .22);
+        0 3px 10px rgba(37,99,235,.2);
+
+    animation:
+        pulse 3s ease-in-out infinite;
+
 }
 
 
-/* ================= ABOUT ================= */
+/* =========================================================
+   ABOUT
+========================================================= */
 
 #about {
-    background: var(--surface-soft);
+
+    background:
+        var(--surface-soft);
+
+}
+
+
+.about-layout {
+
+    max-width: 930px;
+
+    margin: auto;
+
 }
 
 
 .about-content {
 
-    max-width: 850px;
+    padding:
+        34px 40px;
 
-    margin: auto;
+    border:
+        1px solid var(--line);
 
-    text-align: center;
+    border-radius:
+        var(--radius);
+
+    background:
+        rgba(255,255,255,.72);
+
+    box-shadow:
+        var(--shadow-sm);
+
+}
+
+
+.about-content::before {
+
+    content: "";
+
+    display: block;
+
+    width: 45px;
+
+    height: 3px;
+
+    margin-bottom: 22px;
+
+    background:
+        var(--accent);
+
+    border-radius: 20px;
+
 }
 
 
 .about-content p {
 
-    color: var(--muted);
+    color:
+        var(--muted);
 
-    margin-bottom: 19px;
+    font-size:
+        15px;
 
-    font-size: 16px;
+    line-height:
+        1.9;
 
-    line-height: 1.85;
+    margin-bottom:
+        18px;
+
 }
 
 
-/* ================= SKILLS ================= */
+.about-content p:last-child {
+
+    margin-bottom:
+        0;
+
+}
+
+
+/* =========================================================
+   SKILLS
+========================================================= */
 
 #skills {
-    background: var(--surface);
+
+    background:
+        var(--surface);
+
 }
 
 
 .skills-grid {
 
-    display: grid;
+    display:
+        grid;
 
     grid-template-columns:
         repeat(3, 1fr);
 
-    gap: 20px;
+    gap:
+        20px;
+
 }
 
 
 .skill-card {
 
-    position: relative;
+    position:
+        relative;
 
-    overflow: hidden;
+    overflow:
+        hidden;
 
-    background:
-        linear-gradient(
-            145deg,
-            #fff,
-            #f8fafc
-        );
+    padding:
+        28px;
 
     border:
         1px solid var(--line);
 
-    border-radius: var(--radius);
+    border-radius:
+        var(--radius);
 
-    padding: 27px;
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #f8fafc
+        );
 
-    box-shadow: var(--shadow-sm);
+    box-shadow:
+        var(--shadow-sm);
 
     transition:
-        transform .24s ease,
-        box-shadow .24s ease,
-        border-color .24s ease;
+        transform .3s ease,
+        box-shadow .3s ease,
+        border-color .3s ease;
+
 }
 
 
@@ -859,9 +1241,9 @@ section {
 
     position: absolute;
 
-    top: 0;
-
     left: 0;
+
+    top: 0;
 
     width: 100%;
 
@@ -871,294 +1253,623 @@ section {
         linear-gradient(
             90deg,
             var(--accent),
-            #60a5fa
+            var(--accent-light)
         );
 
-    opacity: 0;
+    transform:
+        scaleX(0);
+
+    transform-origin:
+        left;
 
     transition:
-        opacity .24s ease;
+        transform .3s ease;
+
 }
 
 
 .skill-card:hover {
 
-    transform: translateY(-5px);
+    transform:
+        translateY(-7px);
 
-    box-shadow: var(--shadow-md);
+    border-color:
+        #cbd5e1;
 
-    border-color: #cbd5e1;
+    box-shadow:
+        var(--shadow-md);
+
 }
 
 
 .skill-card:hover::before {
-    opacity: 1;
+
+    transform:
+        scaleX(1);
+
+}
+
+
+.skill-number {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    width:
+        37px;
+
+    height:
+        37px;
+
+    margin-bottom:
+        17px;
+
+    border-radius:
+        10px;
+
+    background:
+        var(--accent-soft);
+
+    color:
+        var(--accent);
+
+    font-size:
+        12px;
+
+    font-weight:
+        800;
+
 }
 
 
 .skill-card h3 {
 
-    color: var(--ink);
+    color:
+        var(--ink);
 
-    font-size: 18px;
+    font-size:
+        18px;
 
-    line-height: 1.35;
+    line-height:
+        1.4;
 
-    margin-bottom: 12px;
+    font-weight:
+        750;
 
-    font-weight: 750;
+    margin-bottom:
+        11px;
+
 }
 
 
 .skill-card p {
 
-    color: var(--muted);
+    color:
+        var(--muted);
 
-    font-size: 14px;
+    font-size:
+        13.5px;
 
-    line-height: 1.85;
+    line-height:
+        1.8;
+
 }
 
 
-/* ================= PROJECTS ================= */
+/* =========================================================
+   PROJECTS
+========================================================= */
 
 #projects {
-    background: var(--surface-soft);
+
+    background:
+        var(--surface-soft);
+
 }
 
 
 .projects-grid {
 
-    display: grid;
+    display:
+        grid;
 
     grid-template-columns:
         repeat(3, 1fr);
 
-    gap: 22px;
+    gap:
+        22px;
+
 }
 
 
 .project-card {
 
-    position: relative;
+    position:
+        relative;
 
-    overflow: hidden;
+    overflow:
+        hidden;
 
-    background: var(--surface);
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    background:
+        white;
 
     border:
         1px solid var(--line);
 
-    border-radius: var(--radius);
+    border-radius:
+        var(--radius);
 
-    padding: 27px;
-
-    display: flex;
-
-    flex-direction: column;
-
-    box-shadow: var(--shadow-sm);
+    box-shadow:
+        var(--shadow-sm);
 
     transition:
-        transform .24s ease,
-        box-shadow .24s ease,
-        border-color .24s ease;
-}
+        transform .3s ease,
+        box-shadow .3s ease,
+        border-color .3s ease;
 
-
-.project-card::before {
-
-    content: "";
-
-    position: absolute;
-
-    top: 0;
-
-    left: 0;
-
-    width: 100%;
-
-    height: 3px;
-
-    background:
-        linear-gradient(
-            90deg,
-            var(--accent),
-            #60a5fa
-        );
-
-    opacity: 0;
-
-    transition:
-        opacity .24s ease;
 }
 
 
 .project-card:hover {
 
-    transform: translateY(-6px);
+    transform:
+        translateY(-8px);
 
-    box-shadow: var(--shadow-lg);
+    box-shadow:
+        var(--shadow-lg);
 
-    border-color: #cbd5e1;
+    border-color:
+        #cbd5e1;
+
 }
 
 
-.project-card:hover::before {
-    opacity: 1;
+.project-image {
+
+    position:
+        relative;
+
+    height:
+        195px;
+
+    overflow:
+        hidden;
+
+    background:
+        #eef4ff;
+
+}
+
+
+.project-image::after {
+
+    content: "";
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    background:
+        linear-gradient(
+            180deg,
+            transparent 45%,
+            rgba(15,23,42,.08)
+        );
+
+    pointer-events:
+        none;
+
+}
+
+
+.project-image img {
+
+    width:
+        100%;
+
+    height:
+        100%;
+
+    object-fit:
+        cover;
+
+    transition:
+        transform .55s cubic-bezier(.22,1,.36,1);
+
+}
+
+
+.project-card:hover
+.project-image img {
+
+    transform:
+        scale(1.06);
+
+}
+
+
+.project-body {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    flex:
+        1;
+
+    padding:
+        26px;
+
+}
+
+
+.project-index {
+
+    color:
+        var(--accent);
+
+    font-size:
+        11px;
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        1.5px;
+
+    margin-bottom:
+        8px;
+
 }
 
 
 .project-card h3 {
 
-    color: var(--ink);
+    color:
+        var(--ink);
 
-    font-size: 19px;
+    font-size:
+        19px;
 
-    line-height: 1.4;
+    line-height:
+        1.45;
 
-    margin-bottom: 12px;
+    font-weight:
+        750;
 
-    font-weight: 750;
+    margin-bottom:
+        13px;
+
 }
 
 
 .project-tech {
 
-    display: inline-block;
+    display:
+        inline-block;
 
-    width: fit-content;
+    width:
+        fit-content;
 
-    color: var(--accent);
+    padding:
+        6px 9px;
 
-    background: var(--accent-soft);
+    margin-bottom:
+        16px;
 
     border:
         1px solid #dbeafe;
 
-    border-radius: 7px;
+    border-radius:
+        7px;
 
-    padding: 6px 9px;
+    background:
+        var(--accent-soft);
 
-    font-size: 12.5px;
+    color:
+        var(--accent);
 
-    font-weight: 700;
+    font-size:
+        11px;
 
-    margin-bottom: 17px;
+    line-height:
+        1.55;
 
-    line-height: 1.6;
+    font-weight:
+        700;
+
 }
 
 
 .project-card p {
 
-    color: var(--muted);
+    color:
+        var(--muted);
 
-    font-size: 14px;
+    font-size:
+        13.5px;
 
-    line-height: 1.75;
+    line-height:
+        1.8;
 
-    margin-bottom: 13px;
+    margin-bottom:
+        13px;
+
 }
 
 
 .project-card ul {
 
-    padding-left: 20px;
+    padding-left:
+        18px;
 
-    margin-bottom: 19px;
+    margin-bottom:
+        18px;
+
 }
 
 
 .project-card li {
 
-    color: var(--muted);
+    color:
+        var(--muted);
 
-    font-size: 14px;
+    font-size:
+        13px;
 
-    line-height: 1.7;
+    line-height:
+        1.7;
 
-    margin-bottom: 7px;
+    margin-bottom:
+        6px;
+
 }
 
 
 .project-card li::marker {
-    color: var(--accent);
+
+    color:
+        var(--accent);
+
 }
 
 
 .project-card strong {
-    color: var(--ink-soft);
+
+    color:
+        var(--ink-soft);
+
+}
+
+
+.project-links {
+
+    display:
+        flex;
+
+    flex-wrap:
+        wrap;
+
+    gap:
+        9px;
+
+    margin-top:
+        auto;
+
+    padding-top:
+        10px;
+
 }
 
 
 .project-link {
 
-    display: inline-flex;
+    position:
+        relative;
 
-    align-items: center;
+    overflow:
+        hidden;
 
-    width: fit-content;
+    display:
+        inline-flex;
 
-    margin-top: auto;
+    align-items:
+        center;
 
-    padding-top: 4px;
+    justify-content:
+        center;
 
-    color: var(--accent);
+    padding:
+        8px 13px;
 
-    font-size: 14px;
+    border:
+        1px solid var(--line-strong);
 
-    font-weight: 700;
+    border-radius:
+        8px;
+
+    background:
+        white;
+
+    color:
+        var(--accent);
+
+    font-size:
+        12px;
+
+    font-weight:
+        700;
 
     transition:
+        transform .2s ease,
+        background .2s ease,
         color .2s ease,
-        transform .2s ease;
+        border-color .2s ease;
+
 }
 
 
 .project-link:hover {
 
-    color: var(--accent-dark);
+    transform:
+        translateY(-2px);
 
-    transform: translateX(3px);
+    background:
+        var(--accent);
+
+    color:
+        white;
+
+    border-color:
+        var(--accent);
+
 }
 
 
-/* ================= EDUCATION ================= */
+/* =========================================================
+   PROJECT STATS
+========================================================= */
+
+.project-stats {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap:
+        8px;
+
+    margin:
+        4px 0 17px;
+
+}
+
+
+.project-stat {
+
+    padding:
+        9px;
+
+    border:
+        1px solid var(--line);
+
+    border-radius:
+        8px;
+
+    background:
+        var(--surface-soft);
+
+}
+
+
+.project-stat strong {
+
+    display:
+        block;
+
+    color:
+        var(--ink);
+
+    font-size:
+        13px;
+
+}
+
+
+.project-stat span {
+
+    color:
+        var(--muted);
+
+    font-size:
+        10px;
+
+}
+
+
+/* =========================================================
+   EDUCATION
+========================================================= */
 
 #education {
-    background: var(--surface);
+
+    background:
+        var(--surface);
+
+}
+
+
+.education-wrapper {
+
+    max-width:
+        850px;
+
+    margin:
+        auto;
+
 }
 
 
 .education-card {
 
-    position: relative;
+    position:
+        relative;
 
-    max-width: 800px;
+    overflow:
+        hidden;
 
-    margin: auto;
-
-    background:
-        linear-gradient(
-            145deg,
-            #fff,
-            #f8fafc
-        );
+    padding:
+        32px 35px;
 
     border:
         1px solid var(--line);
 
-    border-radius: var(--radius);
+    border-radius:
+        var(--radius);
 
-    padding: 30px;
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #f8fafc
+        );
 
-    box-shadow: var(--shadow-sm);
+    box-shadow:
+        var(--shadow-sm);
 
     transition:
-        transform .24s ease,
-        box-shadow .24s ease,
-        border-color .24s ease;
+        transform .3s ease,
+        box-shadow .3s ease;
+
+}
+
+
+.education-card:hover {
+
+    transform:
+        translateY(-5px);
+
+    box-shadow:
+        var(--shadow-md);
+
 }
 
 
@@ -1166,544 +1877,1223 @@ section {
 
     content: "";
 
-    position: absolute;
+    position:
+        absolute;
 
-    top: 0;
+    top:
+        0;
 
-    left: 0;
+    left:
+        0;
 
-    width: 4px;
+    width:
+        4px;
 
-    height: 100%;
+    height:
+        100%;
 
     background:
         linear-gradient(
             180deg,
             var(--accent),
-            #60a5fa
+            var(--accent-light)
         );
 
-    border-radius:
-        14px 0 0 14px;
 }
 
 
-.education-card:hover {
+.education-label {
 
-    transform: translateY(-4px);
+    color:
+        var(--accent);
 
-    border-color: #cbd5e1;
+    font-size:
+        11px;
 
-    box-shadow: var(--shadow-md);
+    font-weight:
+        800;
+
+    letter-spacing:
+        1.2px;
+
+    margin-bottom:
+        8px;
+
 }
 
 
 .education-card h3 {
 
-    color: var(--ink);
+    color:
+        var(--ink);
 
-    font-size: 20px;
+    font-size:
+        21px;
 
-    line-height: 1.4;
+    line-height:
+        1.4;
 
-    margin-bottom: 6px;
+    margin-bottom:
+        7px;
+
 }
 
 
 .education-card h4 {
 
-    color: var(--accent);
+    color:
+        var(--accent);
 
-    font-size: 15px;
+    font-size:
+        14px;
 
-    font-weight: 700;
+    margin-bottom:
+        11px;
 
-    margin-bottom: 10px;
 }
 
 
 .education-card p {
 
-    color: var(--muted);
+    color:
+        var(--muted);
 
-    font-size: 14px;
+    font-size:
+        13.5px;
 
-    margin-bottom: 5px;
+    line-height:
+        1.8;
+
+    margin-bottom:
+        5px;
+
 }
 
 
-/* ================= CERTIFICATIONS ================= */
+/* =========================================================
+   INTERNSHIPS
+========================================================= */
+
+#internships {
+
+    background:
+        var(--surface-soft);
+
+}
+
+
+.internship-grid {
+
+    max-width:
+        900px;
+
+    margin:
+        auto;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap:
+        18px;
+
+}
+
+
+.internship-card {
+
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+    padding:
+        25px;
+
+    border:
+        1px solid var(--line);
+
+    border-radius:
+        var(--radius);
+
+    background:
+        white;
+
+    box-shadow:
+        var(--shadow-sm);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease,
+        border-color .3s ease;
+
+}
+
+
+.internship-card:hover {
+
+    transform:
+        translateY(-6px);
+
+    box-shadow:
+        var(--shadow-md);
+
+    border-color:
+        #cbd5e1;
+
+}
+
+
+.internship-icon {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    width:
+        42px;
+
+    height:
+        42px;
+
+    border-radius:
+        11px;
+
+    background:
+        var(--accent-soft);
+
+    color:
+        var(--accent);
+
+    font-size:
+        13px;
+
+    font-weight:
+        800;
+
+    margin-bottom:
+        17px;
+
+}
+
+
+.internship-card h3 {
+
+    color:
+        var(--ink);
+
+    font-size:
+        16px;
+
+    line-height:
+        1.45;
+
+    margin-bottom:
+        9px;
+
+}
+
+
+.internship-card p {
+
+    color:
+        var(--muted);
+
+    font-size:
+        13px;
+
+    line-height:
+        1.75;
+
+    margin-bottom:
+        17px;
+
+}
+
+
+.internship-link {
+
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+    display:
+        inline-flex;
+
+    padding:
+        8px 12px;
+
+    border:
+        1px solid var(--line-strong);
+
+    border-radius:
+        8px;
+
+    color:
+        var(--accent);
+
+    font-size:
+        11.5px;
+
+    font-weight:
+        700;
+
+    transition:
+        .22s ease;
+
+}
+
+
+.internship-link:hover {
+
+    background:
+        var(--accent);
+
+    color:
+        white;
+
+    border-color:
+        var(--accent);
+
+}
+
+
+/* =========================================================
+   CERTIFICATIONS
+========================================================= */
 
 #certifications {
-    background: var(--surface-soft);
+
+    background:
+        var(--surface);
+
 }
 
 
 .certifications-grid {
 
-    display: grid;
+    max-width:
+        950px;
+
+    margin:
+        auto;
+
+    display:
+        grid;
 
     grid-template-columns:
         repeat(2, 1fr);
 
-    gap: 18px;
+    gap:
+        18px;
 
-    max-width: 900px;
-
-    margin: auto;
 }
 
 
 .certification-card {
 
-    position: relative;
+    position:
+        relative;
 
-    background: var(--surface);
+    overflow:
+        hidden;
+
+    padding:
+        25px;
 
     border:
         1px solid var(--line);
 
-    border-radius: var(--radius);
+    border-radius:
+        var(--radius);
 
-    padding: 23px;
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #f8fafc
+        );
 
     transition:
-        transform .24s ease,
-        box-shadow .24s ease,
-        border-color .24s ease;
+        transform .3s ease,
+        box-shadow .3s ease,
+        border-color .3s ease;
+
 }
 
 
 .certification-card:hover {
 
-    transform: translateY(-5px);
+    transform:
+        translateY(-6px);
 
-    border-color: #cbd5e1;
+    box-shadow:
+        var(--shadow-md);
 
-    box-shadow: var(--shadow-md);
+    border-color:
+        #cbd5e1;
+
+}
+
+
+.certification-number {
+
+    color:
+        var(--accent);
+
+    font-size:
+        11px;
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        1.2px;
+
+    margin-bottom:
+        11px;
+
 }
 
 
 .certification-card h3 {
 
-    color: var(--ink);
+    color:
+        var(--ink);
 
-    font-size: 17px;
+    font-size:
+        17px;
 
-    line-height: 1.4;
+    line-height:
+        1.45;
 
-    margin-bottom: 7px;
+    margin-bottom:
+        7px;
+
 }
 
 
 .certification-card p {
 
-    color: var(--muted);
+    color:
+        var(--muted);
 
-    font-size: 14px;
+    font-size:
+        13px;
 
-    margin-bottom: 11px;
+    line-height:
+        1.75;
+
+    margin-bottom:
+        15px;
+
 }
 
 
-.certification-card a {
+.certification-link {
 
-    color: var(--accent);
+    position:
+        relative;
 
-    font-size: 13px;
+    overflow:
+        hidden;
 
-    font-weight: 700;
+    display:
+        inline-flex;
+
+    padding:
+        8px 13px;
+
+    border:
+        1px solid var(--line-strong);
+
+    border-radius:
+        8px;
+
+    color:
+        var(--accent);
+
+    font-size:
+        12px;
+
+    font-weight:
+        700;
 
     transition:
-        color .2s ease;
+        .22s ease;
+
 }
 
 
-.certification-card a:hover {
-    color: var(--accent-dark);
+.certification-link:hover {
+
+    background:
+        var(--accent);
+
+    color:
+        white;
+
+    border-color:
+        var(--accent);
+
 }
 
 
-/* ================= RESUME ================= */
+/* =========================================================
+   RESUME
+========================================================= */
 
 #resume {
-    background: var(--surface);
+
+    background:
+        var(--surface-soft);
+
 }
 
 
 .resume-container {
 
-    position: relative;
+    position:
+        relative;
 
-    max-width: 750px;
+    max-width:
+        780px;
 
-    margin: auto;
+    margin:
+        auto;
 
-    text-align: center;
+    overflow:
+        hidden;
+
+    padding:
+        50px 30px;
+
+    text-align:
+        center;
+
+    border:
+        1px solid var(--line);
+
+    border-radius:
+        18px;
 
     background:
-
         radial-gradient(
             circle at top right,
-            rgba(37, 99, 235, .07),
+            rgba(37,99,235,.07),
             transparent 35%
         ),
 
         linear-gradient(
             145deg,
-            #fff,
+            #ffffff,
             #f8fafc
         );
 
-    border:
-        1px solid var(--line);
+    box-shadow:
+        var(--shadow-md);
 
-    border-radius: 16px;
-
-    padding: 45px 28px;
-
-    box-shadow: var(--shadow-sm);
-
-    overflow: hidden;
 }
 
 
 .resume-container::before {
 
-    content: "";
+    content:
+        "";
 
-    position: absolute;
+    position:
+        absolute;
 
-    top: 0;
+    top:
+        0;
 
-    left: 0;
+    left:
+        0;
 
-    width: 100%;
+    width:
+        100%;
 
-    height: 4px;
+    height:
+        4px;
 
     background:
         linear-gradient(
             90deg,
             var(--accent),
-            #60a5fa
+            var(--accent-light)
         );
+
+}
+
+
+.resume-label {
+
+    display:
+        inline-block;
+
+    padding:
+        6px 10px;
+
+    margin-bottom:
+        13px;
+
+    border-radius:
+        7px;
+
+    background:
+        var(--accent-soft);
+
+    color:
+        var(--accent);
+
+    font-size:
+        11px;
+
+    font-weight:
+        800;
+
 }
 
 
 .resume-container h3 {
 
-    color: var(--ink);
+    color:
+        var(--ink);
 
-    font-size: 24px;
+    font-size:
+        25px;
 
-    line-height: 1.35;
+    line-height:
+        1.35;
 
-    margin-bottom: 9px;
+    margin-bottom:
+        9px;
+
 }
 
 
 .resume-container p {
 
-    color: var(--muted);
+    max-width:
+        580px;
 
-    margin-bottom: 27px;
+    margin:
+        auto auto 26px;
+
+    color:
+        var(--muted);
+
+    font-size:
+        14px;
+
 }
 
 
 .resume-buttons {
 
-    display: flex;
+    display:
+        flex;
 
-    justify-content: center;
+    justify-content:
+        center;
 
-    gap: 12px;
+    flex-wrap:
+        wrap;
 
-    flex-wrap: wrap;
+    gap:
+        11px;
+
 }
 
 
 .resume-button {
 
-    padding: 12px 24px;
+    position:
+        relative;
 
-    border-radius: 9px;
+    overflow:
+        hidden;
 
-    font-size: 14px;
+    display:
+        inline-flex;
 
-    font-weight: 700;
+    align-items:
+        center;
 
-    transition: .22s ease;
+    justify-content:
+        center;
+
+    padding:
+        12px 23px;
+
+    border-radius:
+        9px;
+
+    font-size:
+        13px;
+
+    font-weight:
+        700;
+
+    transition:
+        .25s ease;
+
 }
 
 
 .resume-view {
 
-    background: var(--accent);
+    background:
+        var(--accent);
 
-    color: #fff;
+    color:
+        white;
 
     box-shadow:
-        0 7px 18px rgba(37, 99, 235, .18);
+        0 8px 20px rgba(37,99,235,.18);
+
 }
 
 
 .resume-view:hover {
 
-    background: var(--accent-dark);
+    background:
+        var(--accent-dark);
 
-    transform: translateY(-2px);
+    transform:
+        translateY(-3px);
 
     box-shadow:
-        0 10px 24px rgba(37, 99, 235, .24);
+        0 12px 26px rgba(37,99,235,.25);
+
 }
 
 
 .resume-download {
 
-    background: #fff;
+    background:
+        white;
 
-    color: var(--muted-dark);
+    color:
+        var(--muted-dark);
 
     border:
         1px solid var(--line-strong);
+
 }
 
 
 .resume-download:hover {
 
-    background: var(--accent-soft);
+    background:
+        var(--accent-soft);
 
-    color: var(--accent-dark);
+    color:
+        var(--accent-dark);
 
-    border-color: #bfdbfe;
+    border-color:
+        #bfdbfe;
 
-    transform: translateY(-2px);
+    transform:
+        translateY(-3px);
+
 }
 
 
-/* ================= CONTACT ================= */
+/* =========================================================
+   CONTACT
+========================================================= */
 
 #contact {
 
     background:
         linear-gradient(
             180deg,
-            #f8fafc 0%,
-            #f4f7fb 100%
+            #f8fafc,
+            #f1f5f9
         );
+
 }
 
 
 .contact-container {
 
-    max-width: 750px;
+    max-width:
+        760px;
 
-    margin: auto;
+    margin:
+        auto;
 
-    text-align: center;
+    text-align:
+        center;
+
 }
 
 
 .contact-container p {
 
-    color: var(--muted);
+    color:
+        var(--muted);
 
-    margin-bottom: 27px;
+    font-size:
+        15px;
+
+    margin-bottom:
+        27px;
+
 }
 
 
 .contact-links {
 
-    display: flex;
+    display:
+        flex;
 
-    justify-content: center;
+    justify-content:
+        center;
 
-    gap: 12px;
+    flex-wrap:
+        wrap;
 
-    flex-wrap: wrap;
+    gap:
+        11px;
+
 }
 
 
 .contact-link {
 
-    padding: 11px 20px;
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    min-width:
+        115px;
+
+    padding:
+        11px 20px;
 
     border:
         1px solid var(--line-strong);
 
-    border-radius: 9px;
+    border-radius:
+        9px;
 
-    background: #fff;
+    background:
+        white;
 
-    color: var(--muted-dark);
+    color:
+        var(--muted-dark);
 
-    font-size: 14px;
+    font-size:
+        13px;
 
-    font-weight: 600;
+    font-weight:
+        650;
 
     box-shadow:
-        0 3px 10px rgba(15, 23, 42, .03);
+        0 3px 10px rgba(15,23,42,.03);
 
-    transition: .22s ease;
+    transition:
+        .25s ease;
+
 }
 
 
 .contact-link:hover {
 
-    background: var(--accent);
+    background:
+        var(--accent);
 
-    color: #fff;
+    color:
+        white;
 
-    border-color: var(--accent);
+    border-color:
+        var(--accent);
 
-    transform: translateY(-2px);
+    transform:
+        translateY(-3px);
 
     box-shadow:
-        0 8px 20px rgba(37, 99, 235, .18);
+        0 9px 21px rgba(37,99,235,.18);
+
 }
 
 
-/* ================= FOOTER ================= */
+/* =========================================================
+   FOOTER
+========================================================= */
 
 footer {
 
-    background: #0b1220;
+    padding:
+        27px 25px;
 
-    color: #cbd5e1;
+    text-align:
+        center;
 
-    text-align: center;
+    background:
+        #0b1220;
 
-    padding: 27px 25px;
+    color:
+        #cbd5e1;
 
     border-top:
         1px solid #1e293b;
+
 }
 
 
 footer p {
-    font-size: 13px;
+
+    font-size:
+        12.5px;
+
 }
 
 
-/* ================= RESPONSIVE ================= */
+.footer-name {
 
-@media (max-width: 900px) {
+    color:
+        white;
+
+    font-weight:
+        700;
+
+}
+
+
+/* =========================================================
+   RESPONSIVE - 1000
+========================================================= */
+
+@media (max-width: 1000px) {
 
     .skills-grid {
-        grid-template-columns: repeat(2, 1fr);
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
     }
 
     .projects-grid {
-        grid-template-columns: 1fr;
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+    .internship-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
     }
 
 }
 
 
-@media (max-width: 700px) {
+/* =========================================================
+   RESPONSIVE - 760
+========================================================= */
+
+@media (max-width: 760px) {
 
     .nav-container {
 
-        flex-direction: column;
+        min-height:
+            70px;
 
-        gap: 13px;
+    }
+
+
+    .menu-button {
+
+        display:
+            inline-flex;
+
+        align-items:
+            center;
+
+        justify-content:
+            center;
+
     }
 
 
     .nav-links {
 
-        gap: 14px;
+        position:
+            absolute;
 
-        flex-wrap: wrap;
+        top:
+            70px;
 
-        justify-content: center;
+        left:
+            0;
+
+        width:
+            100%;
+
+        display:
+            none;
+
+        flex-direction:
+            column;
+
+        align-items:
+            stretch;
+
+        gap:
+            0;
+
+        padding:
+            10px 25px 20px;
+
+        background:
+            rgba(255,255,255,.97);
+
+        border-bottom:
+            1px solid var(--line);
+
+        box-shadow:
+            0 15px 30px rgba(15,23,42,.08);
+
+        backdrop-filter:
+            blur(15px);
+
+    }
+
+
+    .nav-links.open {
+
+        display:
+            flex;
+
+    }
+
+
+    .nav-links li {
+
+        width:
+            100%;
+
+    }
+
+
+    .nav-links a {
+
+        display:
+            block;
+
+        padding:
+            11px 0;
+
+        font-size:
+            14px;
+
+    }
+
+
+    .nav-links a::after {
+
+        left:
+            0;
+
+        transform:
+            none;
+
+        bottom:
+            4px;
+
     }
 
 
     .home {
 
-        min-height: 88vh;
+        min-height:
+            92vh;
 
-        padding: 75px 20px;
+        padding:
+            105px 20px 75px;
+
     }
 
 
     .home h1 {
 
-        font-size: 43px;
+        font-size:
+            47px;
 
-        letter-spacing: -1px;
+        letter-spacing:
+            -2.5px;
+
     }
 
 
     .home h2 {
-        font-size: 22px;
-    }
 
+        font-size:
+            22px;
 
-    .home-role {
-        font-size: 14px;
     }
 
 
     .home-summary {
-        font-size: 15px;
-    }
 
+        font-size:
+            14.5px;
 
-    .skills-grid {
-        grid-template-columns: 1fr;
-    }
-
-
-    .certifications-grid {
-        grid-template-columns: 1fr;
     }
 
 
     section {
-        padding: 65px 20px;
+
+        padding:
+            70px 20px;
+
     }
 
 
-    .section-title {
-        font-size: 29px;
+    .section-line {
+
+        margin-bottom:
+            38px;
+
     }
 
 
-    .project-card,
-    .skill-card {
-        padding: 24px 21px;
+    .skills-grid,
+    .projects-grid,
+    .internship-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .certifications-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .about-content {
+
+        padding:
+            28px 24px;
+
     }
 
 
     .education-card {
-        padding: 27px 23px;
+
+        padding:
+            29px 26px;
+
     }
+
+
+    .project-image {
+
+        height:
+            210px;
+
+    }
+
 
 }
 
 
+/* =========================================================
+   RESPONSIVE - 450
+========================================================= */
+
 @media (max-width: 450px) {
 
-    .nav-links {
-        gap: 10px;
+    .nav-container {
+
+        padding:
+            0 18px;
+
     }
 
 
-    .nav-links a {
-        font-size: 13px;
+    .home {
+
+        padding:
+            100px 17px 65px;
+
     }
 
 
     .home h1 {
-        font-size: 37px;
+
+        font-size:
+            39px;
+
     }
 
 
     .home h2 {
-        font-size: 20px;
+
+        font-size:
+            20px;
+
+    }
+
+
+    .home-role {
+
+        font-size:
+            12.5px;
+
+        line-height:
+            1.7;
+
+    }
+
+
+    .status-pill {
+
+        font-size:
+            10px;
+
+    }
+
+
+    .social-links,
+    .home-buttons,
+    .resume-buttons,
+    .contact-links {
+
+        width:
+            100%;
+
     }
 
 
@@ -1713,22 +3103,58 @@ footer p {
     .resume-button,
     .contact-link {
 
-        width: 100%;
+        width:
+            100%;
+
     }
 
 
-    .home-buttons,
-    .social-links,
-    .resume-buttons,
-    .contact-links {
+    .project-body {
 
-        width: 100%;
+        padding:
+            23px;
 
-        max-width: 300px;
+    }
 
-        margin-left: auto;
 
-        margin-right: auto;
+    .skill-card {
+
+        padding:
+            24px;
+
+    }
+
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+
+        scroll-behavior:
+            auto;
+
+    }
+
+
+    *,
+    *::before,
+    *::after {
+
+        animation-duration:
+            .01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+        transition-duration:
+            .01ms !important;
+
     }
 
 }
@@ -1741,1027 +3167,1717 @@ footer p {
 <body>
 
 
-<!-- ================= NAVBAR ================= -->
+<!-- =========================================================
+     NAVIGATION
+========================================================= -->
 
-<nav>
+<nav id="navbar">
 
-<div class="nav-container">
-
-<div class="logo">
-Sristi Paul
-</div>
+    <div class="nav-container">
 
 
-<ul class="nav-links">
+        <a href="#home" class="logo">
+            Sristi<span>.</span>
+        </a>
 
-<li>
-<a href="#about">About</a>
-</li>
 
-<li>
-<a href="#skills">Skills</a>
-</li>
+        <button
+            class="menu-button"
+            id="menuButton"
+            aria-label="Open navigation menu"
+            aria-expanded="false">
 
-<li>
-<a href="#projects">Projects</a>
-</li>
+            ☰
 
-<li>
-<a href="#education">Education</a>
-</li>
+        </button>
 
-<li>
-<a href="#certifications">Certifications</a>
-</li>
 
-<li>
-<a href="#resume">Resume</a>
-</li>
+        <ul class="nav-links" id="navLinks">
 
-<li>
-<a href="#contact">Contact</a>
-</li>
 
-</ul>
+            <li>
+                <a href="#home">Home</a>
+            </li>
 
-</div>
+
+            <li>
+                <a href="#about">About</a>
+            </li>
+
+
+            <li>
+                <a href="#skills">Skills</a>
+            </li>
+
+
+            <li>
+                <a href="#projects">Projects</a>
+            </li>
+
+
+            <li>
+                <a href="#education">Education</a>
+            </li>
+
+
+            <li>
+                <a href="#internships">Training</a>
+            </li>
+
+
+            <li>
+                <a href="#certifications">Certificates</a>
+            </li>
+
+
+            <li>
+                <a href="#resume">Resume</a>
+            </li>
+
+
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+
+
+        </ul>
+
+    </div>
 
 </nav>
 
 
 
-<!-- ================= HOME ================= -->
+<!-- =========================================================
+     HOME
+========================================================= -->
 
 <section class="home" id="home">
 
-<div class="home-content">
+
+    <div class="home-grid"></div>
 
 
-<h1>
-Sristi Paul
-</h1>
+    <div class="home-content">
 
 
-<h2>
-Aspiring Data Analyst
-</h2>
+        <div class="status-pill">
+
+            <span class="status-dot"></span>
+
+            DATA ANALYTICS • BUSINESS INSIGHTS
+
+        </div>
 
 
-<div class="home-role">
+        <h1>
 
-MCA Graduate | Data Analytics | SQL | Python | Excel | Power BI
+            Sristi
+            <span>Paul.</span>
 
-</div>
-
-
-<div class="social-links">
+        </h1>
 
 
-<a
-class="social-box"
-href="https://www.linkedin.com/in/sristi-paul-838a99222/"
-target="_blank"
-rel="noopener noreferrer">
+        <h2>
 
-LinkedIn
+            Data Analyst
 
-</a>
+        </h2>
 
 
-<a
-class="social-box"
-href="https://github.com/sristipaul6289-ops"
-target="_blank"
-rel="noopener noreferrer">
+        <div class="home-role">
 
-GitHub
+            MCA Graduate | SQL | Python | Excel | Power BI
 
-</a>
+        </div>
 
 
-</div>
+        <p class="home-summary">
+
+            Data Analyst with an MCA background and hands-on experience
+            in SQL, Python, Excel, Power BI and data visualization.
+            I enjoy transforming raw data into meaningful insights,
+            identifying patterns and building business-focused
+            dashboards that support data-driven decisions.
+
+        </p>
 
 
-<p class="home-summary">
-
-Aspiring Data Analyst with an MCA background and hands-on
-experience in SQL, Python, Excel, Power BI and data visualization.
-I enjoy transforming raw data into meaningful insights and
-business-focused dashboards that support data-driven decisions.
-
-</p>
+        <div class="social-links">
 
 
-<div class="home-buttons">
+            <a
+                class="social-box"
+                href="https://www.linkedin.com/in/sristi-paul-838a99222/"
+                target="_blank"
+                rel="noopener noreferrer">
+
+                LinkedIn
+
+            </a>
 
 
-<a
-class="primary-button"
-href="#projects">
+            <a
+                class="social-box"
+                href="https://github.com/sristipaul6289-ops"
+                target="_blank"
+                rel="noopener noreferrer">
 
-View Projects
+                GitHub
 
-</a>
-
-
-<a
-class="secondary-button"
-href="#contact">
-
-Contact Me
-
-</a>
+            </a>
 
 
-</div>
+        </div>
 
 
-</div>
+        <div class="home-buttons">
+
+
+            <a
+                class="primary-button"
+                href="#projects">
+
+                View Projects
+
+            </a>
+
+
+            <a
+                class="secondary-button"
+                href="#resume">
+
+                View Resume
+
+            </a>
+
+
+            <a
+                class="secondary-button"
+                href="#contact">
+
+                Contact Me
+
+            </a>
+
+
+        </div>
+
+
+    </div>
 
 </section>
 
 
 
-<!-- ================= ABOUT ================= -->
+<!-- =========================================================
+     ABOUT
+========================================================= -->
 
 <section id="about">
 
-<div class="section-container">
+
+    <div class="section-container">
 
 
-<h2 class="section-title">
-About Me
-</h2>
+        <h2 class="section-title reveal">
+
+            About Me
+
+        </h2>
 
 
-<div class="section-line"></div>
+        <div class="section-line"></div>
 
 
-<div class="about-content">
+        <div class="about-layout">
 
 
-<p>
-
-I am an MCA graduate aspiring to build a career as a Data Analyst.
-My interests include data cleaning, exploratory data analysis,
-business analytics, data visualization and extracting actionable
-insights from datasets.
-
-</p>
+            <div class="about-content reveal">
 
 
-<p>
+                <p>
 
-I have worked on projects involving SQL, Python, Pandas, NumPy,
-Excel, Power Query, PivotTables, Power BI and data visualization.
-My projects focus on solving practical business problems using data.
+                    I am an MCA graduate aspiring to build a career as
+                    a Data Analyst. My interests include data cleaning,
+                    exploratory data analysis, business analytics,
+                    data visualization and extracting actionable
+                    insights from datasets.
 
-</p>
-
-
-<p>
-
-I am currently focused on developing strong analytical,
-problem-solving and communication skills required for a
-professional Data Analyst role.
-
-</p>
+                </p>
 
 
-</div>
+                <p>
 
-</div>
+                    I have worked on projects involving SQL, Python,
+                    Pandas, NumPy, Excel, Power Query, PivotTables,
+                    PivotCharts, Power BI and data visualization.
+                    My projects focus on solving practical business
+                    problems using data.
+
+                </p>
+
+
+                <p>
+
+                    I am focused on developing strong analytical,
+                    problem-solving and communication skills required
+                    for a professional Data Analyst role.
+
+                </p>
+
+
+            </div>
+
+
+        </div>
+
+    </div>
 
 </section>
 
 
 
-<!-- ================= SKILLS ================= -->
+<!-- =========================================================
+     SKILLS
+========================================================= -->
 
 <section id="skills">
 
-<div class="section-container">
+
+    <div class="section-container">
 
 
-<h2 class="section-title">
-Skills
-</h2>
+        <h2 class="section-title reveal">
+
+            Skills
+
+        </h2>
 
 
-<div class="section-line"></div>
+        <p class="section-subtitle reveal">
+
+            Tools and technologies I use for data preparation,
+            analysis, visualization and reporting.
+
+        </p>
 
 
-<div class="skills-grid">
+        <div class="section-line"></div>
 
 
-<div class="skill-card">
-
-<h3>
-Data Analytics
-</h3>
-
-<p>
-
-Data Cleaning, Data Preprocessing,
-Exploratory Data Analysis,
-Data Visualization,
-Statistical Analysis
-
-</p>
-
-</div>
+        <div class="skills-grid">
 
 
+            <div class="skill-card reveal">
 
-<div class="skill-card">
+                <div class="skill-number">
+                    01
+                </div>
 
-<h3>
-Programming & Query Languages
-</h3>
+                <h3>
+                    Data Analytics
+                </h3>
 
-<p>
+                <p>
 
-Python, SQL
+                    Data Cleaning, Data Preprocessing,
+                    Exploratory Data Analysis,
+                    Data Visualization and
+                    Statistical Analysis.
 
-</p>
+                </p>
 
-</div>
-
-
-
-<div class="skill-card">
-
-<h3>
-Python Libraries
-</h3>
-
-<p>
-
-Pandas, NumPy, Matplotlib,
-Seaborn, Plotly, Scikit-Learn
-
-</p>
-
-</div>
+            </div>
 
 
+            <div class="skill-card reveal">
 
-<div class="skill-card">
+                <div class="skill-number">
+                    02
+                </div>
 
-<h3>
-Business Intelligence
-</h3>
+                <h3>
+                    Programming & Query Languages
+                </h3>
 
-<p>
+                <p>
 
-Microsoft Excel, Power Query,
-PivotTables, PivotCharts,
-Power BI, Data Visualization
+                    Python and SQL for data analysis,
+                    querying, transformation and
+                    analytical problem solving.
 
-</p>
+                </p>
 
-</div>
-
-
-
-<div class="skill-card">
-
-<h3>
-Machine Learning
-</h3>
-
-<p>
-
-K-Means Clustering,
-NLP, Cosine Similarity,
-CNN, BiLSTM
-
-</p>
-
-</div>
+            </div>
 
 
+            <div class="skill-card reveal">
 
-<div class="skill-card">
+                <div class="skill-number">
+                    03
+                </div>
 
-<h3>
-Tools
-</h3>
+                <h3>
+                    Python Libraries
+                </h3>
 
-<p>
+                <p>
 
-Git, GitHub, Google Colab,
-Jupyter Notebook, Streamlit
+                    Pandas, NumPy, Matplotlib,
+                    Seaborn, Plotly and Scikit-Learn.
 
-</p>
+                </p>
 
-</div>
+            </div>
 
 
-</div>
+            <div class="skill-card reveal">
 
-</div>
+                <div class="skill-number">
+                    04
+                </div>
+
+                <h3>
+                    Business Intelligence
+                </h3>
+
+                <p>
+
+                    Microsoft Excel, Power Query,
+                    PivotTables, PivotCharts,
+                    Power BI and data visualization.
+
+                </p>
+
+            </div>
+
+
+            <div class="skill-card reveal">
+
+                <div class="skill-number">
+                    05
+                </div>
+
+                <h3>
+                    Machine Learning
+                </h3>
+
+                <p>
+
+                    K-Means Clustering,
+                    NLP, Cosine Similarity,
+                    CNN and BiLSTM.
+
+                </p>
+
+            </div>
+
+
+            <div class="skill-card reveal">
+
+                <div class="skill-number">
+                    06
+                </div>
+
+                <h3>
+                    Tools
+                </h3>
+
+                <p>
+
+                    Git, GitHub, Google Colab,
+                    Jupyter Notebook and Streamlit.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
 
 </section>
 
 
 
-<!-- ================= PROJECTS ================= -->
+<!-- =========================================================
+     PROJECTS
+========================================================= -->
 
 <section id="projects">
 
-<div class="section-container">
 
+    <div class="section-container">
 
-<h2 class="section-title">
-Projects
-</h2>
 
+        <h2 class="section-title reveal">
 
-<div class="section-line"></div>
+            Featured Projects
 
+        </h2>
 
-<div class="projects-grid">
 
+        <p class="section-subtitle reveal">
 
+            Practical data analytics projects using Python, SQL,
+            Excel and Power BI.
 
-<!-- COVID PROJECT -->
+        </p>
 
-<div class="project-card">
 
+        <div class="section-line"></div>
 
-<h3>
-COVID-19 Data Analysis & Interactive Dashboard
-</h3>
 
+        <div class="projects-grid">
 
-<div class="project-tech">
 
-SQL | Python | Pandas | Excel | Power BI
+            <!-- =================================================
+                 PROJECT 1 - SUPPLY CHAIN
+            ================================================== -->
 
-</div>
+            <div class="project-card reveal">
 
 
-<p>
+                <div class="project-image">
 
-Analyzed COVID-19 data to identify trends,
-country-level performance and continental
-patterns using SQL, Python and Power BI.
 
-</p>
+                    <img
+                        src="https://github.com/sristipaul6289-ops/dataanalyst-portfolio/raw/main/Supply-Chain-Data-Analysis/Screenshot%202026-08-29%20001640.png"
+                        alt="Supply Chain Data Analysis visualization"
+                        loading="lazy">
 
 
-<ul>
+                </div>
 
 
-<li>
+                <div class="project-body">
 
-Analyzed more than 429K COVID-19 records
-across 255 locations.
 
-</li>
+                    <div class="project-index">
 
+                        PROJECT 01 • PYTHON
 
-<li>
+                    </div>
 
-Performed data cleaning and exploratory
-analysis using Python and Pandas.
 
-</li>
+                    <h3>
 
+                        Supply Chain Data Analysis Using Python
 
-<li>
+                    </h3>
 
-Used SQL for filtering, aggregation,
-grouping and analytical queries.
 
-</li>
+                    <div class="project-tech">
 
+                        Python | Pandas | NumPy | Matplotlib |
+                        Seaborn | Plotly
 
-<li>
+                    </div>
 
-Created an interactive Power BI dashboard
-with KPIs, country rankings and time-series trends.
 
-</li>
+                    <p>
 
+                        Analyzed 180,519 supply-chain and e-commerce
+                        order-item records to understand sales,
+                        profitability, customers, products and
+                        delivery performance.
 
-<li>
+                    </p>
 
-Added filters for country and continental analysis.
 
-</li>
+                    <div class="project-stats">
 
 
-</ul>
+                        <div class="project-stat">
 
+                            <strong>180,519</strong>
 
-<p>
+                            <span>Order Items</span>
 
-<strong>Key Insight:</strong>
+                        </div>
 
-The analysis highlighted differences in COVID-19
-cases, deaths and trends across countries and continents.
 
-</p>
+                        <div class="project-stat">
 
+                            <strong>20,652</strong>
 
-<a
-class="project-link"
-href="https://github.com/sristipaul6289-ops/dataanalyst-portfolio/tree/main/covid19-data-analysis"
-target="_blank"
-rel="noopener noreferrer">
+                            <span>Customers</span>
 
-View Project →
+                        </div>
 
-</a>
 
+                        <div class="project-stat">
 
-</div>
+                            <strong>65,752</strong>
 
+                            <span>Orders</span>
 
+                        </div>
 
-<!-- ECOMMERCE PROJECT -->
 
-<div class="project-card">
+                        <div class="project-stat">
 
+                            <strong>56.98%</strong>
 
-<h3>
+                            <span>Repeat Customers</span>
 
-E-Commerce Sales & Profit Analysis Dashboard
+                        </div>
 
-</h3>
 
+                    </div>
 
-<div class="project-tech">
 
-Microsoft Excel | Power Query | PivotTables |
-PivotCharts | Excel Formulas | Slicers
+                    <ul>
 
-</div>
 
+                        <li>
+                            Performed data understanding and
+                            quality checks.
+                        </li>
 
-<p>
 
-Built an interactive Excel dashboard to analyze
-e-commerce sales, profitability, customer segments,
-products, discounts, shipping methods and regional performance.
+                        <li>
+                            Created features for delivery delay,
+                            profit margin, order year, month,
+                            quarter and customer frequency.
+                        </li>
 
-</p>
 
+                        <li>
+                            Analyzed sales, profit, products,
+                            categories, customers and markets.
+                        </li>
 
-<ul>
 
+                        <li>
+                            Analyzed delivery and shipping performance.
+                        </li>
 
-<li>
 
-Cleaned and transformed raw e-commerce data
-using Power Query.
+                    </ul>
 
-</li>
 
+                    <p>
 
-<li>
+                        <strong>Key Insight:</strong>
 
-Developed six KPIs: Total Sales, Total Profit,
-Total Orders, Total Quantity, Average Order Value
-and Profit Margin.
+                        Europe recorded the highest market sales,
+                        Consumer customers generated the highest
+                        sales and profit, and Fishing was the
+                        highest-performing category.
 
-</li>
+                    </p>
 
 
-<li>
+                    <div class="project-links">
 
-Performed sales and profitability analysis
-across categories, sub-categories and products.
 
-</li>
+                        <a
+                            class="project-link"
+                            href="https://github.com/sristipaul6289-ops/dataanalyst-portfolio/tree/main/Supply-Chain-Data-Analysis"
+                            target="_blank"
+                            rel="noopener noreferrer">
 
+                            GitHub →
 
-<li>
+                        </a>
 
-Used PivotTables and PivotCharts to analyze
-business performance and trends.
 
-</li>
+                        <a
+                            class="project-link"
+                            href="https://colab.research.google.com/drive/15ftM1tAGPD17H0N2fUAwvsoMAZ9BQbz9?usp=sharing"
+                            target="_blank"
+                            rel="noopener noreferrer">
 
+                            Colab →
 
-<li>
+                        </a>
 
-Created an interactive dashboard with slicers
-for Region, Customer Segment and Ship Mode.
 
-</li>
+                    </div>
 
 
-<li>
+                </div>
 
-Identified Technology as the highest-sales
-product category with approximately $5.98M in sales.
 
-</li>
+            </div>
 
 
-</ul>
 
+            <!-- =================================================
+                 PROJECT 2 - COVID
+            ================================================== -->
 
-<p>
+            <div class="project-card reveal">
 
-<strong>Key Insight:</strong>
 
-Technology generated the highest sales among the
-three product categories, while higher discount levels
-were generally associated with lower profitability.
+                <div class="project-image">
 
-</p>
 
+                    <img
+                        src="https://github.com/sristipaul6289-ops/dataanalyst-portfolio/raw/main/covid19-data-analysis/Screenshot%202026-08-20%20154608.png"
+                        alt="COVID-19 Power BI Dashboard"
+                        loading="lazy">
 
-<a
-class="project-link"
-href="https://github.com/sristipaul6289-ops/dataanalyst-portfolio/tree/main/ecommerce-excel-analysis"
-target="_blank"
-rel="noopener noreferrer">
 
-View Project →
+                </div>
 
-</a>
 
+                <div class="project-body">
 
-</div>
 
+                    <div class="project-index">
 
+                        PROJECT 02 • SQL + PYTHON + POWER BI
 
-<!-- SUPPLY CHAIN PROJECT -->
+                    </div>
 
-<div class="project-card">
 
+                    <h3>
 
-<h3>
+                        COVID-19 Data Analysis & Interactive Dashboard
 
-Supply Chain Data Analysis Using Python
+                    </h3>
 
-</h3>
 
+                    <div class="project-tech">
 
-<div class="project-tech">
+                        SQL | Python | Pandas | Excel | Power BI
 
-Python | Pandas | NumPy | Matplotlib |
-Seaborn | Plotly
+                    </div>
 
-</div>
 
+                    <p>
 
-<p>
+                        Analyzed global COVID-19 data to identify
+                        trends and patterns in cases, deaths and
+                        case fatality rates across countries
+                        and continents.
 
-Performed end-to-end supply chain analysis to
-understand sales, profitability, delivery performance,
-customers, products and market trends.
+                    </p>
 
-</p>
 
+                    <div class="project-stats">
 
-<ul>
 
+                        <div class="project-stat">
 
-<li>
+                            <strong>429K+</strong>
 
-Analyzed 180,519 order-item records,
-65,752 unique orders and 20,652 customers.
+                            <span>Records</span>
 
-</li>
+                        </div>
 
 
-<li>
+                        <div class="project-stat">
 
-Cleaned and prepared the dataset using
-Pandas and NumPy.
+                            <strong>255</strong>
 
-</li>
+                            <span>Locations</span>
 
+                        </div>
 
-<li>
 
-Performed exploratory data analysis and
-feature engineering.
+                        <div class="project-stat">
 
-</li>
+                            <strong>SQL</strong>
 
+                            <span>Analysis</span>
 
-<li>
+                        </div>
 
-Analyzed sales, profit, delivery time,
-shipping and customer behavior.
 
-</li>
+                        <div class="project-stat">
 
+                            <strong>Power BI</strong>
 
-<li>
+                            <span>Dashboard</span>
 
-Performed customer, product, category,
-market and time-based analysis.
+                        </div>
 
-</li>
 
+                    </div>
 
-<li>
 
-Created visualizations using Matplotlib,
-Seaborn and Plotly.
+                    <ul>
 
-</li>
 
+                        <li>
+                            Calculated total cases, deaths and
+                            case fatality rates.
+                        </li>
 
-</ul>
 
+                        <li>
+                            Analyzed daily, yearly and country-level
+                            COVID-19 trends.
+                        </li>
 
-<p>
 
-<strong>Key Insights:</strong>
+                        <li>
+                            Used SQL JOINs, CTEs, CASE,
+                            aggregate and date functions.
+                        </li>
 
-56.98% of customers were repeat customers.
-Europe generated the highest sales, Consumer customers
-generated the highest sales and profit, and Fishing
-was the highest-performing category.
 
-</p>
+                        <li>
+                            Built an interactive single-page
+                            Power BI dashboard.
+                        </li>
 
 
-<a
-class="project-link"
-href="https://github.com/sristipaul6289-ops/dataanalyst-portfolio/tree/main/Supply-Chain-Data-Analysis"
-target="_blank"
-rel="noopener noreferrer">
+                    </ul>
 
-View Project →
 
-</a>
+                    <p>
 
+                        <strong>Key Insight:</strong>
 
-</div>
+                        The analysis highlighted differences in
+                        COVID-19 cases, deaths, daily peaks and
+                        fatality rates across countries and continents.
 
+                    </p>
 
-</div>
 
-</div>
+                    <div class="project-links">
+
+
+                        <a
+                            class="project-link"
+                            href="https://github.com/sristipaul6289-ops/dataanalyst-portfolio/tree/main/covid19-data-analysis"
+                            target="_blank"
+                            rel="noopener noreferrer">
+
+                            GitHub →
+
+                        </a>
+
+
+                        <a
+                            class="project-link"
+                            href="https://colab.research.google.com/drive/1h-3TyRsthrZt62fj6MeVp6clBZh803KF?usp=sharing"
+                            target="_blank"
+                            rel="noopener noreferrer">
+
+                            Colab →
+
+                        </a>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                 PROJECT 3 - ECOMMERCE
+            ================================================== -->
+
+            <div class="project-card reveal">
+
+
+                <div class="project-image">
+
+
+                    <img
+                        src="https://github.com/sristipaul6289-ops/dataanalyst-portfolio/raw/main/ecommerce-excel-analysis/images/Screenshot%202026-08-24%20194624.png"
+                        alt="E-Commerce Sales and Profit Excel Dashboard"
+                        loading="lazy">
+
+
+                </div>
+
+
+                <div class="project-body">
+
+
+                    <div class="project-index">
+
+                        PROJECT 03 • EXCEL
+
+                    </div>
+
+
+                    <h3>
+
+                        E-Commerce Sales & Profit Analysis Dashboard
+
+                    </h3>
+
+
+                    <div class="project-tech">
+
+                        Excel | Power Query | PivotTables |
+                        PivotCharts | Slicers
+
+                    </div>
+
+
+                    <p>
+
+                        Built an interactive Excel dashboard to analyze
+                        sales, profitability, customers, products,
+                        shipping methods, discounts and regional
+                        performance.
+
+                    </p>
+
+
+                    <div class="project-stats">
+
+
+                        <div class="project-stat">
+
+                            <strong>$14.92M</strong>
+
+                            <span>Total Sales</span>
+
+                        </div>
+
+
+                        <div class="project-stat">
+
+                            <strong>$1.52M</strong>
+
+                            <span>Total Profit</span>
+
+                        </div>
+
+
+                        <div class="project-stat">
+
+                            <strong>6</strong>
+
+                            <span>KPI Cards</span>
+
+                        </div>
+
+
+                        <div class="project-stat">
+
+                            <strong>3</strong>
+
+                            <span>Interactive Slicers</span>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <ul>
+
+
+                        <li>
+                            Cleaned and transformed raw data
+                            using Power Query.
+                        </li>
+
+
+                        <li>
+                            Developed six business KPIs including
+                            Sales, Profit, Orders, Quantity,
+                            AOV and Profit Margin.
+                        </li>
+
+
+                        <li>
+                            Analyzed categories, sub-categories,
+                            products, customers and shipping.
+                        </li>
+
+
+                        <li>
+                            Built interactive PivotTables,
+                            PivotCharts and slicers.
+                        </li>
+
+
+                    </ul>
+
+
+                    <p>
+
+                        <strong>Key Insight:</strong>
+
+                        Technology generated the highest sales
+                        among the three product categories,
+                        while discount levels showed a noticeable
+                        impact on profitability.
+
+                    </p>
+
+
+                    <div class="project-links">
+
+
+                        <a
+                            class="project-link"
+                            href="https://github.com/sristipaul6289-ops/dataanalyst-portfolio/tree/main/ecommerce-excel-analysis"
+                            target="_blank"
+                            rel="noopener noreferrer">
+
+                            GitHub →
+
+                        </a>
+
+
+                        <a
+                            class="project-link"
+                            href="https://github.com/sristipaul6289-ops/dataanalyst-portfolio/raw/refs/heads/main/ecommerce-excel-analysis/E-Commerce_Sales_Profitability_Analysis.xlsx"
+                            target="_blank"
+                            rel="noopener noreferrer">
+
+                            Excel File →
+
+                        </a>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+    </div>
 
 </section>
 
 
 
-<!-- ================= EDUCATION ================= -->
+<!-- =========================================================
+     EDUCATION
+========================================================= -->
 
 <section id="education">
 
-<div class="section-container">
+
+    <div class="section-container">
 
 
-<h2 class="section-title">
-Education
-</h2>
+        <h2 class="section-title reveal">
+
+            Education
+
+        </h2>
 
 
-<div class="section-line"></div>
+        <div class="section-line"></div>
 
 
-<div class="education-card">
+        <div class="education-wrapper">
 
 
-<h3>
-
-Master of Computer Applications (MCA)
-
-</h3>
+            <div class="education-card reveal">
 
 
-<h4>
+                <div class="education-label">
 
-Computer Applications
+                    POSTGRADUATE DEGREE
 
-</h4>
-
-
-<p>
-
-Postgraduate Degree
-
-</p>
+                </div>
 
 
-<p>
+                <h3>
 
-Relevant areas: Python, SQL, Database Management,
-Data Analysis, Statistics and Computer Science.
+                    Master of Computer Applications (MCA)
 
-</p>
+                </h3>
 
 
-</div>
+                <h4>
 
-</div>
+                    Computer Applications
+
+                </h4>
+
+
+                <p>
+
+                    Relevant areas: Python, SQL, Database Management,
+                    Data Analysis, Statistics and Computer Science.
+
+                </p>
+
+
+            </div>
+
+
+        </div>
+
+    </div>
 
 </section>
 
 
 
-<!-- ================= CERTIFICATIONS ================= -->
+<!-- =========================================================
+     INTERNSHIPS / TRAINING
+========================================================= -->
+
+<section id="internships">
+
+
+    <div class="section-container">
+
+
+        <h2 class="section-title reveal">
+
+            Internships & Training
+
+        </h2>
+
+
+        <p class="section-subtitle reveal">
+
+            Additional technical training across data science,
+            artificial intelligence, machine learning and
+            full-stack development.
+
+        </p>
+
+
+        <div class="section-line"></div>
+
+
+        <div class="internship-grid">
+
+
+            <!-- DATA SCIENCE -->
+
+            <div class="internship-card reveal">
+
+
+                <div class="internship-icon">
+
+                    DS
+
+                </div>
+
+
+                <h3>
+
+                    Data Science Training
+
+                </h3>
+
+
+                <p>
+
+                    Completed 50 hours of training focused on
+                    data science concepts and practical learning.
+
+                </p>
+
+
+                <a
+                    class="internship-link"
+                    href="https://github.com/sristipaul6289-ops/dataanalyst-portfolio/blob/main/Adobe%20Scan%2016%20Oct%202025.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    View Certificate →
+
+                </a>
+
+
+            </div>
+
+
+
+            <!-- AI ML -->
+
+            <div class="internship-card reveal">
+
+
+                <div class="internship-icon">
+
+                    AI
+
+                </div>
+
+
+                <h3>
+
+                    Artificial Intelligence & Machine Learning
+
+                </h3>
+
+
+                <p>
+
+                    Completed training focused on artificial
+                    intelligence and machine learning concepts.
+
+                </p>
+
+
+                <a
+                    class="internship-link"
+                    href="https://github.com/sristipaul6289-ops/dataanalyst-portfolio/blob/main/Adobe%20Scan%2018%20Feb%202026%20%281%29.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    View Certificate →
+
+                </a>
+
+
+            </div>
+
+
+
+            <!-- MERN -->
+
+            <div class="internship-card reveal">
+
+
+                <div class="internship-icon">
+
+                    MERN
+
+                </div>
+
+
+                <h3>
+
+                    Full Stack Development with MERN
+
+                </h3>
+
+
+                <p>
+
+                    Completed technical training in full-stack
+                    development using the MERN stack.
+
+                </p>
+
+
+                <a
+                    class="internship-link"
+                    href="https://github.com/sristipaul6289-ops/dataanalyst-portfolio/blob/main/SRISTI%20PAUL-MCA%20Department%20of%20Netaji%20Subhash%20Engineering%20College-56.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    View Certificate →
+
+                </a>
+
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     CERTIFICATIONS
+========================================================= -->
 
 <section id="certifications">
 
-<div class="section-container">
+
+    <div class="section-container">
 
 
-<h2 class="section-title">
-Certifications
-</h2>
+        <h2 class="section-title reveal">
+
+            Certifications
+
+        </h2>
 
 
-<div class="section-line"></div>
+        <p class="section-subtitle reveal">
+
+            Selected technical certifications and additional
+            learning relevant to my analytical skill set.
+
+        </p>
 
 
-<div class="certifications-grid">
+        <div class="section-line"></div>
 
 
-
-<div class="certification-card">
-
-
-<h3>
-SQL
-</h3>
+        <div class="certifications-grid">
 
 
-<p>
+            <!-- SQL -->
 
-SQL learning and hands-on practice focused on
-analytical queries and database concepts.
-
-</p>
+            <div class="certification-card reveal">
 
 
-</div>
+                <div class="certification-number">
+
+                    CERTIFICATE 01
+
+                </div>
 
 
+                <h3>
 
-<div class="certification-card">
+                    SQL
 
-
-<h3>
-Python
-</h3>
+                </h3>
 
 
-<p>
+                <p>
 
-Python programming with data analysis and
-Python libraries.
+                    Udemy SQL completion certificate covering
+                    SQL concepts and database querying.
 
-</p>
-
-
-</div>
+                </p>
 
 
+                <a
+                    class="certification-link"
+                    href="https://github.com/sristipaul6289-ops/dataanalyst-portfolio/blob/main/UDEMY%20SQL.jpg"
+                    target="_blank"
+                    rel="noopener noreferrer">
 
-<div class="certification-card">
+                    View Certificate →
 
-
-<h3>
-Data Analytics
-</h3>
-
-
-<p>
-
-Data analytics concepts including data cleaning,
-analysis and visualization.
-
-</p>
+                </a>
 
 
-</div>
+            </div>
 
 
 
-<div class="certification-card">
+            <!-- PYTHON -->
+
+            <div class="certification-card reveal">
 
 
-<h3>
-Microsoft Excel
-</h3>
+                <div class="certification-number">
+
+                    CERTIFICATE 02
+
+                </div>
 
 
-<p>
+                <h3>
 
-Excel, Power Query, PivotTables,
-PivotCharts and dashboard development.
+                    Python 3.4.3
 
-</p>
-
-
-</div>
+                </h3>
 
 
-</div>
+                <p>
 
-</div>
+                    Python programming certificate from
+                    Spoken Tutorial, IIT Bombay.
+
+                </p>
+
+
+                <a
+                    class="certification-link"
+                    href="https://github.com/sristipaul6289-ops/dataanalyst-portfolio/blob/main/PYTHON%203.4.3.png"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    View Certificate →
+
+                </a>
+
+
+            </div>
+
+
+
+            <!-- NPTEL -->
+
+            <div class="certification-card reveal">
+
+
+                <div class="certification-number">
+
+                    CERTIFICATE 03
+
+                </div>
+
+
+                <h3>
+
+                    Data Analytics with Python
+
+                </h3>
+
+
+                <p>
+
+                    NPTEL Online Certification in Data Analytics
+                    with Python.
+
+                </p>
+
+
+                <a
+                    class="certification-link"
+                    href="https://github.com/sristipaul6289-ops/dataanalyst-portfolio/blob/main/nptel-data-analytics-certificate.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    View Certificate →
+
+                </a>
+
+
+            </div>
+
+
+
+            <!-- ETHICAL HACKING -->
+
+            <div class="certification-card reveal">
+
+
+                <div class="certification-number">
+
+                    CERTIFICATE 04
+
+                </div>
+
+
+                <h3>
+
+                    Ethical Hacking
+
+                </h3>
+
+
+                <p>
+
+                    Technical certificate related to ethical
+                    hacking and cybersecurity concepts.
+
+                </p>
+
+
+                <a
+                    class="certification-link"
+                    href="https://github.com/sristipaul6289-ops/dataanalyst-portfolio/blob/main/ETHICAL%20HACKING.png"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    View Certificate →
+
+                </a>
+
+
+            </div>
+
+
+        </div>
+
+    </div>
 
 </section>
 
 
 
-<!-- ================= RESUME ================= -->
+<!-- =========================================================
+     RESUME
+========================================================= -->
 
 <section id="resume">
 
-<div class="section-container">
+
+    <div class="section-container">
 
 
-<h2 class="section-title">
-Resume
-</h2>
+        <h2 class="section-title reveal">
+
+            Resume
+
+        </h2>
 
 
-<div class="section-line"></div>
+        <div class="section-line"></div>
 
 
-<div class="resume-container">
+        <div class="resume-container reveal">
 
 
-<h3>
-Data Analyst Resume
-</h3>
+            <div class="resume-label">
+
+                DATA ANALYST RESUME
+
+            </div>
 
 
-<p>
-View or download my latest resume.
-</p>
+            <h3>
+
+                Sristi Paul
+
+            </h3>
 
 
-<div class="resume-buttons">
+            <p>
+
+                View my latest resume for an overview of my education,
+                technical skills, projects and professional training.
+
+            </p>
 
 
-<a
-class="resume-button resume-view"
-href="https://github.com/sristipaul6289-ops/dataanalyst-portfolio/blob/main/Sristi_Paul_DataAnalyst.pdf"
-target="_blank"
-rel="noopener noreferrer">
-
-View Resume
-
-</a>
+            <div class="resume-buttons">
 
 
-<a
-class="resume-button resume-download"
-href="https://github.com/sristipaul6289-ops/dataanalyst-portfolio/blob/main/Sristi_Paul_DataAnalyst.pdf"
-target="_blank"
-rel="noopener noreferrer"
-download>
+                <a
+                    class="resume-button resume-view"
+                    href="https://github.com/sristipaul6289-ops/dataanalyst-portfolio/blob/main/Sristi_Paul_DataAnalyst.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer">
 
-Download Resume
+                    View Resume
 
-</a>
+                </a>
 
 
-</div>
+                <a
+                    class="resume-button resume-download"
+                    href="https://github.com/sristipaul6289-ops/dataanalyst-portfolio/raw/main/Sristi_Paul_DataAnalyst.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    download>
 
-</div>
+                    Download Resume
 
-</div>
+                </a>
+
+
+            </div>
+
+
+        </div>
+
+    </div>
 
 </section>
 
 
 
-<!-- ================= CONTACT ================= -->
+<!-- =========================================================
+     CONTACT
+========================================================= -->
 
 <section id="contact">
 
-<div class="section-container">
+
+    <div class="section-container">
 
 
-<h2 class="section-title">
-Contact
-</h2>
+        <h2 class="section-title reveal">
+
+            Let's Connect
+
+        </h2>
 
 
-<div class="section-line"></div>
+        <div class="section-line"></div>
 
 
-<div class="contact-container">
+        <div class="contact-container reveal">
 
 
-<p>
+            <p>
 
-I am currently looking for opportunities as a Data Analyst.
-Feel free to connect with me.
+                I am currently looking for opportunities as a
+                Data Analyst. Feel free to connect with me.
 
-</p>
-
-
-<div class="contact-links">
+            </p>
 
 
-<a
-class="contact-link"
-href="mailto:sristipaul6289@gmail.com">
-
-Email
-
-</a>
+            <div class="contact-links">
 
 
-<a
-class="contact-link"
-href="https://www.linkedin.com/in/sristi-paul-838a99222/"
-target="_blank"
-rel="noopener noreferrer">
+                <a
+                    class="contact-link"
+                    href="mailto:sristipaul6289@gmail.com">
 
-LinkedIn
+                    Email
 
-</a>
+                </a>
 
 
-<a
-class="contact-link"
-href="https://github.com/sristipaul6289-ops"
-target="_blank"
-rel="noopener noreferrer">
+                <a
+                    class="contact-link"
+                    href="https://www.linkedin.com/in/sristi-paul-838a99222/"
+                    target="_blank"
+                    rel="noopener noreferrer">
 
-GitHub
+                    LinkedIn
 
-</a>
+                </a>
 
 
-</div>
+                <a
+                    class="contact-link"
+                    href="https://github.com/sristipaul6289-ops"
+                    target="_blank"
+                    rel="noopener noreferrer">
 
-</div>
+                    GitHub
 
-</div>
+                </a>
+
+
+            </div>
+
+
+        </div>
+
+    </div>
 
 </section>
 
 
 
-<!-- ================= FOOTER ================= -->
+<!-- =========================================================
+     FOOTER
+========================================================= -->
 
 <footer>
 
-<p>
 
-© 2026 Sristi Paul. All Rights Reserved.
+    <p>
 
-</p>
+        © 2026
+        <span class="footer-name">
+            Sristi Paul
+        </span>.
+        All Rights Reserved.
+
+    </p>
+
 
 </footer>
 
 
 
-<!-- ================= JAVASCRIPT ================= -->
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
 
 <script>
 
-document.addEventListener("DOMContentLoaded", () => {
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+const menuButton =
+    document.getElementById("menuButton");
+
+const navLinks =
+    document.getElementById("navLinks");
 
 
-    const revealItems = document.querySelectorAll(
+menuButton.addEventListener("click", () => {
 
-        ".about-content, .skills-grid, .projects-grid, .education-card, .certifications-grid, .resume-container, .contact-container"
+    const isOpen =
+        navLinks.classList.toggle("open");
 
+    menuButton.setAttribute(
+        "aria-expanded",
+        isOpen
     );
 
+    menuButton.textContent =
+        isOpen ? "✕" : "☰";
 
-    revealItems.forEach((item) => {
+});
 
-        item.style.opacity = "0";
 
-        item.style.transform =
-            "translateY(18px)";
+/* Close mobile menu */
 
-        item.style.transition =
-            "opacity 0.75s ease, transform 0.75s cubic-bezier(0.22, 1, 0.36, 1)";
+document
+    .querySelectorAll(".nav-links a")
+    .forEach(link => {
+
+        link.addEventListener("click", () => {
+
+            navLinks.classList.remove("open");
+
+            menuButton.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+            menuButton.textContent = "☰";
+
+        });
 
     });
 
 
-    const observer = new IntersectionObserver(
 
-        (entries, obs) => {
+/* =========================================================
+   NAVBAR SCROLL EFFECT
+========================================================= */
+
+const navbar =
+    document.getElementById("navbar");
 
 
-            entries.forEach((entry) => {
+window.addEventListener("scroll", () => {
 
+    if (window.scrollY > 30) {
+
+        navbar.classList.add("scrolled");
+
+    } else {
+
+        navbar.classList.remove("scrolled");
+
+    }
+
+});
+
+
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+const revealElements =
+    document.querySelectorAll(".reveal");
+
+
+const observer =
+    new IntersectionObserver(
+
+        (entries, observerInstance) => {
+
+            entries.forEach(entry => {
 
                 if (entry.isIntersecting) {
 
+                    entry.target.classList.add("active");
 
-                    entry.target.style.opacity = "1";
-
-                    entry.target.style.transform =
-                        "translateY(0)";
-
-
-                    obs.unobserve(entry.target);
+                    observerInstance.unobserve(
+                        entry.target
+                    );
 
                 }
 
@@ -2774,21 +4890,147 @@ document.addEventListener("DOMContentLoaded", () => {
             threshold: 0.12,
 
             rootMargin:
-                "0px 0px -40px 0px"
+                "0px 0px -45px 0px"
 
         }
 
     );
 
 
-    revealItems.forEach((item) => {
+revealElements.forEach(element => {
 
-        observer.observe(item);
+    observer.observe(element);
+
+});
+
+
+
+/* =========================================================
+   ACTIVE NAVIGATION
+========================================================= */
+
+const sections =
+    document.querySelectorAll("section[id]");
+
+const navigationLinks =
+    document.querySelectorAll(".nav-links a");
+
+
+const sectionObserver =
+    new IntersectionObserver(
+
+        entries => {
+
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+
+                    const currentId =
+                        entry.target.getAttribute("id");
+
+
+                    navigationLinks.forEach(link => {
+
+                        link.classList.remove("active");
+
+                        if (
+                            link.getAttribute("href")
+                            === "#" + currentId
+                        ) {
+
+                            link.classList.add("active");
+
+                        }
+
+                    });
+
+                }
+
+            });
+
+        },
+
+        {
+
+            rootMargin:
+                "-35% 0px -55% 0px"
+
+        }
+
+    );
+
+
+sections.forEach(section => {
+
+    sectionObserver.observe(section);
+
+});
+
+
+
+/* =========================================================
+   PROJECT CARD STAGGER
+========================================================= */
+
+document
+    .querySelectorAll(".projects-grid .project-card")
+    .forEach((card, index) => {
+
+        card.style.transitionDelay =
+            `${index * 80}ms`;
 
     });
 
 
+
+/* =========================================================
+   SKILL CARD STAGGER
+========================================================= */
+
+document
+    .querySelectorAll(".skills-grid .skill-card")
+    .forEach((card, index) => {
+
+        card.style.transitionDelay =
+            `${index * 60}ms`;
+
+    });
+
+
+
+/* =========================================================
+   CERTIFICATE STAGGER
+========================================================= */
+
+document
+    .querySelectorAll(".certifications-grid .certification-card")
+    .forEach((card, index) => {
+
+        card.style.transitionDelay =
+            `${index * 70}ms`;
+
+    });
+
+
+
+/* =========================================================
+   PREVENT HASH JUMP ON INITIAL LOAD
+========================================================= */
+
+window.addEventListener("load", () => {
+
+    if (window.location.hash) {
+
+        setTimeout(() => {
+
+            window.scrollTo(0, 0);
+
+        }, 1);
+
+    }
+
 });
+
 
 </script>
 
