@@ -12,6 +12,27 @@
 
     <style>
 
+        :root {
+            --ink: #0b1220;
+            --ink-soft: #1e293b;
+            --muted: #64748b;
+            --muted-dark: #475569;
+            --line: #e2e8f0;
+            --line-strong: #cbd5e1;
+            --blue: #2563eb;
+            --blue-dark: #1d4ed8;
+            --blue-soft: #eff6ff;
+            --surface: #ffffff;
+            --surface-soft: #f8fafc;
+            --surface-blue: #f4f8ff;
+            --shadow-sm: 0 4px 14px rgba(15, 23, 42, 0.06);
+            --shadow-md: 0 12px 30px rgba(15, 23, 42, 0.09);
+            --shadow-lg: 0 20px 45px rgba(15, 23, 42, 0.12);
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -20,17 +41,24 @@
 
         html {
             scroll-behavior: smooth;
+            scroll-padding-top: 80px;
         }
 
         body {
             font-family: Arial, Helvetica, sans-serif;
-            background: #f8fafc;
-            color: #1e293b;
+            background: var(--surface-soft);
+            color: var(--ink-soft);
             line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
         }
 
         a {
             text-decoration: none;
+        }
+
+        ::selection {
+            background: #dbeafe;
+            color: var(--ink);
         }
 
         /* ================= NAVBAR ================= */
@@ -39,15 +67,17 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            background: rgba(255, 255, 255, 0.97);
-            border-bottom: 1px solid #e2e8f0;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+            background: rgba(255, 255, 255, 0.94);
+            border-bottom: 1px solid rgba(226, 232, 240, 0.9);
+            box-shadow: 0 4px 18px rgba(15, 23, 42, 0.05);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
         }
 
         .nav-container {
             max-width: 1100px;
             margin: auto;
-            padding: 15px 25px;
+            padding: 16px 25px;
 
             display: flex;
             justify-content: space-between;
@@ -57,147 +87,212 @@
         .logo {
             font-size: 20px;
             font-weight: 700;
-            color: #0f172a;
+            color: var(--ink);
+            letter-spacing: -0.3px;
         }
 
         .nav-links {
             display: flex;
-            gap: 24px;
+            gap: 25px;
             list-style: none;
         }
 
         .nav-links a {
-            color: #475569;
+            position: relative;
+            color: var(--muted-dark);
             font-size: 14px;
             font-weight: 600;
-            transition: 0.2s ease;
+            transition: color 0.25s ease;
+        }
+
+        .nav-links a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -7px;
+            width: 0;
+            height: 2px;
+            background: var(--blue);
+            border-radius: 10px;
+            transition: width 0.25s ease;
         }
 
         .nav-links a:hover {
-            color: #2563eb;
+            color: var(--blue);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
         }
 
         /* ================= HOME ================= */
 
         .home {
+            position: relative;
             min-height: 92vh;
-            background: white;
+            background:
+                radial-gradient(circle at 15% 20%, rgba(37, 99, 235, 0.07), transparent 28%),
+                radial-gradient(circle at 85% 80%, rgba(59, 130, 246, 0.06), transparent 28%),
+                linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
 
             display: flex;
             align-items: center;
             justify-content: center;
 
             text-align: center;
-            padding: 80px 25px;
+            padding: 90px 25px;
+            overflow: hidden;
+        }
+
+        .home::before {
+            content: "";
+            position: absolute;
+            top: 80px;
+            left: 50%;
+            width: 520px;
+            height: 520px;
+            transform: translateX(-50%);
+            border: 1px solid rgba(37, 99, 235, 0.05);
+            border-radius: 50%;
+            pointer-events: none;
         }
 
         .home-content {
+            position: relative;
+            z-index: 1;
             max-width: 900px;
             width: 100%;
         }
 
         .home h1 {
-            font-size: 58px;
-            color: #0f172a;
-            margin-bottom: 8px;
-            letter-spacing: -1px;
+            font-size: 60px;
+            line-height: 1.1;
+            color: var(--ink);
+            margin-bottom: 10px;
+            letter-spacing: -1.8px;
+            font-weight: 800;
         }
 
         .home h2 {
-            font-size: 27px;
-            color: #2563eb;
-            font-weight: 500;
-            margin-bottom: 12px;
+            font-size: 28px;
+            line-height: 1.3;
+            color: var(--blue);
+            font-weight: 600;
+            margin-bottom: 14px;
         }
 
         .home-role {
-            color: #475569;
+            color: var(--muted-dark);
             font-size: 16px;
             font-weight: 600;
-            margin-bottom: 25px;
+            margin-bottom: 26px;
+            letter-spacing: 0.15px;
         }
 
         .home-summary {
             max-width: 760px;
             margin: auto;
-            color: #64748b;
+            color: var(--muted);
             font-size: 16px;
-            line-height: 1.8;
+            line-height: 1.85;
         }
 
         .social-links {
             display: flex;
             justify-content: center;
             gap: 12px;
-            margin: 25px 0;
+            margin: 27px 0;
             flex-wrap: wrap;
         }
 
         .social-box {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 105px;
             padding: 10px 20px;
 
-            background: white;
-            border: 1px solid #cbd5e1;
-            border-radius: 7px;
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid var(--line-strong);
+            border-radius: var(--radius-sm);
 
-            color: #334155;
+            color: var(--muted-dark);
             font-size: 14px;
             font-weight: 600;
 
-            transition: 0.2s ease;
+            box-shadow: 0 3px 10px rgba(15, 23, 42, 0.04);
+            transition:
+                background 0.25s ease,
+                color 0.25s ease,
+                border-color 0.25s ease,
+                transform 0.25s ease,
+                box-shadow 0.25s ease;
         }
 
         .social-box:hover {
-            background: #2563eb;
+            background: var(--blue);
             color: white;
-            border-color: #2563eb;
-            transform: translateY(-2px);
+            border-color: var(--blue);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.2);
         }
 
         .home-buttons {
-            margin-top: 30px;
+            margin-top: 32px;
 
             display: flex;
             justify-content: center;
-            gap: 12px;
+            gap: 13px;
             flex-wrap: wrap;
         }
 
         .primary-button,
         .secondary-button {
-            padding: 12px 24px;
-            border-radius: 7px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 135px;
+            padding: 12px 25px;
+            border-radius: var(--radius-sm);
             font-size: 14px;
-            font-weight: 600;
-            transition: 0.2s ease;
+            font-weight: 700;
+            transition:
+                background 0.25s ease,
+                color 0.25s ease,
+                border-color 0.25s ease,
+                transform 0.25s ease,
+                box-shadow 0.25s ease;
         }
 
         .primary-button {
-            background: #2563eb;
+            background: var(--blue);
             color: white;
+            box-shadow: 0 7px 18px rgba(37, 99, 235, 0.18);
         }
 
         .primary-button:hover {
-            background: #1d4ed8;
-            transform: translateY(-2px);
+            background: var(--blue-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 11px 24px rgba(37, 99, 235, 0.23);
         }
 
         .secondary-button {
             background: white;
-            color: #334155;
-            border: 1px solid #cbd5e1;
+            color: var(--muted-dark);
+            border: 1px solid var(--line-strong);
         }
 
         .secondary-button:hover {
-            background: #f1f5f9;
-            transform: translateY(-2px);
+            background: var(--surface-blue);
+            color: var(--blue);
+            border-color: #93c5fd;
+            transform: translateY(-3px);
         }
 
         /* ================= GENERAL SECTIONS ================= */
 
         section {
-            padding: 80px 25px;
+            padding: 88px 25px;
         }
 
         .section-container {
@@ -207,23 +302,37 @@
 
         .section-title {
             text-align: center;
-            font-size: 32px;
-            color: #0f172a;
-            margin-bottom: 10px;
+            font-size: 33px;
+            line-height: 1.25;
+            color: var(--ink);
+            margin-bottom: 11px;
+            letter-spacing: -0.5px;
         }
 
         .section-line {
-            width: 55px;
+            position: relative;
+            width: 58px;
             height: 3px;
-            background: #2563eb;
-            margin: 0 auto 45px;
+            background: var(--blue);
+            margin: 0 auto 48px;
+            border-radius: 10px;
+        }
+
+        .section-line::after {
+            content: "";
+            position: absolute;
+            right: -13px;
+            top: 0;
+            width: 7px;
+            height: 3px;
+            background: #93c5fd;
             border-radius: 10px;
         }
 
         /* ================= ABOUT ================= */
 
         #about {
-            background: #f8fafc;
+            background: var(--surface-soft);
         }
 
         .about-content {
@@ -233,52 +342,83 @@
         }
 
         .about-content p {
-            color: #64748b;
-            margin-bottom: 18px;
+            color: var(--muted);
+            margin-bottom: 19px;
             font-size: 16px;
+            line-height: 1.85;
+        }
+
+        .about-content p:last-child {
+            margin-bottom: 0;
         }
 
         /* ================= SKILLS ================= */
 
         #skills {
-            background: white;
+            background: var(--surface);
         }
 
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
+            gap: 21px;
         }
 
         .skill-card {
-            background: #f8fafc;
-            border: 1px solid #e2e8f0;
-            border-radius: 10px;
-            padding: 25px;
-            transition: 0.2s ease;
+            position: relative;
+            background:
+                linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+            border: 1px solid var(--line);
+            border-radius: var(--radius-md);
+            padding: 27px 25px;
+            overflow: hidden;
+
+            transition:
+                transform 0.25s ease,
+                box-shadow 0.25s ease,
+                border-color 0.25s ease;
+        }
+
+        .skill-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--blue), #60a5fa);
+            opacity: 0;
+            transition: opacity 0.25s ease;
         }
 
         .skill-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 25px rgba(15, 23, 42, 0.08);
+            transform: translateY(-6px);
+            border-color: #bfdbfe;
+            box-shadow: var(--shadow-md);
+        }
+
+        .skill-card:hover::before {
+            opacity: 1;
         }
 
         .skill-card h3 {
-            color: #0f172a;
+            color: var(--ink);
             font-size: 18px;
+            line-height: 1.35;
             margin-bottom: 12px;
         }
 
         .skill-card p {
-            color: #64748b;
+            color: var(--muted);
             font-size: 14px;
-            line-height: 1.8;
+            line-height: 1.85;
         }
 
         /* ================= PROJECTS ================= */
 
         #projects {
-            background: #f8fafc;
+            background:
+                linear-gradient(180deg, #f8fafc 0%, #f4f7fb 100%);
         }
 
         .projects-grid {
@@ -288,102 +428,171 @@
         }
 
         .project-card {
-            background: white;
-            border: 1px solid #e2e8f0;
-            border-radius: 10px;
-            padding: 25px;
+            position: relative;
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: var(--radius-md);
+            padding: 27px 25px;
 
             display: flex;
             flex-direction: column;
 
-            transition: 0.2s ease;
+            overflow: hidden;
+
+            transition:
+                transform 0.25s ease,
+                box-shadow 0.25s ease,
+                border-color 0.25s ease;
+        }
+
+        .project-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--blue), #60a5fa);
+            opacity: 0;
+            transition: opacity 0.25s ease;
         }
 
         .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+            transform: translateY(-7px);
+            border-color: #bfdbfe;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .project-card:hover::before {
+            opacity: 1;
         }
 
         .project-card h3 {
-            color: #0f172a;
+            color: var(--ink);
             font-size: 19px;
+            line-height: 1.4;
             margin-bottom: 12px;
         }
 
         .project-tech {
-            color: #2563eb;
-            font-size: 13px;
-            font-weight: 600;
-            margin-bottom: 15px;
-            line-height: 1.7;
+            display: inline-block;
+            color: var(--blue);
+            background: var(--blue-soft);
+            border: 1px solid #dbeafe;
+            border-radius: 7px;
+            padding: 6px 9px;
+            font-size: 12.5px;
+            font-weight: 700;
+            margin-bottom: 17px;
+            line-height: 1.6;
         }
 
         .project-card p {
-            color: #64748b;
+            color: var(--muted);
             font-size: 14px;
-            margin-bottom: 12px;
+            line-height: 1.75;
+            margin-bottom: 13px;
         }
 
         .project-card ul {
             padding-left: 20px;
-            margin-bottom: 18px;
+            margin-bottom: 19px;
         }
 
         .project-card li {
-            color: #64748b;
+            color: var(--muted);
             font-size: 14px;
+            line-height: 1.7;
             margin-bottom: 7px;
         }
 
+        .project-card li::marker {
+            color: var(--blue);
+        }
+
         .project-card strong {
-            color: #334155;
+            color: var(--ink-soft);
         }
 
         .project-link {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            width: fit-content;
             margin-top: auto;
+            padding-top: 4px;
 
-            color: #2563eb;
+            color: var(--blue);
             font-size: 14px;
             font-weight: 700;
+
+            transition:
+                color 0.2s ease,
+                transform 0.2s ease;
         }
 
         .project-link:hover {
-            color: #1d4ed8;
+            color: var(--blue-dark);
+            transform: translateX(3px);
         }
 
         /* ================= EDUCATION ================= */
 
         #education {
-            background: white;
+            background: var(--surface);
         }
 
         .education-card {
+            position: relative;
             max-width: 800px;
             margin: auto;
 
-            background: #f8fafc;
-            border: 1px solid #e2e8f0;
-            border-radius: 10px;
+            background:
+                linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+            border: 1px solid var(--line);
+            border-radius: var(--radius-md);
 
-            padding: 28px;
+            padding: 30px;
+            box-shadow: var(--shadow-sm);
+
+            transition:
+                transform 0.25s ease,
+                box-shadow 0.25s ease,
+                border-color 0.25s ease;
+        }
+
+        .education-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--blue), #60a5fa);
+            border-radius: 12px 0 0 12px;
+        }
+
+        .education-card:hover {
+            transform: translateY(-4px);
+            border-color: #bfdbfe;
+            box-shadow: var(--shadow-md);
         }
 
         .education-card h3 {
-            color: #0f172a;
+            color: var(--ink);
             font-size: 20px;
+            line-height: 1.4;
             margin-bottom: 6px;
         }
 
         .education-card h4 {
-            color: #2563eb;
+            color: var(--blue);
             font-size: 15px;
-            font-weight: 600;
+            font-weight: 700;
             margin-bottom: 10px;
         }
 
         .education-card p {
-            color: #64748b;
+            color: var(--muted);
             font-size: 14px;
             margin-bottom: 5px;
         }
@@ -391,7 +600,7 @@
         /* ================= CERTIFICATIONS ================= */
 
         #certifications {
-            background: #f8fafc;
+            background: var(--surface-soft);
         }
 
         .certifications-grid {
@@ -403,58 +612,95 @@
         }
 
         .certification-card {
-            background: white;
-            border: 1px solid #e2e8f0;
-            border-radius: 9px;
-            padding: 22px;
+            position: relative;
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: var(--radius-md);
+            padding: 23px;
+
+            transition:
+                transform 0.25s ease,
+                box-shadow 0.25s ease,
+                border-color 0.25s ease;
+        }
+
+        .certification-card:hover {
+            transform: translateY(-5px);
+            border-color: #bfdbfe;
+            box-shadow: var(--shadow-md);
         }
 
         .certification-card h3 {
-            color: #0f172a;
+            color: var(--ink);
             font-size: 17px;
-            margin-bottom: 6px;
+            line-height: 1.4;
+            margin-bottom: 7px;
         }
 
         .certification-card p {
-            color: #64748b;
+            color: var(--muted);
             font-size: 14px;
-            margin-bottom: 10px;
+            margin-bottom: 11px;
         }
 
         .certification-card a {
-            color: #2563eb;
+            display: inline-flex;
+            align-items: center;
+            color: var(--blue);
             font-size: 13px;
             font-weight: 700;
+            transition: color 0.2s ease;
+        }
+
+        .certification-card a:hover {
+            color: var(--blue-dark);
         }
 
         /* ================= RESUME ================= */
 
         #resume {
-            background: white;
+            background: var(--surface);
         }
 
         .resume-container {
+            position: relative;
             max-width: 750px;
             margin: auto;
 
             text-align: center;
 
-            background: #f8fafc;
-            border: 1px solid #e2e8f0;
-            border-radius: 10px;
+            background:
+                radial-gradient(circle at top right, rgba(37, 99, 235, 0.07), transparent 35%),
+                linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
 
-            padding: 40px 25px;
+            border: 1px solid var(--line);
+            border-radius: var(--radius-lg);
+
+            padding: 45px 28px;
+            box-shadow: var(--shadow-sm);
+            overflow: hidden;
+        }
+
+        .resume-container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--blue), #60a5fa);
         }
 
         .resume-container h3 {
-            color: #0f172a;
-            font-size: 23px;
-            margin-bottom: 8px;
+            color: var(--ink);
+            font-size: 24px;
+            line-height: 1.35;
+            margin-bottom: 9px;
         }
 
         .resume-container p {
-            color: #64748b;
-            margin-bottom: 25px;
+            color: var(--muted);
+            margin-bottom: 27px;
         }
 
         .resume-buttons {
@@ -465,38 +711,52 @@
         }
 
         .resume-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 145px;
             padding: 12px 24px;
-            border-radius: 7px;
+            border-radius: var(--radius-sm);
             font-size: 14px;
-            font-weight: 600;
-            transition: 0.2s ease;
+            font-weight: 700;
+            transition:
+                background 0.25s ease,
+                color 0.25s ease,
+                border-color 0.25s ease,
+                transform 0.25s ease,
+                box-shadow 0.25s ease;
         }
 
         .resume-view {
-            background: #2563eb;
+            background: var(--blue);
             color: white;
+            box-shadow: 0 7px 18px rgba(37, 99, 235, 0.18);
         }
 
         .resume-view:hover {
-            background: #1d4ed8;
-            transform: translateY(-2px);
+            background: var(--blue-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 11px 24px rgba(37, 99, 235, 0.23);
         }
 
         .resume-download {
             background: white;
-            color: #334155;
-            border: 1px solid #cbd5e1;
+            color: var(--muted-dark);
+            border: 1px solid var(--line-strong);
         }
 
         .resume-download:hover {
-            background: #f1f5f9;
-            transform: translateY(-2px);
+            background: var(--surface-blue);
+            color: var(--blue);
+            border-color: #93c5fd;
+            transform: translateY(-3px);
         }
 
         /* ================= CONTACT ================= */
 
         #contact {
-            background: #f8fafc;
+            background:
+                linear-gradient(180deg, #f8fafc 0%, #f4f7fb 100%);
         }
 
         .contact-container {
@@ -506,8 +766,8 @@
         }
 
         .contact-container p {
-            color: #64748b;
-            margin-bottom: 25px;
+            color: var(--muted);
+            margin-bottom: 27px;
         }
 
         .contact-links {
@@ -518,29 +778,43 @@
         }
 
         .contact-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
             padding: 11px 20px;
-            border: 1px solid #cbd5e1;
-            border-radius: 7px;
+            border: 1px solid var(--line-strong);
+            border-radius: var(--radius-sm);
             background: white;
-            color: #334155;
+            color: var(--muted-dark);
             font-size: 14px;
             font-weight: 600;
-            transition: 0.2s ease;
+
+            box-shadow: 0 3px 10px rgba(15, 23, 42, 0.03);
+
+            transition:
+                background 0.25s ease,
+                color 0.25s ease,
+                border-color 0.25s ease,
+                transform 0.25s ease,
+                box-shadow 0.25s ease;
         }
 
         .contact-link:hover {
-            background: #2563eb;
+            background: var(--blue);
             color: white;
-            border-color: #2563eb;
+            border-color: var(--blue);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.18);
         }
 
         /* ================= FOOTER ================= */
 
         footer {
-            background: #0f172a;
+            background: #0b1220;
             color: #cbd5e1;
             text-align: center;
-            padding: 25px;
+            padding: 27px 25px;
+            border-top: 1px solid #1e293b;
         }
 
         footer p {
@@ -565,7 +839,7 @@
 
             .nav-container {
                 flex-direction: column;
-                gap: 12px;
+                gap: 13px;
             }
 
             .nav-links {
@@ -574,12 +848,26 @@
                 justify-content: center;
             }
 
+            .home {
+                min-height: 88vh;
+                padding: 75px 20px;
+            }
+
             .home h1 {
-                font-size: 42px;
+                font-size: 43px;
+                letter-spacing: -1px;
             }
 
             .home h2 {
                 font-size: 22px;
+            }
+
+            .home-role {
+                font-size: 14px;
+            }
+
+            .home-summary {
+                font-size: 15px;
             }
 
             .skills-grid {
@@ -591,7 +879,58 @@
             }
 
             section {
-                padding: 60px 20px;
+                padding: 65px 20px;
+            }
+
+            .section-title {
+                font-size: 29px;
+            }
+
+            .project-card,
+            .skill-card {
+                padding: 24px 21px;
+            }
+
+            .education-card {
+                padding: 27px 23px;
+            }
+
+        }
+
+        @media (max-width: 450px) {
+
+            .nav-links {
+                gap: 10px;
+            }
+
+            .nav-links a {
+                font-size: 13px;
+            }
+
+            .home h1 {
+                font-size: 37px;
+            }
+
+            .home h2 {
+                font-size: 20px;
+            }
+
+            .social-box,
+            .primary-button,
+            .secondary-button,
+            .resume-button,
+            .contact-link {
+                width: 100%;
+            }
+
+            .home-buttons,
+            .social-links,
+            .resume-buttons,
+            .contact-links {
+                width: 100%;
+                max-width: 300px;
+                margin-left: auto;
+                margin-right: auto;
             }
 
         }
@@ -1003,14 +1342,13 @@
 
                     <p>
                         <strong>Key Insight:</strong>
-                        Technology generated the highest sales among the
-                        three product categories, while higher discount levels
-                        were generally associated with lower profitability.
+                        Higher discounts were associated with lower profitability
+                        in several product segments.
                     </p>
 
 
                     <a class="project-link"
-                        href="https://github.com/sristipaul6289-ops/dataanalyst-portfolio/tree/main/ecommerce-excel-analysis"
+                        href="https://github.com/sristipaul6289-ops/dataanalyst-portfolio/tree/main/e-commerce-sales-profit-dashboard"
                         target="_blank"
                         rel="noopener noreferrer">
 
@@ -1035,36 +1373,31 @@
                     </div>
 
                     <p>
-                        Performed end-to-end supply chain analysis to
-                        understand sales, profitability, delivery performance,
-                        customers, products and market trends.
+                        Analyzed supply chain data to understand sales,
+                        customer behavior, product performance and delivery
+                        patterns using Python-based exploratory data analysis.
                     </p>
 
                     <ul>
 
                         <li>
-                            Analyzed 180,519 order-item records,
-                            65,752 unique orders and 20,652 customers.
+                            Analyzed more than 180K records across
+                            53 columns.
                         </li>
 
                         <li>
-                            Cleaned and prepared the dataset using
-                            Pandas and NumPy.
+                            Examined 65,752 unique orders,
+                            20,652 customers and 118 products.
                         </li>
 
                         <li>
-                            Performed exploratory data analysis and
-                            feature engineering.
+                            Performed data cleaning, preprocessing
+                            and exploratory analysis using Pandas and NumPy.
                         </li>
 
                         <li>
-                            Analyzed sales, profit, delivery time,
-                            shipping and customer behavior.
-                        </li>
-
-                        <li>
-                            Performed customer, product, category,
-                            market and time-based analysis.
+                            Analyzed late deliveries, repeat customers,
+                            product categories and regional performance.
                         </li>
 
                         <li>
@@ -1075,16 +1408,14 @@
                     </ul>
 
                     <p>
-                        <strong>Key Insights:</strong>
-                        56.98% of customers were repeat customers.
-                        Europe generated the highest sales, Consumer customers
-                        generated the highest sales and profit, and Fishing
-                        was the highest-performing category.
+                        <strong>Key Insight:</strong>
+                        Europe recorded the highest sales, while Consumer
+                        customers contributed the highest sales and profit.
                     </p>
 
 
                     <a class="project-link"
-                        href="https://github.com/sristipaul6289-ops/dataanalyst-portfolio/tree/main/Supply-Chain-Data-Analysis"
+                        href="https://github.com/sristipaul6289-ops/dataanalyst-portfolio/tree/main/supply-chain-data-analysis"
                         target="_blank"
                         rel="noopener noreferrer">
 
@@ -1122,16 +1453,33 @@
                 </h3>
 
                 <h4>
-                    Computer Applications
+                    Netaji Subhash Engineering College
                 </h4>
 
                 <p>
-                    Postgraduate Degree
+                    2024 - Present
                 </p>
 
                 <p>
-                    Relevant areas: Python, SQL, Database Management,
-                    Data Analysis, Statistics and Computer Science.
+                    Maulana Abul Kalam Azad University of Technology (MAKAUT)
+                </p>
+
+                <br>
+
+                <h3>
+                    Bachelor of Computer Applications (BCA)
+                </h3>
+
+                <h4>
+                    B.P. Poddar Institute of Management & Technology
+                </h4>
+
+                <p>
+                    2021 - 2024
+                </p>
+
+                <p>
+                    CGPA: 8.11
                 </p>
 
             </div>
@@ -1160,13 +1508,16 @@
                 <div class="certification-card">
 
                     <h3>
-                        SQL
+                        SQL Completion
                     </h3>
 
                     <p>
-                        SQL learning and hands-on practice focused on
-                        analytical queries and database concepts.
+                        Udemy
                     </p>
+
+                    <a href="#" target="_blank">
+                        View Certificate →
+                    </a>
 
                 </div>
 
@@ -1174,13 +1525,16 @@
                 <div class="certification-card">
 
                     <h3>
-                        Python
+                        Python 3.4.3
                     </h3>
 
                     <p>
-                        Python programming with data analysis and
-                        Python libraries.
+                        Spoken Tutorial - IIT Bombay
                     </p>
+
+                    <a href="#" target="_blank">
+                        View Certificate →
+                    </a>
 
                 </div>
 
@@ -1188,13 +1542,16 @@
                 <div class="certification-card">
 
                     <h3>
-                        Data Analytics
+                        Data Analytics with Python
                     </h3>
 
                     <p>
-                        Data analytics concepts including data cleaning,
-                        analysis and visualization.
+                        NPTEL - IIT Roorkee
                     </p>
+
+                    <a href="#" target="_blank">
+                        View Certificate →
+                    </a>
 
                 </div>
 
@@ -1206,9 +1563,12 @@
                     </h3>
 
                     <p>
-                        Excel, Power Query, PivotTables,
-                        PivotCharts and dashboard development.
+                        Data Analytics & Business Intelligence
                     </p>
+
+                    <a href="#" target="_blank">
+                        View Certificate →
+                    </a>
 
                 </div>
 
@@ -1236,18 +1596,19 @@
             <div class="resume-container">
 
                 <h3>
-                    Data Analyst Resume
+                    Download My Resume
                 </h3>
 
                 <p>
-                    View or download my latest resume.
+                    View my latest resume to learn more about my skills,
+                    projects, education and experience.
                 </p>
 
 
                 <div class="resume-buttons">
 
                     <a class="resume-button resume-view"
-                        href="https://github.com/sristipaul6289-ops/dataanalyst-portfolio/blob/main/SRISTIPAUL_DATAANALYST.pdf"
+                        href="https://github.com/sristipaul6289-ops/dataanalyst-portfolio/blob/main/Sristi_Paul_DataAnalyst.pdf"
                         target="_blank"
                         rel="noopener noreferrer">
 
@@ -1257,7 +1618,7 @@
 
 
                     <a class="resume-button resume-download"
-                        href="https://github.com/sristipaul6289-ops/dataanalyst-portfolio/blob/main/SRISTIPAUL_DATAANALYST.pdf"
+                        href="https://github.com/sristipaul6289-ops/dataanalyst-portfolio/blob/main/Sristi_Paul_DataAnalyst.pdf"
                         target="_blank"
                         rel="noopener noreferrer">
 
@@ -1290,13 +1651,12 @@
             <div class="contact-container">
 
                 <p>
-                    I am currently looking for opportunities as a Data Analyst.
-                    Feel free to connect with me.
+                    Feel free to connect with me regarding Data Analyst
+                    opportunities, projects or professional discussions.
                 </p>
 
 
                 <div class="contact-links">
-
 
                     <a class="contact-link"
                         href="mailto:sristipaul6289@gmail.com">
@@ -1324,7 +1684,6 @@
                         GitHub
 
                     </a>
-
 
                 </div>
 
